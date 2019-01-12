@@ -1,5 +1,5 @@
 # settings_linux
-There are my settings for i3, i3pystatus, vim, zsh, compton for Debian9. 
+There are my settings for i3, i3pystatus, vim, zsh, compton in Debian9. 
 
 i3 - ~/.config/i3/config
 i3pystatus - ~/.config/i3pystatus/config.py
