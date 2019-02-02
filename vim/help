@@ -1,0 +1,31 @@
+TCOMMENT
+
+As operator (the prefix can be customized via |g:tcomment_opleader1|):
+
+    gc{motion}   :: Toggle comments (for small comments within one line 
+                    the &filetype_inline style will be used, if 
+                    defined)
+    gc<Count>c{motion} :: Toggle comment with count argument 
+                    (see |tcomment#Comment()|)
+    gcc          :: Toggle comment for the current line
+
+Force line-wise operation:
+    gC{motion}   :: Toggle comments by line
+    gC<Count>c{motion} :: Toggle comment by line with count argument 
+                    (see |tcomment#Comment()|)
+
+Explicit commenting/uncommenting:
+
+    g<{motion}   :: Uncomment region
+    g<c          :: Uncomment the current line
+    g<b          :: Uncomment the current region as block
+
+    g>{motion}   :: Comment region
+    g>c          :: Comment the current line
+    g>b          :: Comment the current region as block
+
+In visual mode:
+
+    gc           :: Toggle comments
+    g>           :: Comment selected text
+

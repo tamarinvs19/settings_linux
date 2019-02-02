@@ -4,7 +4,7 @@ set autoindent
 set smartindent
 
 " Отключаем автоперенос
-set nowrap 
+"set nowrap 
 
 " Размер таба
 set shiftwidth=4
@@ -85,6 +85,20 @@ let g:tagbar_sort = 0
 " поддержка css, less и scss для tagbar
 "Plug 'mtscout6/vim-tagbar-css', {'for': ['css', 'less', 'scss']}
 
+" подсветка парных скобок
+Plug 'amdt/vim-niji'
+let g:niji_dark_colours = 1
+let g:niji_matching_filetypes = ['python', 'javascript', 'json']
+let g:niji_matching_characters = [['(', ')'],
+                                     \ ['\[', '\]'],
+                                     \ ['{', '}']]
+
+" восстановление последней позиции в файле
+Plug 'farmergreg/vim-lastplace'
+let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+let g:lastplace_open_folds = 0
+
+
 " vim-airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -96,14 +110,21 @@ Plug 'fisadev/FixedTaskList.vim'
 Plug 'Keithbsmiley/investigate.vim'
 nnoremap <F1> :call investigate#Investigate()<CR>
 
+" Change lang to EN in Normal
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled       = 1
+let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
+let g:XkbSwitchIMappings     = ['ru']
+let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
+
 " перемещение текущей строки или выделенных строк вверх или вниз
 " <C-k>   Move current line/selections up
 " <C-j>   Move current line/selections down
 Plug 'matze/vim-move'
 let g:move_key_modifier = 'C'
 
-
 " комментирование выделенных строк
+" gcc - comment line
 Plug 'tomtom/tcomment_vim'
 
 "============WEB-programming==============
@@ -113,13 +134,6 @@ Plug 'tpope/vim-surround', {'for': ['htmldjango','html', 'xml']}
 
 " Удобный способ создавать обе части тега html
 Plug 'tpope/vim-ragtag', {'for': ['htmldjango', 'html', 'xhtml', 'xml']}
-
-" Change lang to EN in Normal
-Plug 'lyokha/vim-xkbswitch'
-let g:XkbSwitchEnabled       = 1
-let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
-let g:XkbSwitchIMappings     = ['ru']
-let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
 
 " Plugun for fast creating tags
 Plug 'mattn/emmet-vim',           { 'for': ['htmldjango', 'html','xhtml','css','sass','scss','less'] }
@@ -181,7 +195,7 @@ Plug 'Yggdroot/indentLine'
 let g:indentLine_char       = '¦'
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui  = '#A4E57E'
-nmap <F9> :IndentLinesToggle<CR> " 
+" nmap <F9> :IndentLinesToggle<CR> " 
 
 " autoformat -vim 
 Plug 'Chiel92/vim-autoformat'
@@ -208,11 +222,15 @@ let g:UltiSnipsEditSplit="vertical"
 
 
 
-" --- Python ---
+" --- Python ---"
+" Запуск кода
+nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
+
 " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
 "Plug 'klen/python-mode', {'for': 'python'}
 " Jedi-vim autocomplete plugin
-"Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+
 " --- END Python ---
 
 
@@ -220,10 +238,10 @@ let g:UltiSnipsEditSplit="vertical"
 call plug#end()
 " end plugins
 
-
 colorscheme gruvbox
 set t_Co=256
 set background=dark
+let g:gruvbox_italicize_strings = 1
 
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
@@ -262,7 +280,7 @@ let g:pymode_rope_completion = 0
 let g:pymode_rope_complete_on_dot = 0
 
 " Отключаем надоедливое окно, отображающее ошибки и предупреждения
-"let g:pymode_lint_cwindow = 0
+let g:pymode_lint_cwindow = 0
 
 " документация
 let g:pymode_doc = 0
@@ -293,6 +311,9 @@ let g:pymode_syntax_space_errors = g:pymode_syntax_all
 let g:pymode_options_max_line_length = 79
 let g:pymode_python = 'python3'
 " Disable choose first function/method at autocomplete
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#popup_on_dot = 0
 let g:jedi#force_py_version = 3
 let g:jedi#popup_select_first = 0
 
@@ -319,7 +340,7 @@ nmap SS S$
 " endif
 "
 
-" my command
+" my commands
 command W :w
 command Wq :wq
 command WQ :wq
