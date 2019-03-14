@@ -32,12 +32,11 @@ alias mount='sudo mount'
 
 alias cdcf='cd ~/Documents/CodeForces'
 alias cdpl='cd ~/Documents/Python/python-learning'
+alias cdmx='cd ~/Documents/misterX'
 alias i3set='vim ~/.config/i3/config'
 alias i3pyset='vim ~/.config/i3pystatus/config.py'
 
 export LC_CTYPE="ru_RU.UTF-8"
-
-
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH

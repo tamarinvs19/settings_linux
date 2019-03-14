@@ -13,8 +13,8 @@ status.register("shell",
 # Tue 30 Jul 11:59:46 PM KW31
 #                          ^-- calendar week
 status.register("clock",
-                format="%a %-d %b %H:%M",
-                color="#888888",)
+        format="%a %-d %b %H:%M",
+        color="#888888",)
 # color="#00a388",)
 
 # The battery monitor has many formatting options, see README for details
@@ -29,24 +29,24 @@ status.register("clock",
 # If you don't have a desktop notification demon yet, take a look at dunst:
 #   http://www.knopwob.org/dunst/
 status.register(
-            'battery',
-            interval=5,
-            format='{status}{percentage:.0f} {remaining:%E%hh:%Mm}',
-            alert=True,
-            alert_percentage=15,
-            battery_ident='BAT0',
-            battery_prefix="BAT0",
-            charging_color="#4e9c00",
-            color="#4e9c00",
-            critical_color ="#db143c",
-            full_color="#4e9c00",
-            critical_level_percentage=5,
-            critical_level_command="hibernate",
-            status = {
-                'DPL': ' ',
-                'CHR': '',
-                'DIS': ' ',
-                'FULL': ' ',
+        'battery',
+        interval=5,
+        format='{status}{percentage:.0f} {remaining:%E%hh:%Mm}',
+        alert=True,
+        alert_percentage=15,
+        battery_ident='BAT0',
+        battery_prefix="BAT0",
+        charging_color="#4e9c00",
+        color="#4e9c00",
+        critical_color ="#db143c",
+        full_color="#4e9c00",
+        critical_level_percentage=5,
+        critical_level_command="hibernate",
+        status = {
+            'DPL': ' ',
+            'CHR': '',
+            'DIS': ' ',
+            'FULL': ' ',
             }
         )
 '''status.register("battery",
@@ -76,12 +76,16 @@ status.register(
 '''status.register("load",
                 format="{avg1}",)
 '''
+# Shows your CPU temperature, if you have a Intel CPU
+# status.register("temp",
+#         format="{temp:.0f}°C",
+#         color="#777777",)
 #cpu
 status.register("cpu_usage_graph",
-                format="CPU: {cpu_graph}",
-                color="#4e9c00",
-                graph_width=8,
-                graph_style="blocks",)
+        format="CPU: {cpu_graph}",
+        color="#4e9c00",
+        graph_width=8,
+        graph_style="blocks",)
 
 
 #mem
@@ -94,16 +98,13 @@ status.register("mem",
     divisor=1073741824,)
 '''
 status.register("mem_bar",
-                format="MEM: {used_mem_bar}",
-                color='#4e9c00',
-                warn_color="#ff6800",
-                alert_color="#ff0000",
-                multi_colors=True,
-                )
-# Shows your CPU temperature, if you have a Intel CPU
-'''status.register("temp",
-    format="{temp:.0f}°C",)
-'''
+        format="MEM: {used_mem_bar}",
+        color='#4e9c00',
+        warn_color="#ff6800",
+        alert_color="#ff0000",
+        multi_colors=True,
+        )
+
 # Displays whether a DHCP client is running
 '''status.register("runwatch",
     name="DHCP",
@@ -127,50 +128,50 @@ status.register("updates",
 #
 # Note: the network module requires PyPI package netifaces
 status.register("network",
-    interface="enp3s0",
-    format_up="{v4cidr}",
-    format_down="",
-    color_up="#4e9c00",
-                )
+        interface="enp3s0",
+        format_up="{v4cidr}",
+        format_down="",
+        color_up="#4e9c00",
+        )
 
 # Note: requires both netifaces and basiciw (for essid and quality)
 status.register("network",
-    interface="wlp2s0b1",
-    format_up="{essid} {quality:03.0f}",
-    format_down="",
-    color_up="#4e9c00",
-                )
+        interface="wlp2s0b1",
+        format_up="{essid} {quality:03.0f}",
+        format_down="",
+        color_up="#4e9c00",
+        )
 
 # Shows disk usage of /
 # Format:
 # 42/128G [86G]
 status.register("disk",
-                path="/home",
-                format=" {used} / {total}",#"{avail} GB",
-                color="#888888", # {used}/{total}G
-                critical_color="#f80000",
-                critical_limit=1,)
+        path="/home",
+        format=" {used} / {total}",#"{avail} GB",
+        color="#888888", # {used}/{total}G
+        critical_color="#f80000",
+        critical_limit=1,)
 
 # Shows pulseaudio default sink volume
 #
 # Note: requires libpulseaudio from PyPI
 status.register("pulseaudio",
-                format=" {volume}",
-                format_muted=" {volume}",
-                color_unmuted="#4e9c00",
-                color_muted="#888888",
-                )
+        format=" {volume}",#
+        format_muted=" {volume}",# Ꚙ
+        color_unmuted="#4e9c00",
+        color_muted="#888888",
+        )
 
 # Shows mpd status
 # Format:
 # Cloud connected▶Reroute to Remain
-status.register("mpd",
-    format="{title}{status}{album}",
-    status={
-        "pause": "▷",
-        "play": "▶",
-        "stop": "◾",
-    },)
+# status.register("mpd",
+#         format="{title}{status}{album}",
+#         status={
+#             "pause": "▷",
+#             "play": "▶",
+#             "stop": "◾",
+#             },)
 
 status.run()
 

@@ -36,7 +36,7 @@ set cursorline
 " количество cтрок в всплывающем окне
 set pumheight=5
 
-inoremap  ';           <Esc>
+" inoremap  ';           <Esc>
 
 nnoremap  <F12>f       :exe ':silent !firefox %'<CR><C-l>
 
@@ -49,6 +49,10 @@ imap <F6> <esc>:bp<cr>i
 nmap <F7> :bn<cr>
 vmap <F7> <esc>:bn<cr>i
 imap <F7> <esc>:bn<cr>i
+
+nmap fl :bn<cr>
+nmap fh :bn<cr>
+nmap fd :bn<cr>
 
 " Specify a directory for plugins
 " - For Neovim: ~/.local/share/nvim/plugged
