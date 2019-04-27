@@ -1,7 +1,0 @@
-#!/usr/bin/python3
-
-import os
-cpu_free = os.popen('mpstat 1 1').read().split('\n')[-2].split(' ')[-1].split(',')
-cpu_usage = 100 - int(cpu_free[0]) - int(cpu_free[1])/100
-print(cpu_usage)
-print(cpu_usage)
