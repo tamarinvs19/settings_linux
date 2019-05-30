@@ -1,0 +1,15 @@
+#!/usr/bin/python3
+
+import os
+
+disk = 'sda2'
+data = os.popen('df -h | grep /dev/{}'.format(disk)).read().split() 
+[size, used] = data[1:3]
+percent = int(data[4][:-1])
+
+print(used[:-1] + '/' + size)
+
+if percent >= 90:
+    print('#af0000')
+elif percent >= 75:
+    print('#ffaf00')

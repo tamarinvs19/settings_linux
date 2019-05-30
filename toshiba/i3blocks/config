@@ -5,35 +5,40 @@ separator=false
 separator_block_width=3
 
 [volume]
+command=~/.config/i3blocks/scripts/volume_py
+label=Vol:
+interval=5
+
+[separator]
 
 [disk]
-command=~/.config/i3blocks/scripts/disk/disk
-label=
+command=~/.config/i3blocks/scripts/disk_py
+label=Data:
 interval=60
 
 [eth]
 
 [wifi]
-command=~/.config/i3blocks/scripts/wifi/wifi
+command=~/.config/i3blocks/scripts/wifi_py
 label=Wifi:
 interval=60
 
 [separator]
 
 [mem]
-command=~/.config/i3blocks/scripts/memory/memory
+command=~/.config/i3blocks/scripts/memory_sh
 interval=30
 label=MEM:
 
 [cpu_usage]
-command=~/.config/i3blocks/scripts/cpu_usage/cpu_usage
+command=~/.config/i3blocks/scripts/cpu_usage_perl
 interval=3
 label=CPU:
 
 [separator]
 
 [battery]
-command=~/.config/i3blocks/scripts/battery/battery
+command=~/.config/i3blocks/scripts/battery_perl
 interval=30
 label=Bat:
 

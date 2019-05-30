@@ -1,0 +1,27 @@
+#!/usr/bin/python3
+
+import os
+import basiciw
+
+interface = 'wlp5s0'
+
+if os.popen('cat /sys/class/net/{}/operstate'.format(interface)).read() == 'down':
+    print('down')
+    print('down')
+    print('af0000')
+else:
+    quality = int(int(os.popen('grep {} /proc/net/wireless'.format(interface)).read().strip().split()[2][:-1]) / 70 * 100)
+    essid = basiciw.iwinfo(interface)['essid']
+
+    print(essid, str(quality).rjust(3))
+    print(essid, str(quality).rjust(3))
+
+    if quality >= 80:
+        print('#5faf00')
+    elif quality >= 60:
+        print('#00afaf')
+    elif quality >= 30:
+        print('#ffaf00')
+    else:
+        print('af0000')
+
