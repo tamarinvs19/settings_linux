@@ -1,0 +1,23 @@
+xkb_keymap {
+    xkb_keycodes  { include "evdev+aliases(qwerty)"	};
+    xkb_types     { include "complete"	};
+    xkb_compat    { include "complete+ledscroll(group_lock)"	};
+    xkb_geometry  { include "pc(pc105)"	};
+    xkb_symbols "version2" {
+	include "pc+us+ru:2+inet(evdev)"
+
+	replace key <CAPS> { [ Escape ] };
+
+	key <AC06> { [ colon, backslash ] };
+    key <AC07> { [ h, H ] };
+    key <AC08> { [ j, J ] };
+    key <AC09> { [ k, K ] };
+    key <AC10> { [ l, L ] };
+    key <BKSL> { [ colon, semicolon ] };
+
+    key <TLDE> { [ asciitilde, grave ] };
+
+    key <RALT> { [ ISO_First_Group, ISO_Last_Group ] };
+    };
+};
+
