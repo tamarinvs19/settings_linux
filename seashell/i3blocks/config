@@ -44,10 +44,10 @@ command=date '+%_d %_b %Y %k:%M'
 color=#888888
 interval=1
 
-[separator]
+# [separator]
 
-[lang]
-command=xkb-switch
-color=#af0000
-interval=1
+# [lang]
+# command=xkb-switch
+# color=#af0000
+# interval=1
 
