@@ -1,0 +1,29 @@
+#!/usr/bin/python3
+
+import os
+import basiciw
+
+interface = 'wlp2s0b1'
+
+background = '#434343'
+background_past = '#262626'
+background_next = '#262626'
+
+out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span><span background="{background_next}" color="{background}"></span>'
+if os.popen('cat /sys/class/net/{}/operstate'.format(interface)).read().strip() == 'down':
+    print(out.format(color="#af0000", background=background, background_next=background_next, background_past=background_past, text=" "))
+else:
+    quality = int(int(os.popen('grep {} /proc/net/wireless'.format(interface)).read().strip().split()[2][:-1]) / 70 * 100)
+    essid = basiciw.iwinfo(interface)['essid']
+
+    if quality >= 70:
+        color = '#5faf00'
+    elif quality >= 50:
+        color = '#00afaf'
+    elif quality >= 20:
+        color = '#ffaf00'
+    else:
+        color = '#af0000'
+
+    print(out.format(text=' ' + str(quality).rjust(3), color=color, background=background, background_next=background_next, background_past=background_past))
+

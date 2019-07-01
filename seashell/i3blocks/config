@@ -5,18 +5,25 @@ separator=false
 separator_block_width=3
 
 [volume]
+command=~/.config/i3blocks/scripts/volume_py
+label=
+interval=1
+markup=pango
+
+[separator]
 
 [disk]
 command=~/.config/i3blocks/scripts/disk
-label=Data:
+label=
 interval=60
 
 [eth]
 
 [wifi]
-command=~/.config/i3blocks/scripts/wifi
-label=Wifi:
-interval=60
+command=~/.config/i3blocks/scripts/wifi_py
+label=
+interval=30
+markup=pango
 
 [separator]
 
@@ -33,16 +40,19 @@ label=CPU:
 [separator]
 
 [battery]
-command=~/.config/i3blocks/scripts/battery
+command=~/.config/i3blocks/scripts/battery_py
 interval=30
-label=Bat:
+label=
+markup=pango
 
 [separator]
 
 [time]
 command=date '+%_d %_b %Y %k:%M'
+#command=~/.config/i3blocks/scripts/date_time_py
 color=#888888
 interval=1
+#markup=pango
 
 # [separator]
 

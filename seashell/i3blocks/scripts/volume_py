@@ -1,0 +1,26 @@
+#!/usr/bin/python3
+
+
+import os
+
+background = '#434343'
+background_past = '#262626'
+background_next = '#262626'
+
+volume, setting = [x[1:-1] for x in os.popen("amixer | grep 'Front Left: P'").read().strip().split(' ')[-2:]]
+volume = int(volume[:-1])
+if setting == 'on':
+    if volume > 0:
+        color = ["#ffaf00", "#5faf00"][volume // 51]
+        sign = [" ", " "][volume // 51]
+    else:
+        color = "#888888"
+        sign = " "
+    text = "{sign} {volume}".format(sign=sign, volume=volume)
+else:
+    color = "#af0000"
+    text = ''
+
+out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span><span background="{background_next}" color="{background}"></span>'
+
+print(out.format(text=text, color=color, background=background, background_next=background_next, background_past=background_past))
