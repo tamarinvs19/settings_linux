@@ -194,7 +194,7 @@ bar {
     status_command    i3blocks ~/.config/i3blocks/config
     position          top
     workspace_buttons yes
-    font pango: Iconic, Hack 9
+    font pango: Iconic, DejaVu Sans Mono 9
     # $i3-theme-bar
     colors {
     	background #121212

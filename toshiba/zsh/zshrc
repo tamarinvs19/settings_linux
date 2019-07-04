@@ -121,6 +121,7 @@ alias terset="vim ~/.config/termite/config"
 
 alias cdmx="cd ~/Documents/misterX"
 alias cdpl="cd ~/Documents/python-learning"
+alias cdsl="cd ~/Documents/settings_linux"
 
 alias ga='git add'
 alias gl='git pull'
