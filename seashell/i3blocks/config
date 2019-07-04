@@ -17,7 +17,7 @@ command=~/.config/i3blocks/scripts/disk
 label=
 interval=60
 
-[eth]
+#[eth]
 
 [wifi]
 command=~/.config/i3blocks/scripts/wifi_py
