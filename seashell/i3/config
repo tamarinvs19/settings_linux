@@ -104,16 +104,16 @@ bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1"
-set $ws2 "2"
-set $ws3 "3"
-set $ws4 "4"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -197,10 +197,11 @@ bindsym $mod+Pause mode "$mode_system"
 
 #my combination
 bindsym $alt + v exec vivaldi
-bindsym $alt + c exec chromium
-bindsym $alt + f exec firefox
+bindsym $alt + Shift + c exec chromium
+bindsym $alt + Shift + f exec firefox
 bindsym $alt + r exec lxterminal -e ranger
 bindsym $alt + p exec pcmanfm
+bindsym $alt + e exec evolution
 
 bindsym $mod+Shift+t border toggle
 #Fn
@@ -230,13 +231,12 @@ bindsym $mod+x [urgent=latest] focus
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 
-# i3pystatus
 # $i3-theme-bar
 bar {
-    status_command    python3 ~/.config/i3pystatus/config.py
+    status_command    i3blocks ~/.config/i3blocks/config
     position          top
     workspace_buttons yes
-    font pango: Iconic, DejaVu Sans Mono 9
+    font pango: FontAwesome, Hack, DejaVu Sans Mono 9
     # $i3-theme-bar
     colors {
     	background #262626
@@ -259,10 +259,11 @@ client.urgent 		#C20000 #C20000 #eee8d5 #eee8d5
 
 # переключение раскладки
 # exec setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp:toggle"
-exec xkbcomp ~/.config/xkb/my $DISPLAY
+exec xkbcomp ~/.config/xkb/asymmetry $DISPLAY
 
 exec redshift -l 59:30 &
 exec nitrogen --restore
 exec compton --config ~/.config/compton/compton.conf
 # exec xscreensaver &
 
+# exec evolution &
