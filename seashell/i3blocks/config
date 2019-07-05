@@ -17,6 +17,8 @@ command=~/.config/i3blocks/scripts/disk
 label=
 interval=60
 
+[separator]
+
 #[eth]
 
 [wifi]
