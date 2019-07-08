@@ -111,15 +111,15 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'fisadev/FixedTaskList.vim'
 
 " Documentation
-Plug 'Keithbsmiley/investigate.vim'
-nnoremap <F1> :call investigate#Investigate()<CR>
+"Plug 'Keithbsmiley/investigate.vim'
+"nnoremap <F1> :call investigate#Investigate()<CR>
 
 " Change lang to EN in Normal
-Plug 'lyokha/vim-xkbswitch'
-let g:XkbSwitchEnabled       = 1
-let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
-let g:XkbSwitchIMappings     = ['ru']
-let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
+"Plug 'lyokha/vim-xkbswitch'
+"let g:XkbSwitchEnabled       = 1
+"let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
+"let g:XkbSwitchIMappings     = ['ru']
+"let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
 
 " перемещение текущей строки или выделенных строк вверх или вниз
 " <C-k>   Move current line/selections up
@@ -210,7 +210,7 @@ vnoremap <C-F8> gq
 
 "---> https://github.com/sirver/ultisnips 
 " Track the engine.
-Plug 'SirVer/ultisnips'
+" Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
@@ -233,7 +233,7 @@ nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
 " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
 "Plug 'klen/python-mode', {'for': 'python'}
 " Jedi-vim autocomplete plugin
-Plug 'davidhalter/jedi-vim', {'for': 'python'}
+" Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
 " --- END Python ---
 

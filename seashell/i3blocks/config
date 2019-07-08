@@ -24,7 +24,7 @@ interval=60
 [wifi]
 command=~/.config/i3blocks/scripts/wifi_py
 label=
-interval=30
+interval=10
 markup=pango
 
 [separator]

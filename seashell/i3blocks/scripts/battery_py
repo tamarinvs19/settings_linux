@@ -23,15 +23,17 @@ charging = ''
 discharging = ''
 
 if status == 'Charging':
-    if percent == 100:
-        sign = charging[-1]
-    else:
-        sign = discharging[percent // 10]+' '
+    # if percent == 100:
+    #     sign = charging[-1]
+    # else:
+    #     sign = discharging[percent // 10]+' '
+    sign = str(percent)+ ' '
 elif status == 'Discharging':
-    if percent >= 99:
-        sign = discharging[-1]
-    else:
-        sign = discharging[percent // 10]
+    # if percent >= 99:
+    #     sign = discharging[-1]
+    # else:
+    #     sign = discharging[percent // 10]
+    sign = str(percent)
 else:
     sign = ''
 

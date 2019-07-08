@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 import os
-import basiciw
+# import basiciw
 
 interface = 'wlp2s0b1'
 
@@ -14,7 +14,7 @@ if os.popen('cat /sys/class/net/{}/operstate'.format(interface)).read().strip() 
     print(out.format(color="#af0000", background=background, background_next=background_next, background_past=background_past, text=" "))
 else:
     quality = int(int(os.popen('grep {} /proc/net/wireless'.format(interface)).read().strip().split()[2][:-1]) / 70 * 100)
-    essid = basiciw.iwinfo(interface)['essid']
+    # essid = basiciw.iwinfo(interface)['essid']
 
     if quality >= 70:
         color = '#5faf00'
