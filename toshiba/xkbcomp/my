@@ -1,18 +1,1 @@
-xkb_keymap {
-    xkb_keycodes  { include "evdev+aliases(qwerty)"    };
-    xkb_types     { include "complete"   };
-    xkb_compat    { include "complete+ledscroll(group_lock)"   };
-    xkb_geometry  { include "pc(pc105)"  };
-    xkb_symbols "my" {
-	include "pc+us+ru:2+inet(evdev)"
-	include "compose(rctrl)"
-
-	key <RALT> { [ ISO_First_Group, ISO_Last_Group] };
-	key <AC10> { [ colon, semicolon ] };
-	key <TLDE> { [ asciitilde, grave ] };
-
-	replace key <LSGT> { [ Control_L, Control_L ] };
-
-	replace key <CAPS> { [ Escape ] };
-    };
-};
+/home/slava/.config/xkb/my
