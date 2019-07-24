@@ -10,8 +10,8 @@ xkb_keymap {
 	key <AC10> { [ colon, semicolon ] };
 	key <TLDE> { [ asciitilde, grave ] };
 
-	replace key <AC04> { 
-	    type[Group1]="FOUR_LEVEL",
+	replace key <CAPS> { 
+	    type[Group1]="TWO_LEVEL",
 	    symbols[Group1] = [ ISO_Level3_Shift, ISO_Level3_Shift ]
 	};
 	include "level3(modifier_mapping)"
@@ -20,9 +20,6 @@ xkb_keymap {
 	key <AC07> { [ j, J, KP_Down,  J ] };
 	key <AC08> { [ k, K, KP_Up,    K ] };
 	key <AC09> { [ l, L, KP_Right, L ] };
-
-
-	key <CAPS> { [ Escape, BackSpace ] };
 
 	replace key <LSGT> {
 	    type[Group1]="TWO_LEVEL",
