@@ -7,7 +7,7 @@ separator_block_width=3
 [volume]
 command=~/.config/i3blocks/scripts/volume_py
 label=
-interval=1
+interval=5
 markup=pango
 
 [separator]

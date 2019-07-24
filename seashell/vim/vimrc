@@ -4,7 +4,7 @@ set autoindent
 set smartindent
 
 " Отключаем автоперенос
-"set nowrap 
+set nowrap 
 
 " Размер таба
 set shiftwidth=4
@@ -51,7 +51,7 @@ vmap <F7> <esc>:bn<cr>i
 imap <F7> <esc>:bn<cr>i
 
 nmap fl :bn<cr>
-nmap fh :bn<cr>
+nmap fh :bp<cr>
 nmap fd :bn<cr>
 
 " Specify a directory for plugins
@@ -233,7 +233,7 @@ nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
 " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
 "Plug 'klen/python-mode', {'for': 'python'}
 " Jedi-vim autocomplete plugin
-" Plug 'davidhalter/jedi-vim', {'for': 'python'}
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
 " --- END Python ---
 
