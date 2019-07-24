@@ -1,0 +1,1 @@
+/home/slava/.vim/plugged/vim-airline-themes/autoload/airline/themes/raven_red.vim

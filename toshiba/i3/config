@@ -99,16 +99,16 @@ bindsym $mod+c focus child
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1: >_"
-set $ws2 "2: >_"
-set $ws3 "3: web"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
-set $ws9 "9"
-set $ws10 "10: media"
+set $ws9 "9: "
+set $ws10 "10: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -194,7 +194,7 @@ bar {
     status_command    i3blocks ~/.config/i3blocks/config
     position          top
     workspace_buttons yes
-    font pango: Iconic, Hack 9
+    font pango: Hack 9
     # $i3-theme-bar
     colors {
     	background #121212
@@ -232,21 +232,36 @@ bindsym XF86AudioMute exec amixer set Master toggle
 
 #my combination
 bindsym $alt + v exec vivaldi-stable
+bindsym $alt + Shift + c exec chromium
+bindsym $alt + Shift + f exec firefox
+bindsym $alt + r exec termite -e ranger
 bindsym $alt + p exec pcmanfm
 bindsym $alt + n exec nautilus
 bindsym $alt + w exec wicd-gtk
+bindsym $alt + e exec evolution
 
 # on / off touchpad
 bindsym $alt + Shift + t exec ~/.touchpad_toggle
+
+# moving mouse
+bindsym $alt + $mod + h exec xdotool mousemove_relative -- -10 0
+bindsym $alt + $mod + j exec xdotool mousemove_relative 0 10
+bindsym $alt + $mod + k exec xdotool mousemove_relative 0 -10
+bindsym $alt + $mod + l exec xdotool mousemove_relative 10 0
+
+# key click
+bindsym $alt + $mod + i exec xdotool click 1
+bindsym $alt + $mod + o exec xdotool click 3
 
 # scrot
 bindsym --release $mod + Print exec scrot '%Y-%m-%d_%h%M%S-$wx$h.png' -e 'mv $f ~/Pictures'
 
 # change input
 exec xkbcomp ~/.config/xkb/my $DISPLAY
+exec xcape -t 1000 -e "ISO_Level3_Shift=Escape"
 # exec xcape -t 1000 -e "Shift_L=Escape"
 
 exec nitrogen --restore
-exec redshift -l 59:30 &
+# exec redshift -l 59:30 &
 exec compton --config ~/.config/compton/compton.conf
 
