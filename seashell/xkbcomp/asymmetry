@@ -11,7 +11,16 @@ xkb_keymap {
 	key <AC10> { [ colon, semicolon ] };
 	key <TLDE> { [ asciitilde, grave ] };
 
-	replace key <CAPS> { [ Escape ] };
+	replace key <CAPS> { 
+	    type[Group1]="TWO_LEVEL",
+	    symbols[Group1] = [ ISO_Level3_Shift, ISO_Level3_Shift ]
+	};
+	include "level3(modifier_mapping)"
+
+	key <AC06> { [ h, H, KP_Left,  H ] };
+	key <AC07> { [ j, J, KP_Down,  J ] };
+	key <AC08> { [ k, K, KP_Up,    K ] };
+	key <AC09> { [ l, L, KP_Right, L ] };
     };
 };
 

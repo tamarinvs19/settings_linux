@@ -275,6 +275,7 @@ client.urgent 		#C20000 #C20000 #eee8d5 #eee8d5
 # exec setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp:toggle"
 
 exec xkbcomp /home/slava/.config/xkb/asymmetry $DISPLAY
+exec xcape -t 1000 -e "ISO_Level3_Shift=Escape"
 
 exec redshift -l 59:30 &
 exec nitrogen --restore
