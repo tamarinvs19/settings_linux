@@ -206,6 +206,18 @@ bindsym $alt + p exec pcmanfm
 bindsym $alt + e exec evolution
 
 bindsym $mod+Shift+t border toggle
+
+
+#key click                                
+bindsym $alt + $mod + h exec xdotool mousemove_relative -- -10 0
+bindsym $alt + $mod + j exec xdotool mousemove_relative 0 10
+bindsym $alt + $mod + k exec xdotool mousemove_relative 0 -10
+bindsym $alt + $mod + l exec xdotool mousemove_relative 10 0
+
+# key click
+bindsym $alt + $mod + i exec xdotool click 1
+bindsym $alt + $mod + o exec xdotool click 3
+
 #Fn
 bindsym XF86MonBrightnessUp exec xbacklight -inc 4
 bindsym XF86MonBrightnessDown exec xbacklight -dec 4
