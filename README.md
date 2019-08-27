@@ -5,7 +5,7 @@ seashell - Debian 9
     i3 - ~/.config/i3/config
     i3pystatus - ~/.config/i3pystatus/config.py
     vim - ~/.vimrc
-    vim-airline-theme - ~/.vim/plugged/vim-airline-themes/autoload/themes/raven_green.vim
+    vim-airline-theme - ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/raven_green.vim
     zsh - ~/.zshrc
     oh-my-zsh - ~/.oh-my-zsh/custom/themes/green.vim-themes
     compton - ~/.config/compton/compton.conf
