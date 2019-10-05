@@ -1,10 +1,12 @@
 syntax on
 set number
+set relativenumber
 set autoindent
 set smartindent
+" set textwidth=80
 
 " Отключаем автоперенос
-set nowrap 
+" set nowrap 
 
 " Размер таба
 set shiftwidth=4
@@ -39,16 +41,6 @@ set pumheight=5
 " inoremap  ';           <Esc>
 
 nnoremap  <F12>f       :exe ':silent !firefox %'<CR><C-l>
-
-" F6 - предыдущий буфер
-nmap <F6> :bp<cr>
-vmap <F6> <esc>:bp<cr>i
-imap <F6> <esc>:bp<cr>i
-
-" F7 - следующий буфер
-nmap <F7> :bn<cr>
-vmap <F7> <esc>:bn<cr>i
-imap <F7> <esc>:bn<cr>i
 
 nmap fl :bn<cr>
 nmap fh :bp<cr>
@@ -95,7 +87,7 @@ let g:niji_dark_colours = 1
 let g:niji_matching_filetypes = ['python', 'javascript', 'json']
 let g:niji_matching_characters = [['(', ')'],
                                      \ ['\[', '\]'],
-                                     \ ['{', '}']]
+                                     \ ['{', '}'],]
 
 " восстановление последней позиции в файле
 Plug 'farmergreg/vim-lastplace'
@@ -115,11 +107,11 @@ Plug 'fisadev/FixedTaskList.vim'
 "nnoremap <F1> :call investigate#Investigate()<CR>
 
 " Change lang to EN in Normal
-"Plug 'lyokha/vim-xkbswitch'
-"let g:XkbSwitchEnabled       = 1
-"let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
-"let g:XkbSwitchIMappings     = ['ru']
-"let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled       = 1
+let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
+let g:XkbSwitchIMappings     = ['ru']
+let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
 
 " перемещение текущей строки или выделенных строк вверх или вниз
 " <C-k>   Move current line/selections up
@@ -174,7 +166,7 @@ let g:syntastic_css_csslint_args    = "--ignore=zero-units"
 
 " ---JS---
 " js синкаксис --> jQuery, underscore.js, Backbone.js, AngularJS, RequireJS, Sugar.js, Jasmine
-Plug 'moll/vim-node'
+Plug 'moll/vim-node', {'for': 'javascript'}
 Plug 'pangloss/vim-javascript',      { 'for': 'javascript' }
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 let javascript_enable_domhtmlcss = 1
@@ -207,24 +199,64 @@ let g:formatprg_args_javascript = "-j -q -B -f -"
 noremap  <F8>   :Autoformat<CR><CR>
 vnoremap <C-F8> gq
 
+" julia
+Plug 'JuliaEditorSupport/julia-vim', {'for': 'julua'}
+autocmd BufRead,BufNewFile *.jl :set filetype=julia
+
+
+" tex
+Plug 'lervag/vimtex', {'for': 'tex'}
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+let g:tex_conceal='abdmg'
+set conceallevel=0
+
+let g:vimtex_compiler_latexmk = {
+      \ 'options' : [
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-synctex=1',
+      \   '-interaction=nonstopmode',
+      \   '-jobname="string"'
+      \ ],
+      \}
+
+" run pdflatex
+nnoremap <buffer> <F10> :exec '!pdflatex' shellescape(@%, 1)<cr>
+
 
 "---> https://github.com/sirver/ultisnips 
 " Track the engine.
-" Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips'
 
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
 
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-f>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-f>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 " <--- https://github.com/sirver/ultisnips
+"
 
+nmap <F7> :setlocal spell<cr>
+vmap <F7> <esc>:setlocal spell<cr>i
+imap <F7> <esc>:setlocal spell<cr>i
+" setlocal spell
+set spelllang=en_us,ru_ru
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
+" cpp syntax
+Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'} 
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
 
 " --- Python ---"
 " Запуск кода
