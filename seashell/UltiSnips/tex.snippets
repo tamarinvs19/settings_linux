@@ -1,3 +1,22 @@
+# alphabet
+snippet eps "epsilon" wA
+\varepsilon $0
+endsnippet
+
+snippet delta "delta" wA
+\delta $0
+endsnippet
+
+snippet alpha "alpha" wA
+\alpha $0
+endsnippet
+
+# --
+
+snippet in "in" wA
+\in $0
+endsnippet
+
 snippet today "Date"
 ${2:${1:`date +%d`}.`date +%m`}.`date +%Y`
 endsnippet
@@ -19,12 +38,32 @@ snippet 90m "\left ( \right )" A
 \left ( $1 \right )
 endsnippet
 
-snippet 90matr "\left ( MATRIX \right )" A
+snippet 90tr "\left ( MATRIX \right )" A
 \left ( 
 \begin{array}{$1}
 $0
 \end{array}
 \right )
+endsnippet
+
+snippet -> "to" A
+\to $0
+endsnippet
+
+snippet >= "le" A
+\le $0
+endsnippet
+
+snippet <= "ge" A
+\ge
+endsnippet
+
+snippet => "rightarrow" A
+\Rightarrow
+endsnippet
+
+snippet abs "Abs" wA
+|$1|$0
 endsnippet
 
 snippet beg "begin{} / end{}" bA
@@ -76,9 +115,9 @@ snippet td "superscript" iA
 ^{$1}$0
 endsnippet
 
-snippet // "Fraction" iA
-\\frac{$1}{$2}$0
-endsnippet
+# snippet // "Fraction" iA
+# \\frac{$1}{$2}$0
+# endsnippet
 
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
@@ -159,5 +198,4 @@ endsnippet
 snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet
-
 

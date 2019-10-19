@@ -3,6 +3,10 @@ set number
 set relativenumber
 set autoindent
 set smartindent
+
+set conceallevel=1
+set concealcursor=c
+
 " set textwidth=80
 
 " Отключаем автоперенос
@@ -103,8 +107,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'fisadev/FixedTaskList.vim'
 
 " Documentation
-"Plug 'Keithbsmiley/investigate.vim'
-"nnoremap <F1> :call investigate#Investigate()<CR>
+Plug 'Keithbsmiley/investigate.vim'
+nnoremap <F1> :call investigate#Investigate()<CR>
 
 " Change lang to EN in Normal
 Plug 'lyokha/vim-xkbswitch'
@@ -210,7 +214,6 @@ let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 let g:tex_conceal='abdmg'
-set conceallevel=0
 
 let g:vimtex_compiler_latexmk = {
       \ 'options' : [
@@ -236,15 +239,19 @@ Plug 'honza/vim-snippets'
 " Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-f>"
+let g:UltiSnipsJumpBackwardTrigger="<c-tab>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 " <--- https://github.com/sirver/ultisnips
 "
+" inkscape
+inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
-nmap <F7> :setlocal spell<cr>
+
+map <F7> :setlocal spell<cr>
 vmap <F7> <esc>:setlocal spell<cr>i
 imap <F7> <esc>:setlocal spell<cr>i
 " setlocal spell
@@ -302,8 +309,6 @@ let g:airline#extensions#tabline#show_buffers = 1
 " показывать номер вкладки
 let g:airline#extensions#tabline#show_tab_nr = 1
 
-
-
 map <F3> :NERDTreeToggle<CR>
 map <F5> :TagbarToggle<CR>
 
@@ -335,8 +340,8 @@ let g:pymode_lint_write = 1
 let g:pymode_virtualenv = 1
 
 " установка breakpoints
-"let g:pymode_breakpoint = 1
-"let g:pymode_breakpoint_key = '<leader>b'
+let g:pymode_breakpoint = 1
+let g:pymode_breakpoint_key = '<leader>b'
 
 " подстветка синтаксиса
 let g:pymode_syntax = 1

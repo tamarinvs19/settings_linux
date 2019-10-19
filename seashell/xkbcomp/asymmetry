@@ -59,22 +59,27 @@ xkb_keymap {
 	    symbols[group2]=[Cyrillic_sha, Cyrillic_SHA, Cyrillic_ha, Cyrillic_HA]
 	};
 	key <AD11> {
-	    symbols[group2]=[bracketleft,         braceleft]
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[bracketleft,         braceleft, Cyrillic_ha, Cyrillic_HA]
 	};
 	key <AD12> {
 	    symbols[group2]=[bracketright,         braceright]
 	};
 	key <AC10> {
-	    symbols[group2]=[colon,             semicolon]
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[colon,             semicolon, Cyrillic_zhe, Cyrillic_ZHE]
 	};
 	key <AC11> {
-	    symbols[group2]=[apostrophe,          quotedbl]
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[apostrophe,          quotedbl, Cyrillic_e, Cyrillic_E]
 	};
 	key <AB08> {
-	    symbols[group2]=[comma,              less]
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[comma,              less, Cyrillic_be, Cyrillic_BE]
 	};
 	key <AB09> {
-	    symbols[group2]=[period,           greater]
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[period,           greater, Cyrillic_yu, Cyrillic_YU]
 	};
 	key <AE04> {
 	    symbols[group2]=[4,           dollar]
