@@ -1,0 +1,94 @@
+xkb_keymap {
+    xkb_keycodes  { include "evdev+aliases(qwerty)"    };
+    xkb_types     { include "complete"   };
+    xkb_compat    { include "complete+ledscroll(group_lock)"   };
+    xkb_geometry  { include "pc(pc104)"  };
+    xkb_symbols "my" {
+	include "pc+us+ru:2+inet(evdev)"
+	include "compose(rctrl)"
+
+	name[group1]="English (US)";
+	name[group2]="Russian";
+
+
+	key <RALT> { [ ISO_First_Group, ISO_Last_Group] };
+	key <AC10> { [ colon, semicolon ] };
+	key <TLDE> { [ asciitilde, grave ] };
+
+	replace key <CAPS> { [ ISO_Level3_Shift, ISO_Level3_Shift ] };
+	include "level3(modifier_mapping)"
+
+	key <AC06> { [ h, H, KP_Left,  H ] };
+	key <AC07> { [ j, J, KP_Down,  J ] };
+	key <AC08> { [ k, K, KP_Up,    K ] };
+	key <AC09> { [ l, L, KP_Right, L ] };
+	
+	key <LatE> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_u, Cyrillic_U, Cyrillic_yu, Cyrillic_YU]
+	};
+	key <LatD> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_ve, Cyrillic_VE, Cyrillic_be, Cyrillic_BE]
+	};
+	key <LatM> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_softsign, Cyrillic_SOFTSIGN, Cyrillic_hardsign, Cyrillic_HARDSIGN ]
+	};
+	key <LatP> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_ze, Cyrillic_ZE, Cyrillic_zhe, Cyrillic_ZHE]
+	};
+	key <LatO> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_shcha, Cyrillic_SHCHA, Cyrillic_e, Cyrillic_E]
+	};
+	key <LatO> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_shcha, Cyrillic_SHCHA, Cyrillic_e, Cyrillic_E]
+	};
+	key <LatI> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_sha, Cyrillic_SHA, Cyrillic_ha, Cyrillic_HA]
+	};
+	key <AD11> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_ha, Cyrillic_HA, bracketleft,         braceleft]
+	};
+	key <AD12> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_hardsign, Cyrillic_HARDSIGN, bracketright,         braceright]
+	};
+	key <AC10> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_zhe, Cyrillic_ZHE, colon,             semicolon]
+	};
+	key <AC11> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_e, Cyrillic_E, apostrophe,          quotedbl]
+	};
+	key <AB08> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_be, Cyrillic_BE, comma,              less]
+	};
+	key <AB09> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_yu, Cyrillic_YU, period,           greater]
+	};
+	key <AE04> {
+	    symbols[group2]=[4,           dollar]
+	};
+	key <AE11> {
+	    symbols[group1]=[minus,           underscore, asciicircum],
+	    symbols[group2]=[minus,           underscore, asciicircum]
+	};
+    };
+};
+
