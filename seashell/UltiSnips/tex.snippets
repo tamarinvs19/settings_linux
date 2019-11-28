@@ -1,19 +1,166 @@
+# global !p
+# texMathZones = ['texMathZone'+x for x in ['A', 'AS', 'B', 'BS', 'C', 'CS', 'D', 'DS', 'E', 'ES', 'F', 'FS', 'G', 'GS', 'H', 'HS', 'I', 'IS', 'J', 'JS', 'K', 'KS', 'L', 'LS', 'DS', 'V', 'W', 'X', 'Y', 'Z']]
+#
+# texIgnoreMathZones = ['texMathText']
+#
+# texMathZoneIds = vim.eval('map('+str(texMathZones)+", 'hlID(v:val)')")
+# texIgnoreMathZoneIds = vim.eval('map('+str(texIgnoreMathZones)+", 'hlID(v:val)')")
+#
+# ignore = texIgnoreMathZoneIds[0]
+#
+# def math():
+# 	synstackids = vim.eval("synstack(line('.'), col('.') - (col('.')>=2 ? 1 : 0))")
+# 	try:
+# 		first = next(i for i in reversed(synstackids) if i in texIgnoreMathZoneIds or i in texMathZoneIds)
+# 		return first != ignore
+# 	except StopIteration:
+# 		return False
+# endglobal
+
+snippet template "Basic template" b
+\documentclass[a4paper]{article}
+
+\usepackage [utf8] {inputenc}
+\usepackage [T2A] {fontenc}
+\usepackage {amsfonts}
+\usepackage{amssymb, amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{needspace}
+\usepackage{etoolbox}
+\usepackage{lipsum}
+\usepackage{comment}
+\usepackage{cmap}
+\usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage{enumitem}
+\usepackage{fullpage}
+
+\usepackage{textcomp}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+# rus text
+snippet титт "тогда и только тогда, когда" wA
+тогда и только тогда, когда $1
+endsnippet
+
+snippet согда "тогда и только тогда, когда" wA
+тогда и только тогда, когда $1
+endsnippet
+
+# разбор равносильности
+snippet =)) "=>)"
+$\Rightarrow )$ $1
+endsnippet
+
+snippet ((= "(<="
+$( \Leftarrow$ $1
+endsnippet
+
 # alphabet
-snippet eps "epsilon" wA
+snippet eps "epsilon" A
 \varepsilon $0
 endsnippet
 
-snippet delta "delta" wA
+snippet delta "delta" A
 \delta $0
 endsnippet
 
-snippet alpha "alpha" wA
+snippet alp "alpha" A
 \alpha $0
+endsnippet
+
+snippet beta "beta" A
+\beta $0
+endsnippet
+
+snippet Sigma "Sigma" A
+\Sigma $0
+endsnippet
+
+snippet sigma "sigma" A
+\sigma $0
+endsnippet
+
+snippet phi "phi" A
+\varphi $0
+endsnippet
+
+snippet Om "Omega" A
+\Omega $0
+endsnippet
+
+snippet omega "omega" A
+\omega $0
+endsnippet
+
+snippet Tau "Tau" A
+\Tau $0
+endsnippet
+
+snippet tau "tau" A
+\tau $0
 endsnippet
 
 # --
 
-snippet in "in" wA
+snippet stci "\stackrel \circ" wA
+\stackrel \circ $0
+endsnippet
+
+snippet ?! "?!" wA
+Противоречие. $0
+endsnippet
+
+snippet 1[ "\{\}" wA
+\\{$1\\}$0
+endsnippet
+
+snippet ... "\ldots" wA
+\ldots $1
+endsnippet
+
+#--
+# snippet 1set "\{ \}" wA
+# \{$1\}$0
+# endsnippet
+
+snippet all "forall" A
+\forall $0
+endsnippet
+
+snippet log "Log" A
+\log{$1}$0
+endsnippet
+
+snippet sum "Sum" A
+\sum$1
+endsnippet
+
+snippet in "in" A
 \in $0
 endsnippet
 
@@ -34,6 +181,17 @@ snippet box "Box"
 $0
 endsnippet
 
+snippet list "list of items"
+$ $
+\begin{enumerate}
+    \item $1
+\end{enumerate}$0
+endsnippet
+
+snippet item "item"
+\item $1
+endsnippet
+
 snippet 90m "\left ( \right )" A
 \left ( $1 \right )
 endsnippet
@@ -46,20 +204,45 @@ $0
 \right )
 endsnippet
 
-snippet -> "to" A
+snippet -> "to" wA
 \to $0
 endsnippet
 
-snippet >= "le" A
+snippet to "to" A
+\to $0
+endsnippet
+
+snippet >= "ge" wA
+\ge $0
+endsnippet
+
+snippet <= "le" wA
 \le $0
 endsnippet
 
-snippet <= "ge" A
-\ge
+snippet => "rightarrow" wA
+\Rightarrow $0
 endsnippet
 
-snippet => "rightarrow" A
-\Rightarrow
+snippet =< "leftarrow" wA
+\Leftarrow $0
+endsnippet
+
+snippet ==> "Longrightarrow" wA
+\Longrightarrow $0
+endsnippet
+
+snippet ==< "Longleftarrow" wA
+\Longleftarrow $0
+endsnippet
+
+snippet lleq "Longleftrightarrow" wA
+\Longleftrightarrow $0
+endsnippet
+
+priority 10
+snippet lequ "Leftrightarrow" wA
+\Leftringharrow $0
 endsnippet
 
 snippet abs "Abs" wA
@@ -73,7 +256,7 @@ snippet beg "begin{} / end{}" bA
 endsnippet
 
 snippet mk "Math" wA
-$${1}$`!p
+$ ${1}$`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
     snip.rv = ' '
 else:
@@ -111,13 +294,17 @@ snippet compl "complement" iA
 ^{c}
 endsnippet
 
+snippet inv "invese element" iA
+^{-1}
+endsnippet
+
 snippet td "superscript" iA
 ^{$1}$0
 endsnippet
 
-# snippet // "Fraction" iA
-# \\frac{$1}{$2}$0
-# endsnippet
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
 
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
@@ -138,9 +325,9 @@ snip.rv = stripped[0:i] + "\\frac{" + stripped[i+1:-1] + "}"
 `{$1}$0
 endsnippet
 
-snippet / "Fraction" iA
-\\frac{${VISUAL}}{$1}$0
-endsnippet
+# snippet / "Fraction" iA
+# \\frac{${VISUAL}}{$1}$0
+# endsnippet
 
 snippet sympy "sympy block " w
 sympy $1 sympy$0
@@ -199,3 +386,225 @@ snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet
 
+# context  "math()"
+snippet () "left( right)" iA
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr "left( right)" i
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr( "left( right)" i
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr| "left| right|" i
+\left| ${1:${VISUAL}} \right| $0
+endsnippet
+
+snippet lrm "left| right|" i
+\left| ${1:${VISUAL}} \right| $0
+endsnippet
+
+snippet lr{ "left\{ right\}" i
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+snippet lrs "left\{ right\}" i
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+snippet lr[ "left[ right]" i
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+snippet lra "leftangle rightangle" iA
+\langle${1:${VISUAL}} \rangle$0
+endsnippet
+
+# context  "math()"
+snippet conj "conjugate" iA
+\overline{$1}$0
+endsnippet
+
+snippet __ "subscript" iA
+_{$1}$0
+endsnippet
+
+snippet ooo "\infty" iA
+\infty
+endsnippet
+
+# context  "math()"
+snippet EE "geq" iA
+\exists 
+endsnippet
+
+# context  "math()"
+snippet AA "forall" iA
+\forall 
+endsnippet
+
+# context  "math()"
+snippet xnn "xn" iA
+x_{n}
+endsnippet
+
+# context  "math()"
+snippet ynn "yn" iA
+y_{n}
+endsnippet
+
+
+# context  "math()"
+snippet xii "xi" iA
+x_{i}
+endsnippet
+
+# context  "math()"
+snippet yii "yi" iA
+y_{i}
+endsnippet
+
+# context  "math()"
+snippet xjj "xj" iA
+x_{j}
+endsnippet
+
+# context  "math()"
+snippet yjj "yj" iA
+y_{j}
+endsnippet
+
+# context  "math()"
+snippet xp1 "x" iA
+x_{n+1}
+endsnippet
+
+# context  "math()"
+snippet xmm "x" iA
+x_{m}
+endsnippet
+
+# context  "math()"
+snippet xx "cross" iA
+\times 
+endsnippet
+
+priority 100
+snippet ** "cdot" iA
+\cdot 
+endsnippet
+
+# context  "math()"
+snippet norm "norm" iA
+\|$1\|$0
+endsnippet
+
+priority 100
+# context  "math()"
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+priority 300
+# context  "math()"
+snippet dint "integral" wA
+\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+endsnippet
+
+priority 200
+# context  "math()"
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+\\`!p snip.rv = match.group(1)`
+endsnippet
+
+priority 200
+# context  "math()"
+snippet <-> "leftrightarrow" iA
+\leftrightarrow
+endsnippet
+
+# context  "math()"
+snippet !> "mapsto" iA
+\mapsto 
+endsnippet
+
+# context  "math()"
+snippet \\\ "setminus" iA
+\setminus
+endsnippet
+
+snippet >> ">>" iA
+\gg
+endsnippet
+
+snippet << "<<" iA
+\ll
+endsnippet
+
+
+snippet ~~ "~" iA
+\sim 
+endsnippet
+
+# # context  "math()"
+# snippet set "set" wA
+# \\{$1\\} $0
+# endsnippet
+
+
+# context  "math()"
+snippet CC "subset" Ai
+\subset 
+endsnippet
+
+snippet notin "not in " iA
+\not\in 
+endsnippet
+
+snippet NN "cap" iA
+\cap 
+endsnippet
+
+snippet UU "cup" iA
+\cup 
+endsnippet
+
+snippet uuu "bigcup" iA
+\bigcup_{${1:i \in ${2: I}}} $0
+endsnippet
+
+snippet nnn "bigcap" iA
+\bigcap_{${1:i \in ${2: I}}} $0
+endsnippet
+
+snippet OO "emptyset" iA
+\varnothing
+endsnippet
+
+snippet <! "normal" iA
+\triangleleft 
+endsnippet
+
+# context  "math()"
+snippet tt "text" iA
+\text{$1}$0
+endsnippet
+
+# context  "math()"
+snippet case "cases" wA
+\begin{cases}
+	$1
+\end{cases}
+endsnippet
+
+# context  "math()"
+snippet and "logic and"
+\wedge $1
+endsnippet
+
+snippet != "not ="
+\ne $1
+endsnippet

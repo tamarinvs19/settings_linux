@@ -4,9 +4,6 @@ set relativenumber
 set autoindent
 set smartindent
 
-set conceallevel=1
-set concealcursor=c
-
 " set textwidth=80
 
 " Отключаем автоперенос
@@ -88,7 +85,7 @@ let g:tagbar_sort = 0
 " подсветка парных скобок
 Plug 'amdt/vim-niji'
 let g:niji_dark_colours = 1
-let g:niji_matching_filetypes = ['python', 'javascript', 'json']
+let g:niji_matching_filetypes = ['python', 'javascript', 'json', 'julia']
 let g:niji_matching_characters = [['(', ')'],
                                      \ ['\[', '\]'],
                                      \ ['{', '}'],]
@@ -204,16 +201,17 @@ noremap  <F8>   :Autoformat<CR><CR>
 vnoremap <C-F8> gq
 
 " julia
-Plug 'JuliaEditorSupport/julia-vim', {'for': 'julua'}
+Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
 
+" java
+" Plug 'vim-scripts/Vim-JDE', {'for': 'java'}
 
 " tex
 Plug 'lervag/vimtex', {'for': 'tex'}
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
-let g:tex_conceal='abdmg'
 
 let g:vimtex_compiler_latexmk = {
       \ 'options' : [
@@ -231,7 +229,7 @@ nnoremap <buffer> <F10> :exec '!pdflatex' shellescape(@%, 1)<cr>
 
 "---> https://github.com/sirver/ultisnips 
 " Track the engine.
-Plug 'SirVer/ultisnips'
+Plug 'sirver/ultisnips' 
 
 " Snippets are separated from the engine. Add this if you want them:
 Plug 'honza/vim-snippets'
@@ -245,18 +243,24 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 " <--- https://github.com/sirver/ultisnips
-"
+
 " inkscape
 inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
 nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
+Plug 'KeitaNakamura/tex-conceal.vim'
+    set conceallevel=1
+    set concealcursor=c
+    let g:tex_conceal='abdmg'
+
+" spell
+setlocal spell
+set spelllang=en_us,ru_ru
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 map <F7> :setlocal spell<cr>
 vmap <F7> <esc>:setlocal spell<cr>i
 imap <F7> <esc>:setlocal spell<cr>i
-" setlocal spell
-set spelllang=en_us,ru_ru
-inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
 " cpp syntax
 Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'} 
@@ -270,7 +274,7 @@ let g:cpp_experimental_simple_template_highlight = 1
 nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
 
 " Python mode (docs, refactor, lints, highlighting, run and ipdb and more)
-"Plug 'klen/python-mode', {'for': 'python'}
+Plug 'klen/python-mode', {'for': 'python'}
 " Jedi-vim autocomplete plugin
 Plug 'davidhalter/jedi-vim', {'for': 'python'}
 
@@ -330,7 +334,7 @@ let g:pymode_doc_key = 'F1'
 " проверка кода
 let g:pymode_lint = 1
 let g:pymode_lint_checker = "pyflakes,pep8"
-"let g:pymode_lint_ignore="E501,W601,C0110"
+let g:pymode_lint_ignore="E501,W601,C0110"
 let g:pymode_indent = 1
 
 " провека кода после сохранения
@@ -358,6 +362,10 @@ let g:jedi#popup_on_dot = 0
 let g:jedi#force_py_version = 3
 let g:jedi#popup_select_first = 0
 
+" pyrope
+let g:pymode_rope_goto_definition_bind = '<F4>'
+
+
 " замена слова в <> без записи в буфер Х
 nnoremap <silent> S :set opfunc=PasteReplace<CR>g@
 function! PasteReplace(type, ...)
@@ -377,9 +385,9 @@ nmap SS S$
 " imap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 " smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 " if has('conceal')
-"   set conceallevel=2 concealcursor=i
+"   set conceallevel=2 concealcursor=c
 " endif
-"
+
 
 " my commands
 command W :w
