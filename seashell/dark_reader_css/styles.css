@@ -1,0 +1,53 @@
+acm.math.spbu.ru
+
+CSS
+FORM, BODY, body.subm, table, FORM.frm INPUT.submb, form.frm input.submb, a, input, select, input.sm {
+    font: 12pt cursive;
+}
+
+a, input, select, input.sm{
+    display: inline-block;
+    text-decoration: none;
+    margin: 1px 1px;
+    padding: 5px 5px;
+    font-size: 13px;
+    border: 2px solid #5faf00;
+    border-radius: 10px;
+    color: #eee;
+    /* background-color: #5faf00; */
+}
+FORM, BODY, body.subm, table {
+    /* font: 12pt comic sans ms; */
+    background-color: #262626;
+    color: #eee;
+}
+
+form.frm select, FORM.frm INPUT.sm {
+    height: 25pt;
+}
+
+select[name="lang"] option[value="14"], option[value="13"], option[value="12"] {
+    color: #5faf00;
+}
+
+FORM.frm INPUT.submb, form.frm input.submb {
+    /* font: 12pt Hack; */
+    background-color: #af0000;
+    border-color: #af0000;
+    border: 0px;
+    border-radius: 4px;
+    color: #000;
+    width: 100px;
+}
+
+input[type="SUBMIT"] {
+    height: 25px;
+    padding: 0px 5px;
+    border-radius: 0px;
+}
+
+hr {
+    visibility: hidden;
+}
+
+================================
