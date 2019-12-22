@@ -1,8 +1,13 @@
 acm.math.spbu.ru
 
 CSS
+@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap');
+
 FORM, BODY, body.subm, table, FORM.frm INPUT.submb, form.frm input.submb, a, input, select, input.sm {
-    font: 12pt cursive;
+    font-size: 12pt;
+    font-family:'Bubblegum Sans', cursive;
+    background-color: #262626;
+    color: #eee;
 }
 
 a, input, select, input.sm{
@@ -10,15 +15,8 @@ a, input, select, input.sm{
     text-decoration: none;
     margin: 1px 1px;
     padding: 5px 5px;
-    font-size: 13px;
     border: 2px solid #5faf00;
     border-radius: 10px;
-    color: #eee;
-    /* background-color: #5faf00; */
-}
-FORM, BODY, body.subm, table {
-    /* font: 12pt comic sans ms; */
-    background-color: #262626;
     color: #eee;
 }
 
@@ -31,7 +29,6 @@ select[name="lang"] option[value="14"], option[value="13"], option[value="12"] {
 }
 
 FORM.frm INPUT.submb, form.frm input.submb {
-    /* font: 12pt Hack; */
     background-color: #af0000;
     border-color: #af0000;
     border: 0px;
@@ -49,5 +46,3 @@ input[type="SUBMIT"] {
 hr {
     visibility: hidden;
 }
-
-================================
