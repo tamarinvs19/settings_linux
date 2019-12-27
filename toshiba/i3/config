@@ -257,8 +257,7 @@ bindsym $alt + $mod + o exec xdotool click 3
 bindsym --release $mod + Print exec scrot '%Y-%m-%d_%h%M%S-$wx$h.png' -e 'mv $f ~/Pictures'
 
 # change input
-exec xkbcomp ~/.config/xkb/my $DISPLAY
-exec xcape -t 1000 -e "ISO_Level3_Shift=Escape"
+exec xkbcomp /home/slava/.config/xkb/stru $DISPLAY && xcape -t 500 -e "ISO_Level3_Shift=Escape"
 # exec xcape -t 1000 -e "Shift_L=Escape"
 
 exec nitrogen --restore
