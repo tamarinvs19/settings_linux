@@ -208,6 +208,10 @@ snippet -> "to" wA
 \to $0
 endsnippet
 
+snippet --> "long arrow" wA
+\longleftarrow $0
+endsnippet
+
 snippet to "to" A
 \to $0
 endsnippet
@@ -242,7 +246,7 @@ endsnippet
 
 priority 10
 snippet lequ "Leftrightarrow" wA
-\Leftringharrow $0
+\Leftrightarrow $0
 endsnippet
 
 snippet abs "Abs" wA
@@ -420,7 +424,7 @@ snippet lr[ "left[ right]" i
 endsnippet
 
 snippet lra "leftangle rightangle" iA
-\langle${1:${VISUAL}} \rangle$0
+\langle ${1:${VISUAL}} \rangle$0
 endsnippet
 
 # context  "math()"
@@ -588,6 +592,10 @@ snippet <! "normal" iA
 \triangleleft 
 endsnippet
 
+snippet <!= "normal eq" iA
+\trianglelefteq
+endsnippet
+
 # context  "math()"
 snippet tt "text" iA
 \text{$1}$0
@@ -601,10 +609,27 @@ snippet case "cases" wA
 endsnippet
 
 # context  "math()"
-snippet and "logic and"
+snippet and "logic and" 
 \wedge $1
 endsnippet
 
-snippet != "not ="
+# context  "math()"
+snippet or "logic or" 
+\vee $1
+endsnippet
+
+snippet != "not =" iA
 \ne $1
+endsnippet
+
+snippet === "= mod" iA
+\equiv $1
+endsnippet
+
+snippet obar "\bar{}"
+\bar{ $1} $0
+endsnippet
+
+snippet _{ "index" A
+_{ $1 } $0
 endsnippet
