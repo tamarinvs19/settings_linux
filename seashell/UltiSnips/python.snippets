@@ -1,0 +1,14 @@
+snippet init "init"
+def __init__(self$2):
+    $1
+endsnippet
+
+snippet 'class .*'  "class"
+`!p 
+string = match.string[6:].split(' ')
+snip.rv = f"class {string[0]}(', '.join(string[1:])):"
+`
+    def __init__(self$2):
+	$1
+endsnippet
+
