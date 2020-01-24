@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta content="text/html; charset=utf-8" http-equiv="content-type" />
+		<title>Shades of gray - Readme</title>
+
+		<style>
+
+		body {
+			font-family: "DejaVu Sans", Verdana, Helvetica, sans-serif;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			background-color: white;
+			color: black;
+			max-width: 800px;
+			max-height: none;
+			margin: auto;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+		#gray {
+			color: #ffffff;
+			background-color: #787878;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#arch {
+			color: #ffffff;
+			background-color: #1F77B7;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#cerulean {
+			color: #ffffff;
+			background-color: #6484a4;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#firebrick {
+			color: #ffffff;
+			background-color: #c14e4e;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#harvest {
+			color: #ffffff;
+			background-color: #AD8641;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#orient {
+			color: #ffffff;
+			background-color: #1B779E;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#patina {
+			color: #ffffff;
+			background-color: #3c7460;
+			width: 10em;
+			padding-left: 1em;
+			line-height: 1.25em;
+		}
+		#contents {
+			font-size: 93%;
+		}
+		#contents ul,
+		#contents ul ul {
+			list-style: circle;
+		}
+		.version {
+			font-size: 90%;
+		}
+		code {
+			font-family: "DejaVu Sans Mono", Consolas, Monaco, "Courier New", Courier, monospace;
+			font-style: normal;
+		}
+		p > code {
+			font-size: 90%;
+			background-color: rgb(238, 238, 238);
+		}
+		div > code {
+			font-size: 90%;
+			background-color: rgb(238, 238, 238);
+			padding: 0.6em;
+			margin: 0;
+			display: block;
+			white-space: nowrap;
+			overflow: auto;
+		}
+		h1 {
+			padding-bottom: 0.5em;
+		}
+		h2 {
+			padding-top: 0.75em;
+		}
+		hr {
+			border-style: solid;
+			border-color: #e9e9e9;
+			margin-top: 1.5em;
+			margin-bottom: 1.5em;
+			margin-left: -15px;
+		}
+		a {
+			color: #0366d6;
+			text-decoration: none;
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		li {
+			margin-bottom: 3px;
+		}
+		blockquote > p {
+			font-style: italic;
+			color: #4b4b4b;
+			border-left: 7px solid #1F77B7;
+			padding-left: 8px;
+		}
+		.note {
+			padding: 0.6em;
+			display: block;
+			font-style: italic;
+			font-size: 93%;
+			background-color: rgba(255, 243, 212, 0.6);
+			color: #303030;
+			border-left: 5px solid #ffd76f;
+		}
+		.m {
+			color: red;
+		}
+		.p {
+			color: green;
+		}
+		.c {
+			color: #e4e4e4;
+			font-style: italic;
+		}
+		.gr {
+			color: #707070;
+		}
+
+		</style>
+	</head>
+
+	<body>
+
+		<h1 id="Shadesofgray">Shades-of-gray</h1>
+		<p>Shades-of-gray is a flat dark GTK-theme with ergonomic contrasts. It supports Gnome, Cinnamon, Xfce4, Mate and Openbox.<br>
+			Theme customizations for Firefox, Thunderbird and Inkscape are additionally included.<br>
+		Shades-of-gray is available in seven color variants:</p>
+
+		<ul>
+			<li id="gray">&#8226; Gray</li>
+			<li id="arch">&#8226; Arch</li>
+			<li id="cerulean">&#8226; Cerulean</li>
+			<li id="firebrick">&#8226; Firebrick</li>
+			<li id="harvest">&#8226; Harvest</li>
+			<li id="orient">&#8226; Orient</li>
+			<li id="patina">&#8226; Patina</li>
+		</ul>
+
+	<hr>
+
+		<h2 id="Contents">Table of contents</h2>
+
+		<ol id="contents">
+			<li><a href="#Installation">Installation</a></li>
+				<ul>
+					<li><a href="#Arch_Linux">Arch Linux</a></li>
+					<li><a href="#Installation_terminal">Installation via terminal</a></li>
+					<li><a href="#Manual_Installation">Manual Installation</a></li>
+				</ul>
+			<li><a href="#Gadgets">Gadgets</a></li>
+				<ul>
+					<li><a href="#Thunderbird">Thunderbird</a></li>
+					<li><a href="#Firefox">Firefox</a></li>
+					<li><a href="#Firefox_addons">Firefox add-ons</a></li>
+						<ul>
+							<li><a href="#Bookmark_search_plus">Bookmarked Search Plus 2</a></li>
+							<li><a href="#Panorama_Tab_Groups">Panorama Tab Groups</a></li>
+							<li><a href="#Bookmarked_Speed_Dial">Bookmarked Speed Dial</a></li>
+						</ul>
+					<li><a href="#Inkscape">Inkscape</a></li>
+					<li><a href="#Syntax">Syntax Highlighting</a></li>
+						<ul>
+							<li><a href="#Sublime">Sublime Text</a></li>
+							<li><a href="#Gedit">Gedit, Pluma, Xed, Mousepad</a></li>
+							<li><a href="#Vim">Vim, GVim</a></li>
+						</ul>
+				</ul>
+			<li><a href="#Requirements">Requirements</a></li>
+			<li><a href="#License">License</a></li>
+			<li><a href="#Changelog">Changelog</a></li>
+			<li><a href="#Bugreports">Bug reports</a></li>
+			<li><a href="#FAQ">FAQ and tips</a></li>
+				<ul>
+					<li><a href="#gtk_qt5">GTK+ style plugins for Qt5</a></li>
+					<li><a href="#gtk_java">Java applications and GTK+</a></li>
+					<li><a href="#vb6_issue">VirtualBox 6.0: GTK issue</a></li>
+					<li><a href="#white_font">White font in white input field</a></li>
+					<li><a href="#firefox_issues">Firefox customization issues</a></li>
+					<li><a href="#Th_unread_messages">Font color of unread messages in Thunderbird</a></li>
+				</ul>
+		</ol>
+
+	<hr>
+
+		<h2 id="Installation">Installation</h2>
+
+		<h3 id="Arch_Linux">Arch Linux</h3>
+
+		<p>You can install the AUR package:</p>
+
+		<ul>
+			<li>Last release: <a href="https://aur.archlinux.org/packages/gtk-theme-shades-of-gray">gtk-theme-shades-of-gray</a></li>
+			<li>Git version: <a href="https://aur.archlinux.org/packages/gtk-theme-shades-of-gray-git">gtk-theme-shades-of-gray-git</a></li>
+		</ul>
+
+		<p>If you want to benefit from the latest upstream changes, it makes sense to install the Git version.<br>
+			In <a href="https://github.com/WernerFP/Shades-of-gray-theme/commits/master" title="Shades-of-gray GitHub commits">GitHub commits</a> you can check if there are changes since the latest release that can be useful for you.
+		</p>
+
+	<hr>
+
+		<h3 id="Installation_terminal">Installation via terminal</h3>
+
+		<p>You can install the Git version by using this method:</p>
+
+		<div><code>
+			mkdir ~/Shades-of-gray-git<br>
+			cd ~/Shades-of-gray-git/<br>
+			git clone https://github.com/WernerFP/Shades-of-gray-theme.git<br>
+			cd Shades-of-gray-theme/<br>
+			rm -rf README.md LICENSE .git<br>
+			sudo cp -r * /usr/share/themes/<br>
+		</code></div>
+
+		<p class="note">Existing installations of Shades-of-gray are overwritten by the last command. If Shades-of-gray was previously installed using your distribution‘s package management, the package should be uninstalled first.</p>
+
+	<hr>
+
+		<h3 id="Manual_Installation">Manual Installation</h3>
+
+		<p>Copy the chosen theme folders either for personal use into directory <code>~/.themes/</code> or for common use into <code>/usr/share/themes/</code>.</p>
+
+		<p>Shades-of-gray can be downloaded from <a href="https://github.com/WernerFP/Shades-of-gray-theme/commits/master" title="Shades-of-gray on GitHub">GitHub</a> or from <a href="https://www.opendesktop.org/p/1244058/" title="Shades-of-gray on openDesktop.org">openDesktop.org</a>.</p>
+
+	<hr>
+
+		<h2 id="Gadgets">Gadgets</h2>
+
+		<p>Each theme folder contains an <code>app-gadgets</code> directory with additional theme files for Thunderbird, Firefox and Inkscape.</p>
+
+		<h3 id="Thunderbird">Thunderbird</h3>
+
+		<p>The folder <code>assets</code> and the file <code>userChrome.css</code> in folder <code>Thunderbird-Shades-of-gray</code> contain a Thunderbird theme adapted to Shades-of-gray. Copy both to this location:</p>
+
+		<div><code>
+			~/.thunderbird/&lt;name-of-your-profile&gt;/chrome/assets<br>
+			~/.thunderbird/&lt;name-of-your-profile&gt;/chrome/userChrome.css
+		</code></div>
+
+		<p>If you change a Shades-of-gray theme color, it is not necessary to copy the file again. You can simply comment the current theme color in <code>userChrome.css</code> (Thunderbird and/or Firefox) and uncomment the new theme color value.</p>
+
+		<h4 id="Thunderbird_Calendar">&#8226;  Thunderbird Calendar</h4>
+
+		<p>Thunderbird‘s Calendar (formaly <i>Lightning</i>) uses its own bright colors in default setting. The option for using theme colors is hidden as '<em>Accessibility</em>'.<br>
+		Open the Thunderbird settings and activate the checkbox '<em>Optimize colors for accessibility</em>' in calendar area.</p>
+
+	<hr>
+
+		<h3 id="Firefox">Firefox</h3>
+
+		<p class="note">As of Firefox 68/69, you must set the <code>toolkit.legacyUserProfileCustomizations.stylesheets</code> preference to <code>true</code> in <code>about:config</code> in order to load <code>userChrome.css</code> or <code>userContent.css</code> files.</p>
+
+		<h5 id="userChrome">&#8226;  userChrome.css</h5>
+
+		<p>The file <code>userChrome.css</code> in folder <code>Firefox-Shades-of-gray</code> contains a theme adaptation to Shades-of-gray. To enable the customizations, copy the file or its content to this location:</p>
+
+		<div><code>
+			~/.mozilla/firefox/&lt;name-of-your-profile&gt;/chrome/userChrome.css
+		</code></div>
+
+		<p>Additional options are included at the end of the file <code>userChrome.css</code> (e.g. to hide unwanted items in context menus). You can activate options of your choice by removing the comment characters <code>/*</code> at the beginning of a line.<br>
+		You should choose the dark style in Firefox to get a consistent dark appearance.</p>
+
+		<h5 id="userContent">&#8226;  userContent.css</h5>
+
+		<p>The file <code>userContent.css</code> contains customizations for the Firefox Home screen (<code>about:home</code>, <code>about:newtab</code>) and more unobtrusive form widgets.
+		<br>If you want to use these customizations, copy the file to this location:</p>
+
+		<div><code>
+			~/.mozilla/firefox/&lt;name-of-your-profile&gt;/chrome/userContent.css<br>
+		</code></div>
+
+	<hr>
+
+		<h3 id="Firefox_addons">Firefox add-ons</h3>
+
+		<p>Some theme customizations for Firefox add-ons are included in separate CSS files. The CSS code is imported into <code>userContent.css</code>. If a new add-on customization has been added to <em>Shades of gray</em>, please also update the file <code>userContent.css</code> which contains the new import instruction.</p>
+
+		<h4 id="Bookmark_search_plus">&#8226;  Bookmark search plus 2</h4>
+
+		<p>The file <code>bookmark-search-plus-2.css</code> contains theme customizations for the very useful add-on <em>Bookmark search plus 2</em> (<a href="https://addons.mozilla.org/firefox/addon/bookmark-search-plus-2">AMO</a> | <a href="https://github.com/aaFn/Bookmark-search-plus-2">Github</a>).<br>
+		Copy this file in addition to <code>userContent.css</code> into your <em>chrome</em> directory:</p>
+
+		<div><code>
+			~/.mozilla/firefox/&lt;name-of-your-profile&gt;/chrome/bookmark-search-plus-2.css
+		</code></div>
+
+		<h4 id="Panorama_Tab_Groups">&#8226;  Panorama Tab Groups</h4>
+
+		<p>The file <code>panorama-tab-groups.css</code> contains theme customizations for the recommended add-on <em>Panorama Tab Groups</em> (<a href="https://addons.mozilla.org/firefox/addon/panorama-tab-groups">AMO</a> | <a href="https://github.com/projectdelphai/panorama-tab-groups">Github</a>).<br>
+		Copy this file in addition to <code>userContent.css</code> into your <em>chrome</em> directory:</p>
+
+		<div><code>
+			~/.mozilla/firefox/&lt;name-of-your-profile&gt;/chrome/panorama-tab-groups.css
+		</code></div>
+
+		<p class="note">In <em>Panorama Tab Groups</em> settings you can toggle between light and dark theme. The Shades-of-gray customizations only take effect with the dark theme.</p>
+
+		<h4 id="Bookmarked_Speed_Dial">&#8226;  Bookmarked Speed Dial</h4>
+
+		<p><em>Bookmarked Speed Dial</em> (<a href="https://addons.mozilla.org/firefox/addon/bookmarked-speeddial">AMO</a>) is an add-on that offers similar functionality to <em>Vivaldi Speed Dial</em>.</p>
+
+		<p>The file <code>bookmarked-speed-dial.css</code> contains a <em>Shades-of-gray</em> theme customization.<br>
+		Copy this file in addition to <code>userContent.css</code> into your <em>chrome</em> directory:</p>
+
+		<div><code>
+			~/.mozilla/firefox/&lt;name-of-your-profile&gt;/chrome/bookmarked-speed-dial.css
+		</code></div>
+
+		<p>The directory <code>../app-gadgets/Firefox-Shades-of-gray/bookmarked-speed-dial-images</code> contains images wich you can choose as '<em>Default dial image</em>' and '<em>Default folder image</em>' in the add-on options.</p>
+
+		<p class="note">In the add-on options you can customize the appearance with your own CSS code. This only takes effect if you remove the <code>!important</code> statement from the correlating property in <code>bookmarked-speed-dial.css</code>.</p>
+
+	<hr>
+
+		<h3 id="Inkscape">Inkscape</h3>
+
+		<p>Original colored icons in Inkscape are hard to identify in dark themes. The file <code>icon.svg</code> in folder <code>Inkscape-icons</code> contains bright icons.<br>
+		To use them in Inkscape, the file must be stored in this directory:</p>
+
+		<div><code>
+			~/.config/inkscape/icons/icons.svg
+		</code></div>
+
+		<p class="note">Not all symbols can be customized because Inkscape is partly using standard GTK symbols:<br>
+		https://bugs.launchpad.net/inkscape/+bug/789804</p>
+
+	<hr>
+
+		<h3 id="Syntax">Syntax Highlighting</h3>
+
+		<p>Shades-of-gray includes the syntax color scheme Shades-of-pastel for several editors. By using pastel colors on dark background like pastel chalks on a blackboard the Shades-of-pastel scheme provides balanced and easy on eyes contrasts.</p>
+
+
+		<h4 id="Sublime">&#8226;  Sublime Text</h4>
+
+		<p>To install the scheme for Sublime-Text change to directory <code>Shades-of-gray/app-gadgets/Syntax-Colors</code>. Copy the contained file <code>Shades-of-pastel.tmTheme</code> to a folder in your Sublime Packages directory:</p>
+
+		<div><code>
+			mkdir -p $HOME/.config/sublime-text-3/Packages/Shades-of-pastel<br>
+			cp Shades-of-pastel.tmTheme $HOME/.config/sublime-text-3/Packages/Shades-of-pastel/
+		</code></div>
+
+		<p>Now you can select Shades-of-pastel as a color scheme in menu <i>Preferences</i>.</p>
+
+		<p class="note">To get a perfect integration of Sublime window elements in Shades-of-gray you can choose the 'Adaptive.sublime-theme' in 'Preferences'.</p>
+
+		<h4 id="Gedit">&#8226;  Gedit, Pluma, Xed, Mousepad</h4>
+
+		<p>Shades-of-pastel can be used by editors with syntax highlighting based on <i>GtkSourceView 3</i> or <i>GtkSourceView 4</i>.<br>
+		To install the color scheme change to directory <code>Shades-of-gray/app-gadgets/Syntax-Colors</code>. Copy the contained file <code>shades-of-pastel.xml</code> into the following user directories:</p>
+
+		<div><code>
+		mkdir -p $HOME/.local/share/gtksourceview-3.0/styles<br>
+		cp shades-of-pastel.xml $HOME/.local/share/gtksourceview-3.0/styles/<br>
+		</code></div>
+
+		<div><code>
+		mkdir -p $HOME/.local/share/gtksourceview-4/styles<br>
+		cp shades-of-pastel.xml $HOME/.local/share/gtksourceview-4/styles/<br>
+		</code></div>
+
+		<p>Shades-of-pastel is now available in the settings of your editor.</p>
+
+		<h4 id="Vim">&#8226;  Vim, GVim</h4>
+
+		<p>To install Shades-of-pastel for Vim change to directory <code>Shades-of-gray/app-gadgets/Syntax-Colors</code>. Copy the file <code>shades-of-pastel.vim</code> into your Vim profile folder:</p>
+
+		<div><code>
+		mkdir -p $HOME/.vim/colors<br>
+		cp shades-of-pastel.vim $HOME/.vim/colors/<br>
+		</code></div>
+
+		<p>Turn on syntax highlighting (<code>syntax on</code>) in your configuration file (<code>~/.vimrc</code>) and append the line <code>colorscheme shades-of-pastel</code> if you want to use the Shades-of-Pastel scheme by default.</p>
+
+	<hr>
+
+		<h2 id="Requirements">Requirements</h2>
+
+		<ul>
+			<li>GTK+ 3.20 or above</li>
+			<li>Pixmap theme engine</li>
+			<li>Murrine theme engine</li>
+
+		</ul>
+
+	<hr>
+
+		<h2 id="License">License</h2>
+
+		<p>GNU General Public License <a href="https://raw.githubusercontent.com/WernerFP/Shades-of-gray-theme/master/LICENSE" title="Shades-of-gray license">GPL-3</a></p>
+
+	<hr>
+
+		<h2 id="Changelog">Changelog</h2>
+
+		<h4 id="1.1.8">1.1.8</h4>
+
+		<ul class="version">
+			<li>GTK3: Epiphany urlbar dropdown fixed (gtk-colors.css)</li>
+			<li>Firefox: modifications for FF 68/69 (userChrome.css, userContent.css)</li>
+			<li>Firefox: about:addons can no longer be customized (about.css removed)</li>
+			<li>Firefox: Bookmarked Speed Dial for FF 68/69 adjusted (bookmarked-speed-dial.css)</li>
+			<li>Firefox: Bookmark search plus 2 for FF 68/69 adjusted (bookmark-search-plus-2.css)</li>
+		</ul>
+
+		<h4 id="1.1.7">1.1.7</h4>
+
+		<ul class="version">
+			<li>Thunderbird: Enigmail flat button text color forced (userChrome.css)</li>
+			<li>Firefox add-on: background focus group header fixed (panorama-tab-groups.css)</li>
+			<li>Firefox add-on: minor fix (bookmarked-speed-dial.css)</li>
+			<li>Firefox 66+ home content: blue font in context menu fixed (userContent.css)</li>
+			<li>Firefox: customizations identity-popup (userChrome.css)</li>
+			<li>Firefox: CSS-code cleaned up (userContent.css, userChrome.css)</li>
+			<li>New: Firefox - dark Shades-of-gray theme for '<code>about:</code>' pages (about.css)</li>
+		</ul>
+
+		<h4 id="1.1.6">1.1.6</h4>
+
+		<ul class="version">
+			<li>New: Syntax scheme for Vim and GVim added (Shades-of-pastel)</li>
+			<li>GNOME Shell 3.32: close buttons in dash overview adapted (gnome-shell.css)</li>
+			<li>GTK3 workaround: gnome-control-center 3.32 ignores '<em>@base_color</em>' (gtk.css)</li>
+			<li>Firefox add-on: 0.8.8 update (panorama-tab-groups.css)</li>
+			<li>Firefox add-on: color '<em>#searchtext</em>' fixed (bookmark-search-plus-2.css)</li>
+			<li>Firefox urlbar indicator: color for validated sites adjusted (userChrome.css)</li>
+			<li>Firefox 66+: update CSS corrections for '<em>about</em>' sites (userContent.css)</li>
+		</ul>
+
+		<h4 id="1.1.5">1.1.5</h4>
+
+		<ul class="version">
+			<li>GTK2: entry background color in HexChat fixed (apps.rc)</li>
+			<li>GTK3: Gedit document-panel background color synchronized (gtk.css)</li>
+			<li>Thunderbird: titles of unread messages are colored (userChrome.css)</li>
+			<li>Firefox add-on theme: 2.0.52 update (bookmark-search-plus-2.css)</li>
+			<li>Firefox: fallback webextension popup background added (userChrome.css)</li>
+			<li>Firefox: width of vertical scrollbar in sidebar reduced (userChrome.css)</li>
+			<li>New: Firefox add-on theme - Bookmarked Speed Dial (bookmarked-speed-dial.css, userContent.css)</li>
+			<li>New: Syntax color schemes for Sublime-Text, Gedit, Pluma, Xed, Mousepad etc. added (Shades-of-pastel)</li>
+		</ul>
+
+		<h4 id="1.1.4">1.1.4</h4>
+
+		<ul class="version">
+			<li>GTK3, GTK2, Cinnamon, Gnome, Openbox: thin dark menu separator lines added</li>
+			<li>GTK3: side effect Evolution-CSS in Rhythmbox fixed (gtk.css)</li>
+			<li>Gnome: slider and barlevel fixed to version 3.29+ (gnome-shell.css)</li>
+			<li>Gnome: better activities icon (gnome-shell.css)</li>
+			<li>Gnome: panel less opacity (gnome-shell.css)</li>
+			<li>Theme folder: Readme files superseded (new: Shades-of-gray-Readme.html)</li>
+			<li>Firefox, Thunderbird: thin dark menu separator lines added (userChrome.css)</li>
+			<li>Firefox: overflow submenu improved for add-on content (userChrome.css)</li>
+			<li>Firefox: added options to hide context menu items (userChrome.css)</li>
+			<li>New: Firefox add-on theme - Panorama Tab Groups (panorama-tab-groups.css, userContent.css)</li>
+		</ul>
+
+		<h4 id="1.1.3">1.1.3</h4>
+
+		<ul class="version">
+			<li>Thunar, Nemo, Nautilus, Caja: list view improved (gtk.css)</li>
+			<li>Firefox: minor adjustments in places window (userChrome.css)</li>
+			<li>New: Firefox add-on theme - Bookmark search plus 2 (bookmark-search-plus-2.css, userContent.css)</li>
+		</ul>
+
+		<h4 id="1.1.2">1.1.2</h4>
+
+		<ul class="version">
+			<li>Xfce4: panel adjusted to gtk3 in Xfce 4.13 (gtk.css)</li>
+			<li>Xfwm4: window buttons supplemented (xfwm4)</li>
+			<li>Thunderbird, Lightning: Shades-of-gray icons added (userChrome.css, assets)</li>
+			<li>Firefox: smaller identity box for extensions in urlbar (userContent.css)</li>
+			<li>Firefox: menus in '<em>about:preferences</em>' fixed (userContent.css)</li>
+			<li>Evolution: sidebars adjusted (gtk.css)</li>
+			<li>gThumb: sidebar and browser background improved (gtk.css)</li>
+			<li>Calendar: Gnome Calendar enhancements (gtk.css)</li>
+		</ul>
+
+		<h4 id="1.1.1">1.1.1</h4>
+
+		<ul class="version">
+			<li>Openbox: close button modified</li>
+			<li>Openbox: some improvements (close button, menu)</li>
+			<li>Thunderbird: minimum column width defined (userChrome.css)</li>
+			<li>Lighning 6.2: bright navigation buttons (userChrome.css)</li>
+			<li>Firefox: form widgets also adapted for moz-extensions (userContent.css)</li>
+		</ul>
+
+		<h4 id="1.1.0">1.1.0</h4>
+
+		<ul class="version">
+			<li>New: theme for Cinnamon added (cinnamon.css, assets)</li>
+			<li>GTK3: minor changes (gtk.css)</li>
+			<li>Metacity: updated for Cinnamon (metacity-theme-*.xml)</li>
+			<li>Thunderbird 60: fixes and improvements (userChrome.css)</li>
+			<li>Lightning: theme adaption improved (userChrome.css)</li>
+			<li>Firefox: fixes and further theme customizations (userChrome.css, userContent.css)</li>
+		</ul>
+
+		<h4 id="1.0.4.1">1.0.4.1</h4>
+
+		<ul class="version">
+			<li>Fix: gtk3-submenus are positioned closer to parent menu (gtk.css)</li>
+		</ul>
+
+		<h4 id="1.0.4">1.0.4</h4>
+
+		<ul class="version">
+			<li>Borders and separators slightly less contrast (gtk-colors.css, gtk-2.0)</li>
+			<li>Thunderbird: added theme customizations for color tags in email tree view (userChrome.css)</li>
+		</ul>
+
+		<h4 id="1.0.3">1.0.3</h4>
+
+		<ul class="version">
+			<li>Fix: now window decorations of Gnome programs correctly trigger a resize mouse pointer (gtk.css)</li>
+		</ul>
+
+		<h4 id="1.0.2">1.0.2</h4>
+
+		<ul class="version">
+			<li>Borders in focused entries are highlighted less obtrusive (gtk.css)</li>
+			<li>Unused variables removed (gtk-colors.css)</li>
+			<li>Nemo, Gedit, Pluma: sidebars treeview/places unified (gtk.css)</li>
+		</ul>
+
+	<hr>
+
+		<h2 id="Bugreports">Bug reports</h2>
+
+		<p>Please report bugs, issues and feature requests on <a href="https://github.com/WernerFP/Shades-of-gray-theme/issues" title="Shades-of-gray issues">GitHub</a>.
+		First you can check the ongoing <a href="https://github.com/WernerFP/Shades-of-gray-theme/commits/master" title="Shades-of-gray GitHub commits">GitHub commits</a> to see if your issue has already been solved.</p>
+
+	<hr>
+
+		<h2 id="FAQ">FAQ and tips</h2>
+
+		<h4 id="gtk_qt5">GTK+ style plugins for Qt5</h4>
+
+		<blockquote>
+			<p>How can I get Qt applications to use the selected GTK+ theme?</p>
+		</blockquote>
+
+		<p>Install the '<em>Qt5 Configuration Utility</em>' <code>qt5ct</code> and "<em>Qt5 Widget Styles</em>' <code>qt5-styleplugins</code>.</p>
+
+		<ul>
+			<li>
+				<b>Arch Linux:</b> <a href="https://www.archlinux.org/packages/?sort=&q=qt5ct" title="Arch package (Community)">qt5ct</a>, <a href="https://www.archlinux.org/packages/?sort=&q=qt5-styleplugins" title="Arch package (Community)">qt5-styleplugins</a>
+			</li>
+			<li>
+				<b>Debian:</b> <a href="https://packages.debian.org/search?keywords=qt5ct&searchon=names&suite=all&section=all" title="Debian package">qt5ct</a>, <a href="https://packages.debian.org/search?keywords=qt5-style-plugins&searchon=names&suite=all&section=all" title="Debian package">qt5-style-plugins</a>
+			</li>
+			<li>
+				<b>Fedora:</b> <a href="https://apps.fedoraproject.org/packages/qt5ct" title="Fedora package">qt5ct</a>, <a href="https://apps.fedoraproject.org/packages/qt5-qtstyleplugins" title="Fedora package">qt5-qtstyleplugins</a>
+			</li>
+			<li>
+				<b>Ubuntu:</b> <a href="https://packages.ubuntu.com/search?suite=default&section=all&arch=any&keywords=qt5ct&searchon=names" title="Ubuntu package">qt5ct</a>, <a href="https://packages.ubuntu.com/search?keywords=qt5-style-plugins" title="Ubuntu package">qt5-style-plugins</a>
+			</li>
+		</ul>
+
+		<p>Start the configuration utility <code>qt5ct</code> and choose <i>GTK2</i>.</p>
+		<p>To activate GTK themes for Qt5 programs, the environment variable <code>QT_QPA_PLATFORMTHEME=qt5ct</code> must be set.<br>
+			For automatic setting on login, you can write the environment variable in <code>~/.bashrc</code> and <code>~/.xinitrc</code> or in <code>~/.bashrc</code> and <code>~/.xprofile</code> or <code>~/.profile</code> if a display manager is used:</p>
+
+		<div><code>
+			export QT_QPA_PLATFORMTHEME=qt5ct
+		</code></div><br>
+
+		<p>If a program does‘nt read the environment variable in this way, this line in <code>/etc/environment</code> may be a workaround:</p>
+
+		<div><code>
+			QT_QPA_PLATFORMTHEME=qt5ct
+		</code></div><br>
+
+	<hr>
+
+		<h4 id="gtk_java">Java applications and GTK+</h4>
+
+		<blockquote>
+			<p>Is it possible to make GTK themes available in Java programs and improve the unpleasant Java font display?</p>
+		</blockquote>
+
+		<p>This can be configured using an environment variable.<br>
+			Enter the environment variable in a configuration file that is executed automatically on login, for example in <code>~/.bashrc</code> and <code>~/.xinitrc</code> or in <code>~/.bashrc</code> and <code>~/.xprofile</code> or <code>~/.profile</code> if a display manager is used:</p>
+
+		<div><code>
+			export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true<br>
+			-Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel<br>
+			-Dswing.crossplatformlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
+		</code></div>
+
+		<p>After the next login you can start the Java program and select GTK+ in preferences.</p>
+
+	<hr>
+
+		<h4 id="vb6_issue">VirtualBox 6.0: GTK issue</h4>
+
+		<p>The main window in <i>VirtualBox 6.0</i> (Qt5) is not readable with dark gtk-themes via <code>qt5ct</code> (white font on light background).<br><br>
+		You can work around this improper conduct by starting <i>VirtualBox</i> with qt5-theme <i>'Fusion'</i> instead of the gtk-theme:</p>
+
+		<div><code>
+			VirtualBox -style Fusion
+		</code></div>
+
+		<p>... or by editing the VirtualBox launcher:</p>
+
+		<div><code>
+			<span class="m">-  Exec=VirtualBox %U</span><br>
+			<span class="p">+  Exec=VirtualBox -style Fusion %U</span>
+		</code></div><br>
+
+	<hr>
+
+		<h4 id="white_font">White font in white input field</h4>
+
+		<blockquote>
+			<p>In a GTK2 program called foobar, the font is white in a white input field. How can I resolve this problem?
+			</p>
+		</blockquote>
+
+		<p>In rare cases developers may have defined a white background for an input field in their GTK2 program without specifying a appropriate font color. The program then will use the font color but not the background color of the chosen GTK2 theme.</p>
+
+		<p>The problem cannot be solved by the theme. As a workaround, you can start the specific GTK2 program with another theme using a black font. The easiest way to start it with an alternative theme is a bash script, for example:</p>
+
+		<div><code>
+			#!/bin/sh<br>
+			GTK2_RC_FILES=/usr/share/themes/Numix/gtk-2.0/gtkrc /opt/foo/bar
+		</code></div><br>
+
+	<hr>
+
+		<h4 id="firefox_issues">Firefox customization issues</h4>
+
+		<blockquote>
+			<p>Why are the adjustments for Firefox <code>about:</code>-pages (about.css) no longer included?
+			</p>
+		</blockquote>
+
+		<p>The page <code>about:addons</code> in Firefox 68 and higher contains dynamic content (HTML with inline styles created by JavaScript) and cannot be customized anymore. Therefore, the customizations in "about.css" are no longer included.</p>
+
+		<p><i>(Firefox customizations are becoming increasingly difficult or even made impossible by Mozilla Foundation. They don't care what users want.)</i></p>
+
+		<h4 id="addon_issues">Firefox add-on customization issues</h4>
+
+		<p>Firefox add-ons contain a random unique ID. Therefore, it is quite tricky to address specific selectors in specific add-ons. In rare cases there might be an overlap with another add-on.</p>
+		<p>If an add-on customization does not work as expected you can easily disable the Shades-of-gray adaption in this file:</p>
+
+		<div><code>
+			~/.mozilla/firefox/&lt;name-of-your-profile&gt;/chrome/userContent.css
+		</code></div>
+
+		<p>Comment out the import command for the relevant add-on, for example:</p>
+
+		<div><code>
+			<span class="m">-  @import url("panorama-tab-groups.css");</span><br>
+			<span class="p">+  /* @import url("panorama-tab-groups.css"); */</span>
+		</code></div><br>
+
+		<hr>
+
+		<h4 id="Th_unread_messages">Font color of unread messages in Thunderbird</h4>
+
+		<blockquote>
+			<p>Is it possible to change the font color for titles of unread messages in the Thunderbird folder pane and thread view?</p>
+		</blockquote>
+
+		<p>You can customize this by pasting the following code snippet at the end of the file <code>userChrome.css</code> in your Thunderbird profile:</p>
+
+		<div><code>
+			#threadTree > treechildren::-moz-tree-cell-text(unread),<br>
+			#folderTree > treechildren::-moz-tree-cell-text(hasUnreadMessages-true) {<br><br>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;color: #FFA500 !important;<br>
+			}
+		</code></div>
+
+	<hr>
+
+	</body>
+</html>

@@ -1,0 +1,325 @@
+/******************************************
+********* Bookmarked Speed Dial ***********
+******************************************/
+
+/*
+  Shades of gray dark theme customisation
+  Author: WernerFP
+  Author add-on: AKAPON
+  AMO: https://addons.mozilla.org/de/firefox/addon/bookmarked-speeddial
+*/
+
+/* Random UUID token: moz-extension://[random-UUID]/[path] */
+
+/******************/
+/* Speed Dial tab */
+/******************/
+
+@-moz-document regexp("^moz-extension://.*/data/index.html.*") {
+
+	body {
+
+		background-color: #434343 !important;
+		background-position: 50% 50% !important;
+	}
+	#options {
+
+		font-size: 90% !important;
+		margin-left: 10px !important;
+	}
+	.header {
+
+		color: #e5e5e5 !important;
+		height: auto !important;
+		font-size: 13px !important;
+		padding: 4px 4px !important;
+		line-height: 24px !important;
+		text-transform: capitalize !important;
+		background-color: #292929 !important;
+		min-height: 26px !important;
+		box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.2) !important;
+	}
+	.header input {
+
+		color: #f5f5f5 !important;
+		background-color: #575757 !important;
+		font-size: 13px !important;
+	}
+	.header input:hover,
+	.header input:focus {
+
+		box-shadow: inset 1px 0 #787878,
+			inset -1px 0 #787878,
+			inset 0 1px #787878,
+			inset 0 -1px #787878 !important;
+	}
+	.header input:focus {
+
+		background-color: #3a3a3a !important;
+	}
+	.header input::selection {
+
+		color: #ffffff !important;
+		background-color: #787878 !important;
+	}
+	.delimiter {
+
+		display: none !important;
+	}
+	.customdelimiter:after {
+
+		content: '    ' !important;
+	}
+	#upbutton {
+
+		font-weight: bold !important;
+	}
+	#upbutton:hover,
+	#upbutton:active {
+
+		color: #ffffff !important;
+		background-color: rgba(200,200,200,0.25) !important;
+	}
+	#toggle {
+
+		font-size: 1.5em !important;
+		padding-left: 8px !important;
+		padding-right: 8px !important;
+		border-radius: 3px !important;
+		text-align: center !important;
+	}
+	#toggle:hover,
+	#toggle:active {
+
+		color: #ffffff !important;
+		background-color: rgba(200,200,200,0.25) !important;
+	}
+	#n-rows,
+	#n-columns,
+	#b-spacing,
+	#a-colors,
+	#bgimageclean {
+
+		margin-right: 10px !important;
+	}
+	.header input[type="number"] {
+
+		width: 3.7rem !important;
+	}
+	#bgimage {
+
+		-moz-appearance: none;
+		box-shadow: none !important;
+		background-color: #424242 !important;
+		min-width: 7rem !important;
+		border-radius: 3px !important;
+		border: none !important;
+		font-size: 95% !important;
+	}
+	#reloadbutton,
+	#bgimageclean {
+
+		-moz-appearance: none;
+		box-shadow: none !important;
+		background-color: #424242 !important;
+		font-weight: 400 !important;
+		min-width: 4rem !important;
+		border: none !important;
+		border-radius: 3px !important;
+	}
+	#reloadbutton:hover,
+	#bgimageclean:hover,
+	#bgimage:hover {
+
+		background-color: rgba(200,200,200,0.35) !important;
+	}
+	#rootdirname {
+
+		-moz-appearance: none;
+		color: #f5f5f5 !important;
+		background-color: #575757 !important;
+		border: 1px solid #232323 !important;
+		border-radius: 3px !important;
+		height: 23px !important;
+		width: 18em !important;
+		padding-left: 5px !important;
+	}
+	#rootdirname:focus {
+
+		-moz-appearance: none;
+		color: #ffffff !important;
+		background-color: #3a3a3a !important;
+	}
+	.container {
+
+		padding: 90px !important;
+		padding-top: 60px !important;
+	}
+	.container table tr td {
+
+		-webkit-filter: brightness(75%) contrast(85%) grayscale(40%) !important;
+		box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.3) !important;
+		border: 1px solid #292929 !important;
+	}
+	.container table tr td:hover {
+
+		-webkit-filter: none !important;
+		box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.2) !important;
+	}
+	.container table tr td p {
+
+		color: #f5f5f5 !important;
+		font-weight: normal !important;
+		height: 14px !important;
+		width: calc(100% - 79px) !important;
+		text-overflow: ellipsis !important;
+		font-size: 0.72em !important;
+		background-color: #292929 !important;
+	}
+	.container table tr td p.folder {
+
+		width: calc(100% - 10px) !important;
+	}
+	.folder div[type="reloadfolder"],
+	.folder div[type="remove"] {
+
+		display: none !important;
+	}
+	div[type="remove"],
+	div[type="edit"],
+	div[type="reloadbookmark"],
+	div[type="reloadfolder"] {
+
+		display: inline-block !important; /* overwrites setting option */
+		color: #f5f5f5 !important;
+		background-color: #292929 !important;
+		width: 23px !important;
+	}
+	.container table tr td div[type='remove']:hover,
+	.container table tr td div[type='edit']:hover,
+	.container table tr td div[type='reloadbookmark']:hover,
+	div[type='reloadfolder']:hover {
+
+		color: #ffffff !important;
+		background-color: #626262 !important;
+	}
+	.imgcontainer {
+
+		border-bottom: 1px solid #292929 !important;
+		padding-top: 63% !important;
+	}
+	.imgcontainer img {
+		/* Scrollbars not visible: */
+		-webkit-transform: translateX(0.5%) scaleX(1.01) !important;
+		min-height: 100% !important;
+	}
+	.pages {
+
+		color: #ffffff !important;
+		background-color: transparent !important;
+		border-bottom: 3px solid transparent !important;
+	}
+	.pages:not(.active):hover {
+
+		color: #ffffff !important;
+		background-color: rgba(200,200,200,0.25) !important;
+		border-bottom: 3px solid transparent !important;
+	}
+	.pages.active {
+
+		color: #ffffff !important;
+		background-color: transparent !important;
+		border-bottom: 3px solid #747474 !important;
+	}
+	#reloadmenu {
+
+		font-size: 0.8em !important;
+		color: #f5f5f5 !important;
+		cursor: pointer !important;
+		background-color: #484848 !important;
+		box-shadow: 0 0 18px rgba(0, 0, 0, 0.5) !important;
+		padding: 3px 10px 3px 10px !important;
+	}
+	#reloadmenu div:hover {
+
+	background-color: #787878 !important;
+	}
+	#reloadmenu div {
+
+		padding: 5px 10px 5px 10px !important;
+	}
+	/*
+	NOTE: unsatisfactory hack for "No items to show in Speed Dial..."
+	td cannot be adressed separately because no attribute selector exists
+	*/
+	.container table tr td p.information {
+
+		cursor: default !important;
+		overflow: hidden !important;
+		white-space: nowrap !important;
+		font-size: 0.72em !important;
+		text-overflow: ellipsis !important;
+	}
+	.container table tr td p.information:hover {
+
+		overflow: visible !important;
+		white-space: initial !important;
+	}
+}
+
+/**********************/
+/* Speed Dial options */
+/**********************/
+
+@-moz-document regexp("^moz-extension://.*/data/options.html.*") {
+
+	body {
+
+		font-size: 1em !important;
+		margin: 20px auto !important;
+		font-family: "DejaVu Sans", arial, sans-serif !important;
+		line-height: 1.75em !important;
+	}
+	.content {
+	/* Fallback to #addon-options in dark 'about:' pages*/
+		background: transparent !important;
+	}
+	td, td input, label {
+
+		height: inherit !important;
+		padding: 5px;
+	}
+	#userstyles {
+
+		font-family: "DejaVu Sans Mono", monospace !important;
+		font-size: 1em !important;
+		width: 420px !important;
+		min-height: 80px !important;
+		max-height: 200px !important;
+		overflow: auto !important;
+	}
+	td button {
+		margin-left: 5px !important;
+		font-size: 1em !important;
+		padding: 2px 5px 2px 5px !important;
+		text-align: center;
+		border-radius: 2px !important;
+	}
+	td input[type="number"] {
+
+		font-size: 1em !important;
+	}
+	.imgcontainer {
+
+		width: 100px !important;
+		height: 64px !important;
+		border: 1px solid #e5e5e5 !important;
+	}
+	/* Counterproductive options are hidden: */
+	#disabledialedit,
+	#alwayscreateimage,
+	#editdialsonlywithsettings {
+
+		margin-left: -1000px !important;
+	}
+}
