@@ -191,17 +191,17 @@ bindsym $mod+Shift+t border toggle
 
 
 # moving mouse
-bindsym $alt + $mod + h exec xdotool mousemove_relative -- -10 0
-bindsym $alt + $mod + j exec xdotool mousemove_relative 0 10
-bindsym $alt + $mod + k exec xdotool mousemove_relative 0 -10
-bindsym $alt + $mod + l exec xdotool mousemove_relative 10 0
+bindsym $win + Shift + h exec xdotool mousemove_relative -- -10 0
+bindsym $win + Shift + j exec xdotool mousemove_relative 0 10
+bindsym $win + Shift + k exec xdotool mousemove_relative 0 -10
+bindsym $win + Shift + l exec xdotool mousemove_relative 10 0
 
 # key click
-bindsym $alt + $mod + i exec xdotool click 1
-bindsym $alt + $mod + o exec xdotool click 3
+bindsym $win + Shift + i exec xdotool click 1
+bindsym $win + Shift + o exec xdotool click 3
 
 # on / off touchpad
-bindsym $alt + Shift + t exec ~/.touchpad_toggle
+bindsym $win + Shift + t exec ~/.touchpad_toggle
 
 #Fn
 bindsym XF86MonBrightnessUp exec xbacklight -inc 25
