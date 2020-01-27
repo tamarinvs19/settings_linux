@@ -9,49 +9,38 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod4
-set $alt Mod1
+set $mod Mod1
+set $win Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-#font pango:monospace 8
+font pango: Hack 9
 
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 9
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+# border style
+for_window [class=".*"] border none
+for_window [tiling class="Termite"] border pixel 1
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-#bindsym $mod+t exec i3-sensible-terminal
-bindsym $mod+t exec termite
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec termite
+bindsym $mod+t exec i3-sensible-terminal
+# bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+p exec rofi -show drun
-bindsym $mod+Shift+w exec rofi -show window
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
+# start rofi (a program launcher)
+bindsym $win+d exec rofi -show run
+bindsym $win+w exec rofi -show window
+bindsym $win+u exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+l focus right 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -63,7 +52,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+l move right 
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -72,10 +61,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-#bindsym $mod+Control+h split h
+bindsym $win+h split h
 
 # split in vertical orientation
-bindsym $mod+Control+v split v
+bindsym $win+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+Shift+f fullscreen toggle
@@ -189,6 +178,48 @@ mode "$mode_system" {
 bindsym $mod+Pause mode "$mode_system"
 #end power
 
+#my combination
+bindsym $win + k exec vivaldi
+bindsym $win + c exec chromium
+bindsym $win + f exec firefox
+bindsym $win + p exec pcmanfm
+bindsym $win + n exec nautilus
+bindsym $win + e exec evolution
+
+#toggle separator line
+bindsym $mod+Shift+t border toggle
+
+
+# moving mouse
+bindsym $alt + $mod + h exec xdotool mousemove_relative -- -10 0
+bindsym $alt + $mod + j exec xdotool mousemove_relative 0 10
+bindsym $alt + $mod + k exec xdotool mousemove_relative 0 -10
+bindsym $alt + $mod + l exec xdotool mousemove_relative 10 0
+
+# key click
+bindsym $alt + $mod + i exec xdotool click 1
+bindsym $alt + $mod + o exec xdotool click 3
+
+# on / off touchpad
+bindsym $alt + Shift + t exec ~/.touchpad_toggle
+
+#Fn
+bindsym XF86MonBrightnessUp exec xbacklight -inc 25
+bindsym XF86MonBrightnessDown exec xbacklight -dec 25
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2- unmute
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2+ unmute
+bindsym XF86AudioMute exec amixer set Master toggle
+
+bindsym $win+F2 exec wicd-gtk
+
+# scrot
+bindsym --release $mod + Print exec scrot '%Y-%m-%d_%h%M%S-$wx$h.png' -e 'mv $f ~/Pictures'
+
+#bar toggle, hide, show
+bindsym $mod+m bar mode toggle
+
+#focus
+bindsym $mod+x [urgent=latest] focus
 # $i3-theme-bar
 bar {
     status_command    i3blocks ~/.config/i3blocks/config
@@ -214,49 +245,8 @@ client.focused_inactive #1B0000 #1B0000 #888888 #eee8d5
 client.unfocused        #121212 #121212 #888888 #eee8d5
 client.urgent 		#C20000 #C2C200 #eee8d5 #eee8d5
 
-#bar toggle, hide, show
-bindsym $mod+m bar mode toggle
 
-#focus
-bindsym $mod+x [urgent=latest] focus
-
-#toggle separator line
-bindsym $mod+Shift+t border toggle
-
-#Fn
-bindsym XF86MonBrightnessUp exec xbacklight -inc 25
-bindsym XF86MonBrightnessDown exec xbacklight -dec 25
-bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 2- unmute
-bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 2+ unmute
-bindsym XF86AudioMute exec amixer set Master toggle
-
-#my combination
-bindsym $alt + v exec vivaldi-stable
-bindsym $alt + Shift + c exec chromium
-bindsym $alt + Shift + f exec firefox
-bindsym $alt + r exec termite -e ranger
-bindsym $alt + p exec pcmanfm
-bindsym $alt + n exec nautilus
-bindsym $alt + w exec wicd-gtk
-bindsym $alt + e exec evolution
-
-# on / off touchpad
-bindsym $alt + Shift + t exec ~/.touchpad_toggle
-
-# moving mouse
-bindsym $alt + $mod + h exec xdotool mousemove_relative -- -10 0
-bindsym $alt + $mod + j exec xdotool mousemove_relative 0 10
-bindsym $alt + $mod + k exec xdotool mousemove_relative 0 -10
-bindsym $alt + $mod + l exec xdotool mousemove_relative 10 0
-
-# key click
-bindsym $alt + $mod + i exec xdotool click 1
-bindsym $alt + $mod + o exec xdotool click 3
-
-# scrot
-bindsym --release $mod + Print exec scrot '%Y-%m-%d_%h%M%S-$wx$h.png' -e 'mv $f ~/Pictures'
-
-# change input
+# setting keyboard
 exec xkbcomp /home/slava/.config/xkb/stru $DISPLAY && xcape -t 500 -e "ISO_Level3_Shift=Escape"
 # exec xcape -t 1000 -e "Shift_L=Escape"
 
