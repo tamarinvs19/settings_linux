@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Gravit.io -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   style="isolation:isolate"
+   viewBox="0 0 27 27"
+   width="27"
+   height="27"
+   version="1.1"
+   id="svg33"
+   sodipodi:docname="panel.svg"
+   inkscape:version="0.92.2 2405546, 2018-03-11">
+  <metadata
+     id="metadata37">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview35"
+     showgrid="false"
+     inkscape:zoom="42.62963"
+     inkscape:cx="8.5034752"
+     inkscape:cy="13.5"
+     inkscape:current-layer="svg33" />
+  <defs
+     id="defs5">
+    <clipPath
+       id="_clipPath_c5B6OQzz2CEv9RceKE5WNquypvDIygFk">
+      <rect
+         width="27"
+         height="27"
+         id="rect2" />
+    </clipPath>
+  </defs>
+  <g
+     clip-path="url(#_clipPath_c5B6OQzz2CEv9RceKE5WNquypvDIygFk)"
+     id="g31"
+     style="opacity:0.85">
+    <g
+       opacity="0.9"
+       id="g29"
+       style="">
+      <rect
+         x="0"
+         y="0"
+         width="27"
+         height="27"
+         transform="matrix(1,0,0,1,0,0)"
+         fill="rgb(0,0,0)"
+         id="rect7"
+         style="" />
+      <clipPath
+         id="_clipPath_izEknIZBg1r4ganH55F9gNXwUW8vzW2i">
+        <g
+           opacity="0.9"
+           id="g11">
+          <rect
+             x="0"
+             y="0"
+             width="27"
+             height="27"
+             transform="matrix(1,0,0,1,0,0)"
+             fill="rgb(0,0,0)"
+             id="rect9" />
+        </g>
+      </clipPath>
+      <g
+         clip-path="url(#_clipPath_izEknIZBg1r4ganH55F9gNXwUW8vzW2i)"
+         id="g27"
+         style="">
+        <g
+           id="g25"
+           style="">
+          <g
+             id="Group"
+             style="opacity:0.95">
+            <g
+               opacity="0.95"
+               id="g16"
+               style="">
+              <rect
+                 x="0"
+                 y="0"
+                 width="27"
+                 height="26"
+                 transform="matrix(1,0,0,1,0,0)"
+                 fill="rgb(18,18,18)"
+                 id="rect14"
+                 style="" />
+            </g>
+          </g>
+          <g
+             id="g23"
+             style="opacity:0.95">
+            <g
+               opacity="0.95"
+               id="g21"
+               style="">
+              <rect
+                 x="0"
+                 y="26"
+                 width="27"
+                 height="1"
+                 transform="matrix(1,0,0,1,0,0)"
+                 fill="rgb(18,18,18)"
+                 id="rect19"
+                 style="" />
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

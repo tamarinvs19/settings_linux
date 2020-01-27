@@ -82,6 +82,10 @@ xkb_keymap {
 	    type[group2]= "FOUR_LEVEL",
 	    symbols[group2]=[Cyrillic_yu, Cyrillic_YU, period,           greater]
 	};
+	key <AE03> {
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[3, numbersign, number, apostrophe]
+	};
 	key <AE04> {
 	    symbols[group2]=[4,           dollar]
 	};

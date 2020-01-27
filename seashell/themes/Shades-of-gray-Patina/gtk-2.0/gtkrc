@@ -1,0 +1,67 @@
+# Based on Bridge by ScionicSpectre
+#
+# This is the GTK+ 2 version of Adwaita. It's whole purpose is to look as the
+# GTK+ 3 version as much as possible until GTK+ 2 dies completely.
+#
+# Note: comments for explaining styles are on the bottom of each file beside the
+# widget matches.
+#
+# Name: Shades of gray GTK2 Theme
+# Author: WernerFP
+# License: GPL-3.0+
+
+############ Shades of gray color selection ############
+
+# Patina green:
+gtk-color-scheme = "selected_bg_color:      #5faf00"
+
+########################################################
+
+# Text/base
+gtk-color-scheme = "text_color:               #eee8d5"
+gtk-color-scheme = "base_color:               #262626"
+
+
+# Foreground/background
+gtk-color-scheme = "bg_color:                 #262626"
+gtk-color-scheme = "fg_color:                 #888888"
+
+# Selected foreground
+gtk-color-scheme = "selected_fg_color:        #eee8d5"
+
+# Insensitive foreground/background
+gtk-color-scheme = "insensitive_bg_color:     #262626"
+gtk-color-scheme = "insensitive_fg_color:     #888888"
+
+# Menus
+gtk-color-scheme = "menu_bg:                  #262626"
+gtk-color-scheme = "menu_fg:                  #eee8d5"
+
+# Menubar
+gtk-color-scheme = "menubar_bg:               #262626"
+
+# Notebooks
+gtk-color-scheme = "notebook_bg:              #262626"
+
+# Sidebar
+gtk-color-scheme = "dark_sidebar_bg:          #262626"
+
+# Links
+gtk-color-scheme = "link_color:               #a6a6a6"
+
+# Tooltips
+gtk-color-scheme = "tooltip_bg_color:         #262626"
+gtk-color-scheme = "tooltip_fg_color:         #eee8d5"
+gtk-color-scheme = "tooltip_borders:          #262626"
+
+
+# Set GTK settings
+gtk-icon-sizes = "gtk-button=16,16"
+gtk-auto-mnemonics = 1
+gtk-primary-button-warps-slider = 1
+
+
+# And hand over the control to the theme files
+include "main.rc"
+include "apps.rc"
+include "panel.rc"
