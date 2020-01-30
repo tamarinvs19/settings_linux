@@ -11,13 +11,16 @@ font pango: Hack 9
 
 # border style
 for_window [class=".*"] border none
-for_window [tiling class="Termite"] border pixel 1
+for_window [tiling class="terminal"] border pixel 1
+
+# activate floating
+for_window [class="XTerm"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec lxterminal
+bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+t exec termite
 
 # kill focused window
@@ -90,6 +93,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9: "
 set $ws10 "10: "
+set $wsWICD "  "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -102,6 +106,7 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+$win+i workspace $wsWICD
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -114,6 +119,13 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+# assign
+assign [class="Vivaldi"] $ws3
+assign [class="Audacious"] $ws10
+assign [class="Pcmanfm"] $ws9
+assign [class="Libreoffice"] $ws4
+assign [class="Wicd"] $wsWICD
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -201,7 +213,7 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym $win+F2 exec wicd-gtk
 
 #screenshort
-bindsym $mod+Print exec scrot '%Y-%m-%d-%H-%M_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
+bindsym Print exec scrot '%Y-%m-%d-%H-%M_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
 bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/'
 
 #bar toggle, hide, show
@@ -209,9 +221,6 @@ bindsym $mod+m bar mode toggle
 
 #focus
 bindsym $mod+x [urgent=latest] focus
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 
 # $i3-theme-bar
 bar {
@@ -237,7 +246,6 @@ client.focused          #5faf00 #5faf00 #eee8d5 #eee8d5
 client.focused_inactive #1B3600 #1B3600 #888888 #eee8d5
 client.unfocused        #262626 #262626 #888888 #eee8d5
 client.urgent 		#C20000 #C20000 #eee8d5 #eee8d5
-
 
 # setting keyboard
 exec xkbcomp /home/slava/.config/xkb/stru $DISPLAY && xcape -t 500 -e "ISO_Level3_Shift=Escape"
