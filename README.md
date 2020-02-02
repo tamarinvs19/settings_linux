@@ -18,9 +18,8 @@ Name | Description | Config file | Note
 **xkbcomp** | Compile XKB keyboard description | ~/.config/xkbcomp/\<*name*\> | Settings for keyword
 **zathura** | A document viewer | ~/.config/zathura/zathurarc
 
-## PC
-Computer | Distributive
----------|--------
-toshiba | ArchLinux
-seashell | Debian 9
-neo | Ubuntu 18.04
+Computer | Distributive | Model
+---------|--------------|-------
+toshiba | ArchLinux | Toshiba Satelline P200
+seashell | Debian 9 | Asus Eee PC 1011 Seashell series
+neo | Ubuntu 18.04 | Desktop PC
