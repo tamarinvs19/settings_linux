@@ -30,16 +30,24 @@ alias cal='cal -m'
 alias umount='sudo umount'
 alias mount='sudo mount'
 
-alias cdcf='cd ~/Documents/CodeForces'
-alias cdpl='cd ~/Documents/Python/python-learning'
+alias cdu='cd ~/Documents/university'
+alias cdpl='cd ~/Documents/python-learning'
+alias cdls='cd ~/Documents/settings_linux'
 alias cdmx='cd ~/Documents/misterX'
 alias i3set='vim ~/.config/i3/config'
 alias i3pyset='vim ~/.config/i3pystatus/config.py'
 
+#git
+alias goo='git checkout'
+alias gitlog='git log --graph --pretty=oneline --abbrev-commit --all --decorate'
+
+# python3.7
+alias py3='python3.7'
+
 export LC_CTYPE="ru_RU.UTF-8"
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$PATH
 
 # Path to your oh-my-zsh installation.
   export ZSH="/home/slava/.oh-my-zsh"
@@ -103,7 +111,6 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
   sudo
   web-search
 )
@@ -139,5 +146,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+#source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:/opt/clion/bin
+#export PATH=$PATH:/opt/clion/bin
+source /home/slava/builds/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
