@@ -9,14 +9,26 @@ xkb_keymap {
 	name[group1]="English (US)";
 	name[group2]="Russian";
 
-	key <RALT> { [ ISO_First_Group, ISO_Last_Group] };
-
 	include "altwin(swap_lalt_lwin)"
 
 	key <CAPS> { 
 	    type[group1]="ONE_LEVEL",
 	    symbols[group1] =[ ISO_Level3_Shift ] 
 	    };
+
+	key <RALT> {
+	   symbols[group1] = [ Alt_R, ISO_Last_Group ],
+	   virtualMods= AltGr
+	};
+	key <RTSH> {
+	   type[group1]="PC_RALT_LEVEL2",
+	   symbols[group1] = [ Shift_R, ISO_Last_Group ]
+	};
+
+	key <LFSH> { 
+	    type[group1]="PC_RALT_LEVEL2",
+	    symbols[group1]=[ Shift_L, ISO_Last_Group ]
+	};
 
 	key <TLDE> { [ asciitilde, grave ] };
 	key <SPCE> { [ space, space, BackSpace, BackSpace ] };
@@ -29,7 +41,9 @@ xkb_keymap {
 	key <BKSL> {
 	    type = "ALPHABETIC",
 	    type[group2] = "FOUR_LEVEL",
-	    symbols[group2]=[ backslash, slash, bar ]
+	    symbols[group2]=[ backslash, slash, bar, ISO_First_Group ],
+	    type[group1] = "FOUR_LEVEL",
+	    symbols[group1]=[ backslash, slash, bar, ISO_First_Group ]
 	};
 	key <LatE> {
 	    type= "ALPHABETIC",
