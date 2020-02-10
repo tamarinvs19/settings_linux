@@ -5,24 +5,46 @@ xkb_keymap {
     xkb_geometry  { include "pc(pc104)"  };
     xkb_symbols "my" {
 	include "pc+us+ru:2+inet(evdev)"
-	include "compose(rctrl)"
 
 	name[group1]="English (US)";
 	name[group2]="Russian";
 
+	include "altwin(swap_lalt_lwin)"
 
-	key <RALT> { [ ISO_First_Group, ISO_Last_Group] };
-	key <AC10> { [ colon, semicolon ] };
+	key <CAPS> { 
+	    type[group1]="ONE_LEVEL",
+	    symbols[group1] =[ ISO_Level3_Shift ] 
+	    };
+
+	key <RALT> {
+	   symbols[group1] = [ Alt_R, ISO_Last_Group ],
+	   virtualMods= AltGr
+	};
+	key <RTSH> {
+	   type[group1]="PC_RALT_LEVEL2",
+	   symbols[group1] = [ Shift_R, ISO_Last_Group ]
+	};
+
+	key <LFSH> { 
+	    type[group1]="PC_RALT_LEVEL2",
+	    symbols[group1]=[ Shift_L, ISO_Last_Group ]
+	};
+
 	key <TLDE> { [ asciitilde, grave ] };
-
-	replace key <CAPS> { [ ISO_Level3_Shift, ISO_Level3_Shift ] };
-	include "level3(modifier_mapping)"
-
-	key <AC06> { [ h, H, KP_Left,  H ] };
-	key <AC07> { [ j, J, KP_Down,  J ] };
-	key <AC08> { [ k, K, KP_Up,    K ] };
-	key <AC09> { [ l, L, KP_Right, L ] };
+	key <SPCE> { [ space, space, BackSpace, BackSpace ] };
+	key <AC06> { [ h, H, KP_Left  ] };
+	key <AC07> { [ j, J, KP_Down  ] };
+	key <AC08> { [ k, K, KP_Up    ] };
+	key <AC09> { [ l, L, KP_Right ] };
+	key <AC10> { [ colon, semicolon ] };
 	
+	key <BKSL> {
+	    type = "ALPHABETIC",
+	    type[group2] = "FOUR_LEVEL",
+	    symbols[group2]=[ backslash, slash, bar, ISO_First_Group ],
+	    type[group1] = "FOUR_LEVEL",
+	    symbols[group1]=[ backslash, slash, bar, ISO_First_Group ]
+	};
 	key <LatE> {
 	    type= "ALPHABETIC",
 	    type[group2]= "FOUR_LEVEL",
@@ -42,11 +64,6 @@ xkb_keymap {
 	    type= "ALPHABETIC",
 	    type[group2]= "FOUR_LEVEL",
 	    symbols[group2]=[Cyrillic_ze, Cyrillic_ZE, Cyrillic_zhe, Cyrillic_ZHE]
-	};
-	key <LatO> {
-	    type= "ALPHABETIC",
-	    type[group2]= "FOUR_LEVEL",
-	    symbols[group2]=[Cyrillic_shcha, Cyrillic_SHCHA, Cyrillic_e, Cyrillic_E]
 	};
 	key <LatO> {
 	    type= "ALPHABETIC",
@@ -82,13 +99,23 @@ xkb_keymap {
 	    type[group2]= "FOUR_LEVEL",
 	    symbols[group2]=[Cyrillic_yu, Cyrillic_YU, period,           greater]
 	};
+	key <AB10> {
+	    symbols[group2]=[slash, question]
+	};
+	key <AE03> {
+	    type[group2]="FOUR_LEVEL",
+	    symbols[group2]=[3, numbersign, number, apostrophe]
+	};
 	key <AE04> {
 	    symbols[group2]=[4,           dollar]
 	};
-	key <AE11> {
-	    symbols[group1]=[minus,           underscore, asciicircum],
-	    symbols[group2]=[minus,           underscore, asciicircum]
+	key <AE06> {
+	    symbols[group2]=[6,           asciicircum]
 	};
+	key <AE07> {
+	    symbols[group2]=[7,           ampersand]
+	};
+	key <AE11> { [minus, underscore, asciicircum] };
     };
 };
 
