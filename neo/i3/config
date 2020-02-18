@@ -14,8 +14,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $win Mod4
+set $win Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -24,6 +24,10 @@ font pango: Hack 9
 # border style
 for_window [class=".*"] border none
 for_window [tiling class="Termite"] border pixel 1
+# for_window [tabbed] border none
+
+# activate floating
+for_window [class="XTerm"] floating enable
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -102,6 +106,8 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9: "
 set $ws10 "10: "
+set $wsWICD "  "
+set $wsWP "WP"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -114,6 +120,8 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
+bindsym $mod+$win+i workspace $wsWICD
+bindsym $mod+$win+p workspace $wsWP
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -126,6 +134,14 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
+# assign
+assign [class="Vivaldi"] $ws3
+assign [class="Audacious"] $ws10
+assign [class="Pcmanfm"] $ws9
+assign [class="Libreoffice"] $ws4
+assign [class="Wicd"] $wsWICD
+assign [class="WhatPulse"] $wsWP
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -219,9 +235,6 @@ bindsym $mod+m bar mode toggle
 #focus
 bindsym $mod+x [urgent=latest] focus
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-
 # $i3-theme-bar
 bar {
     status_command    i3blocks ~/.config/i3blocks/config
@@ -257,3 +270,5 @@ exec compton --config ~/.config/compton/compton.conf
 # exec xscreensaver &
 
 # exec evolution &
+
+exec ~/builds/whatpulse-linux-ubuntu/whatpulse &

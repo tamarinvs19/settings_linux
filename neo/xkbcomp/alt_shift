@@ -1,7 +1,7 @@
 xkb_keymap {
     xkb_keycodes  { include "evdev+aliases(qwerty)"    };
     xkb_types     { include "complete"   };
-    xkb_compat    { include "complete"   };
+    xkb_compat    { include "complete+ledscroll(group_lock)"   };
     xkb_geometry  { include "pc(pc104)"  };
     xkb_symbols "my" {
 	include "pc+us+ru:2+inet(evdev)"
@@ -17,7 +17,17 @@ xkb_keymap {
 	    };
 
 	key <RALT> {
-	   symbols[group1] = [ ISO_First_Group, ISO_Last_Group ]
+	   symbols[group1] = [ Alt_R, ISO_Last_Group ],
+	   virtualMods= AltGr
+	};
+	key <RTSH> {
+	   type[group1]="PC_RALT_LEVEL2",
+	   symbols[group1] = [ Shift_R, ISO_Last_Group ]
+	};
+
+	key <LFSH> { 
+	    type[group1]="PC_RALT_LEVEL2",
+	    symbols[group1]=[ Shift_L, ISO_Last_Group ]
 	};
 
 	key <TLDE> { [ asciitilde, grave ] };
