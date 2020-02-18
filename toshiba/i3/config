@@ -179,7 +179,7 @@ bindsym $mod+Pause mode "$mode_system"
 #end power
 
 #my combination
-bindsym $win + k exec vivaldi
+bindsym $win + k exec vivaldi-stable
 bindsym $win + c exec chromium
 bindsym $win + f exec firefox
 bindsym $win + p exec pcmanfm
