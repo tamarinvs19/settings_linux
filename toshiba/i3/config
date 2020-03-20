@@ -9,8 +9,8 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
-set $win Mod4
+set $mod Mod4
+set $win Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -181,7 +181,7 @@ bindsym $mod+Pause mode "$mode_system"
 #my combination
 bindsym $win + k exec vivaldi-stable
 bindsym $win + c exec chromium
-bindsym $win + f exec firefox
+# bindsym $win + f exec firefox
 bindsym $win + p exec pcmanfm
 bindsym $win + n exec nautilus
 bindsym $win + e exec evolution
