@@ -27,22 +27,19 @@ for_window [tiling class="Termite"] border pixel 1
 # for_window [tabbed] border none
 
 # activate floating
-for_window [class="XTerm"] floating enable
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
-bindsym $mod+t exec termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $win+d exec rofi -show run
-bindsym $win+w exec rofi -show window
-bindsym $win+u exec rofi -show drun
+bindsym $win+d exec rofi -show window
+bindsym $mod+space exec rofi -show run
+bindsym $mod+Shift+space exec rofi -show drun
 
 # change focus
 bindsym $mod+h focus left
@@ -83,10 +80,10 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $win+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $win+Shift+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+p focus parent
@@ -106,8 +103,11 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9: "
 set $ws10 "10: "
-set $wsWICD "  "
+set $wsWICD ""
 set $wsWP "WP"
+set $wsTelegram ""
+set $wsZoom ""
+set $wsSkype ""
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -120,8 +120,11 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+$win+i workspace $wsWICD
-bindsym $mod+$win+p workspace $wsWP
+bindsym $mod+Shift+i workspace $wsWICD
+bindsym $mod+Shift+p workspace $wsWP
+bindsym $mod+t workspace $wsTelegram
+bindsym $mod+z workspace $wsZoom
+bindsym $mod+Shift+s workspace $wsSkype
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -142,6 +145,9 @@ assign [class="Pcmanfm"] $ws9
 assign [class="Libreoffice"] $ws4
 assign [class="Wicd"] $wsWICD
 assign [class="WhatPulse"] $wsWP
+assign [class="Telegram"] $wsTelegram
+assign [class="Skype"] $wsSkype
+assign [class="Zoom"] $wsZoom
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -203,9 +209,10 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym $win + k exec vivaldi
 bindsym $win + c exec chromium
 bindsym $win + f exec firefox
-bindsym $win + r exec lxterminal -e ranger
+bindsym $win + r exec gnome-terminal -e ranger
 bindsym $win + p exec pcmanfm
 bindsym $win + e exec evolution
+bindsym $win + t exec telegram-desktop
 
 bindsym $mod+Shift+t border toggle
 
@@ -214,6 +221,11 @@ bindsym $win + Shift + h exec xdotool mousemove_relative -- -10 0
 bindsym $win + Shift + j exec xdotool mousemove_relative 0 10
 bindsym $win + Shift + k exec xdotool mousemove_relative 0 -10
 bindsym $win + Shift + l exec xdotool mousemove_relative 10 0
+
+bindsym $win + Control + h exec xdotool mousemove_relative -- -50 0
+bindsym $win + Control + j exec xdotool mousemove_relative 0 50
+bindsym $win + Control + k exec xdotool mousemove_relative 0 -50
+bindsym $win + Control + l exec xdotool mousemove_relative 50 0
 
 # key click
 bindsym $win + Shift + i exec xdotool click 1
@@ -271,4 +283,4 @@ exec compton --config ~/.config/compton/compton.conf
 
 # exec evolution &
 
-exec ~/builds/whatpulse-linux-ubuntu/whatpulse &
+# exec ~/builds/whatpulse-linux-ubuntu/whatpulse &
