@@ -114,6 +114,14 @@ snippet beta "beta" A
 \beta $0
 endsnippet
 
+snippet gamma "gamma" A
+\gamma $0
+endsnippet
+
+snippet Gamma "Gamma" A
+\Gamma $0
+endsnippet
+
 snippet Sigma "Sigma" A
 \Sigma $0
 endsnippet
@@ -204,14 +212,6 @@ endsnippet
 
 snippet 90m "\left ( \right )" A
 \left ( $1 \right )
-endsnippet
-
-snippet 90tr "\left ( MATRIX \right )" A
-\left ( 
-\begin{array}{$1}
-$0
-\end{array}
-\right )
 endsnippet
 
 snippet -> "to" wA
@@ -388,9 +388,9 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
-snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
-\vec{`!p snip.rv=match.group(1)`}
-endsnippet
+# snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
+# \vec{`!p snip.rv=match.group(1)`}
+# endsnippet
 
 # context  "math()"
 snippet () "left( right)" iA
@@ -427,6 +427,10 @@ endsnippet
 
 snippet lra "leftangle rightangle" iA
 \langle ${1:${VISUAL}} \rangle$0
+endsnippet
+
+snippet lrA "leftangle rightangle" iA
+\left\langle ${1:${VISUAL}} \right\rangle$0
 endsnippet
 
 # context  "math()"
@@ -505,12 +509,12 @@ endsnippet
 
 # context  "math()"
 snippet norm "norm" iA
-\lvert $1 \rvert $0
+\| $1 \| $0
 endsnippet
 
 priority 100
 # context  "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp|star|perp)' "ln" rwA
+snippet '(?<!\\)(sin|cos|arcctg|ctg|csc|ln|log|exp|star|perp)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -526,7 +530,7 @@ endsnippet
 
 priority 200
 # context  "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|pi|zeta|int)' "ln" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arctg|arcctg|arccsc|arcsec|pi|zeta|int)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
@@ -649,8 +653,8 @@ snippet Rn "R^n" wA
 \R^{n} $1
 endsnippet
 
-snippet Sn "S^n" A
-S^{n} $1
+snippet Sn "S_n" A
+S_{n} $1
 endsnippet
 
 # fonts snippets
@@ -691,5 +695,22 @@ $0
 endsnippet
 
 snippet ssum "sum with params" wA
-\sum_{$2}^{$1} $0
+\sum_{$1}^{$2} $0
 endsnippet
+
+snippet sqrt "sqrt" wA
+\sqrt{ $1} $0
+endsnippet
+
+snippet :: "colon" wA
+\colon $0
+endsnippet
+
+snippet := "coloneqq" wA
+\coloneqq $0
+endsnippet
+
+snippet wtilde "big tilde" wA
+\widetilde{ $1} $0
+endsnippet
+
