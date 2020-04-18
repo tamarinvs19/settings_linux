@@ -103,11 +103,12 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9: "
 set $ws10 "10: "
-set $wsWICD ""
-set $wsWP "WP"
 set $wsTelegram ""
 set $wsZoom ""
 set $wsSkype ""
+set $wsDiscord "Discord"
+set $wsWICD ""
+set $wsWP "WP"
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -125,6 +126,7 @@ bindsym $mod+Shift+p workspace $wsWP
 bindsym $mod+t workspace $wsTelegram
 bindsym $mod+z workspace $wsZoom
 bindsym $mod+Shift+s workspace $wsSkype
+bindsym $mod+d workspace $wsDiscord
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -137,6 +139,7 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+z move container to workspace $wsZoom
 
 # assign
 assign [class="Vivaldi"] $ws3
@@ -147,7 +150,8 @@ assign [class="Wicd"] $wsWICD
 assign [class="WhatPulse"] $wsWP
 assign [class="Telegram"] $wsTelegram
 assign [class="Skype"] $wsSkype
-assign [class="Zoom"] $wsZoom
+assign [class="zoom"] $wsZoom
+assign [class="discord"] $wsDiscord
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -170,10 +174,10 @@ mode "resize" {
         bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -184,15 +188,15 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 #Power
-# set $Locker xscreensaver-command -lock && sleep 1
-set $Locker i3lock -i ~/Pictures/Wallpaper/IMG_1220.png && sleep 1
+set $Locker xscreensaver-command -lock && sleep 1
+# set $Locker i3lock -i ~/Pictures/Wallpaper/IMG_1220.png && sleep 1
 # set $Locker i3lock -p win -c 3f888f
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (p) poweroff
 mode "$mode_system" {
     bindsym l exec --no-startup-id $Locker, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $Locker && systemctl suspend, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
     bindsym h exec --no-startup-id $Locker && systemctl hibernate, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
     bindsym p exec --no-startup-id systemctl poweroff -i, mode "default"  
@@ -238,8 +242,8 @@ bindsym $mod + F10 exec amixer set Master toggle
 bindsym $win+F2 exec wicd-gtk
 
 #screenshort
-bindsym $mod+Print exec scrot '%Y-%m-%d-%H-%M_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/'
-bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots'
+bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/' &
+bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/' &
 
 #bar toggle, hide, show
 bindsym $mod+m bar mode toggle

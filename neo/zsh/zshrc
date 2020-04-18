@@ -32,9 +32,9 @@ alias cal='cal -m'
 
 alias cdls='cd ~/Documents/settings_linux'
 alias cdpl='cd ~/Documents/python-learning'
-alias cdmx='cd ~/Documents/misterX'
-alias cdu='cd ~/Documents/University'
-alias cdppl='cd ~/Documents/University/ppl'
+alias cdmx='cd ~/Documents/misterx'
+alias cdu='cd ~/Documents/university'
+alias cdsp='cd ~/Documents/university/sp'
 alias i3set='vim ~/.config/i3/config'
 alias i3bset='vim ~/.config/i3blocks/config'
 
@@ -145,4 +145,5 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:/opt/clion/bin
+export PATH=$PATH:$HOME/build/clion/bin
+export PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-linux

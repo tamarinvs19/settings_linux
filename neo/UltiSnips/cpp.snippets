@@ -1,32 +1,9 @@
-snippet main
-#include <iostream>
-using namespace std;
-
-int main()
-{
-    $0
-    return 0;
-}
-endsnippet
-
 snippet cout
-cout << $1 << endl;
+std::cout << $1 << std::endl;
 endsnippet
 
 snippet cin
-cin >> $1 >> endl;
-endsnippet
-
-snippet while
-while ($1) {
-    $0
-}
-endsnippet
-
-snippet for
-for ($1 = 0; $1 < $2; $1 $3) {
-    $0
-}
+std::cin >> $1 >> std::endl;
 endsnippet
 
 snippet lli "long long int" bA
@@ -36,3 +13,4 @@ endsnippet
 snippet std "std::" A
 std::$0
 endsnippet
+
