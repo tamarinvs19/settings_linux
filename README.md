@@ -7,10 +7,10 @@ Name | Description | Config file | Note
 **i3pystatus** | Status bar for i3wm | ~/.config/i3pystatus/config.py | Now I do not use it
 **i3blocks** | Status bar for i3wm | ~/.config/i3blocks/config.py 
 **vim** | Perfect text editor | ~/.vimrc
-**vim-airline-theme** | Themes for vim | ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/raven_green.vim | or *rave_red*, *raven_blue*
+**vim-airline-theme** | Themes for vim | ~/.vim/plugged/vim-airline-themes/autoload/airline/themes/raven_green.vim | or *raven_red*, *raven_blue*
 **UltiSnips** | Snippets for vim | ~/.vim/UltiSnips
 **zsh** | Z shell |  ~/.zshrc
-**oh-my-zsh** | Themes for zsh | ~/.oh-my-zsh/custom/themes/green.vim-themes  
+**oh-my-zsh** | Themes for zsh | ~/.oh-my-zsh/custom/themes/green.zsh-theme  
 **compton** | A compositor for X11 | ~/.config/compton/compton.conf 
 **dark-reader** | Plugin for web-browser | settings of plugin
 **rofi** | A window switcher, application launcher, ssh dialog and dmenu replacement | ~/.config/rofi/config
