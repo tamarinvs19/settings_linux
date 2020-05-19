@@ -31,7 +31,7 @@ autocmd FileType python setlocal ts=4 sts=4 sw=4 et
 autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noet
 autocmd FileType html setlocal ts=2 sts=2 sw=2 noet
 autocmd FileType htmldjango setlocal ts=2 sts=2 sw=2 noet
-autocmd FileType css setlocal ts=2 sts=2 sw=2 noet
+autocmd FileType css setlocal ts=4 sts=4 sw=4 noet
 
 command! Vimrc :vs $MYVIMRC
 " copy to buffer
@@ -73,6 +73,7 @@ let g:indent_guides_auto_colors = 0
 let g:indent_guides_enable_on_vim_startup = 1
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guifg=gray ctermfg=5
 
 " Вместо 'c-n' 'tab'
 Plug 'ervandew/supertab'
@@ -97,11 +98,14 @@ let g:lastplace_open_folds = 0
 
 Plug 'vim-airline/vim-airline', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango' ] }
 Plug 'vim-airline/vim-airline-themes', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango' ] }
-let g:airline_theme='gruvbox' " raven_blue
-let g:airline_left_sep = ''"'▶'
+let g:airline_theme='solarized' " raven_blue
+let g:airline_solarized_bg = 'dark'
+let g:airline_left_sep = ''
 let g:airline_fugitive_prefix = '∲'
-let g:airline_right_sep = ''"'◀'
+let g:airline_right_sep = ''
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#keymap#enabled = '0'
+let g:airline#extensions#xkblayout#enabled = '0'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#tab_min_count = 2
 let g:airline#extensions#tabline#formatter = 'unique_tail'
@@ -115,7 +119,7 @@ nnoremap <F1> :call investigate#Investigate()<CR>
 " Change lang to EN in Normal
 Plug 'lyokha/vim-xkbswitch'
 let g:XkbSwitchEnabled       = 1
-let g:XkbSwitchLib           = '/usr/lib/libxkbswitch.so'
+let g:XkbSwitchLib           = '/usr/local/lib/libxkbswitch.so'
 let g:XkbSwitchIMappings     = ['ru']
 let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
 
@@ -277,9 +281,3 @@ function! PasteReplace(type, ...)
     endif
 endfunction
 nmap SS S$
-
-" my commands
-command W :w
-command Wq :wq
-command WQ :wq
-command Q :q

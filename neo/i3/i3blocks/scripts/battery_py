@@ -1,0 +1,52 @@
+#!/usr/bin/python3
+
+import os
+
+background = '#434343'
+background_past = '#262626'
+background_next = '#262626'
+
+battery_number = 0
+command = "acpi -b | grep 'Battery {}'".format(battery_number)
+print(command)
+
+acpi = os.popen(command).read().split(', ')
+status = acpi[0].split(': ')[1]
+percent = int(acpi[1].split('%')[0])
+if not status in {'Unknown', 'Full'}:
+    time = ' ' + acpi[2].split(' ')[0][:-3]
+else:
+    status = 'Charging'
+    time = ' '
+    percent = 100
+charging = ''
+discharging = ''
+
+if status == 'Charging':
+    sign = str(percent)+ ' '
+elif status == 'Discharging':
+    sign = str(percent)
+else:
+    sign = ''
+
+discharging_colors_1 = ['#5faf00','#5fff00','#5fff5a','#5ff5a5','#5ff5f5','#a5aff5','#f5aff5','#ff5aa5','#ff005a','#ff0000']
+discharging_colors_2 = ['#5faf00','#5fff00','#5fff5a','#5ff5a5','#5ff5f5','#0aa5f5','#0a0af5','#a00af5','#ff005a','#ff0000']
+
+if status == 'Charging':
+    if percent <= 15:
+        color = '#af0000'
+    elif percent <= 30:
+        color = '#fff600'
+    else:
+        color = '#5faf00'
+elif status == 'Discharging':
+    color = discharging_colors_1[10 - (percent+9) // 10]
+else:
+    color = '#5faf00'
+
+out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span><span background="{background_next}" color="{background}"></span>'
+if time == ' ' or time == ' charg':
+    print(out.format(background=background, color=color, text=sign, background_past=background_past, background_next=background_next))
+else:
+    print(out.format(background=background, color=color, text=sign+time, background_past=background_past, background_next=background_next))
+

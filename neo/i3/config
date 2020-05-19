@@ -31,7 +31,8 @@ for_window [tiling class="Termite"] border pixel 1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+#bindsym $mod+Return exec termite
+bindsym $mod+Return exec lxterminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -213,9 +214,8 @@ bindsym $mod+Pause mode "$mode_system"
 bindsym $win + k exec vivaldi
 bindsym $win + c exec chromium
 bindsym $win + f exec firefox
-bindsym $win + r exec gnome-terminal -e ranger
+bindsym $win + r exec lxterminal -e ranger
 bindsym $win + p exec pcmanfm
-bindsym $win + e exec evolution
 bindsym $win + t exec telegram-desktop
 
 bindsym $mod+Shift+t border toggle
@@ -242,8 +242,8 @@ bindsym $mod + F10 exec amixer set Master toggle
 bindsym $win+F2 exec wicd-gtk
 
 #screenshort
-bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/' &
-bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/' &
+bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/pictures/Screenshots/' &
+bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/pictures/Screenshots/' &
 
 #bar toggle, hide, show
 bindsym $mod+m bar mode toggle
@@ -251,38 +251,37 @@ bindsym $mod+m bar mode toggle
 #focus
 bindsym $mod+x [urgent=latest] focus
 
-# $i3-theme-bar
 bar {
     status_command    i3blocks ~/.config/i3blocks/config
     position          top
     workspace_buttons yes
     font pango: FontAwesome, Hack, DejaVu Sans Mono 9
-    # $i3-theme-bar
+    separator_symbol ""
     colors {
-    	background #262626
+    	background #002933
     	statusline #eee8d5
-    	separator  #262626
-    	focused_workspace  #3f888f #3f888f #eee8d5
+	separator  #3f888f 
+	focused_workspace  #3f888f #3f888f #eee8d5
     	active_workspace   #262626 #262626 #eee8d5
-    	inactive_workspace #262626 #262626 #888888
+    	inactive_workspace #002933 #002933 #888888
     	urgent_workspace   #af0000 #af0000 #eee8d5
     }
 }
 
 # $i3-theme-window
 # class                 border  backgr. text    indicator
-client.focused          #3f888f #3f888f #eee8d5 #eee8d5
-client.focused_inactive #184852 #184852 #888888 #eee8d5
+client.focused          #002933 #002933 #eee8d5 #eee8d5
+client.focused_inactive #093943 #003943 #888888 #eee8d5
 client.unfocused        #262626 #262626 #888888 #eee8d5
 client.urgent 		#af0000 #af0000 #eee8d5 #eee8d5
 
 
 # Настройка клавиатуры
-exec xkbcomp /home/slava/.config/xkb/stru $DISPLAY && xcape -t 500 -e "ISO_Level3_Shift=Escape"
+exec xkbcomp /home/slava/.config/xkbcomp/stru $DISPLAY && xcape -t 500 -e "ISO_Level3_Shift=Escape"
 
 exec redshift -l 59:30 -t 3500:3000 &
 exec nitrogen --restore
-exec compton --config ~/.config/compton/compton.conf
+#exec compton --config ~/.config/compton/compton.conf
 # exec xscreensaver &
 
 # exec evolution &

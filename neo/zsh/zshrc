@@ -17,10 +17,6 @@ setopt HIST_REDUCE_BLANKS
 bindkey -v
 #
 
-bindkey '\e[3~' delete-char # del
-bindkey ';5D' backward-word # ctrl+left 
-bindkey ';5C' forward-word #ctrl+right
-
 alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 
@@ -30,15 +26,14 @@ alias gitlog='git log --graph --pretty=oneline --addrev-commit --all --decorate'
 alias df='df -h'
 alias cal='cal -m'
 
-alias cdls='cd ~/Documents/settings_linux'
-alias cdpl='cd ~/Documents/python-learning'
-alias cdmx='cd ~/Documents/misterx'
-alias cdu='cd ~/Documents/university'
-alias cdsp='cd ~/Documents/university/sp'
+alias cdls='cd ~/settings_linux'
+alias cdpl='cd ~/python-learning'
+alias cdmx='cd ~/misterX'
+alias cdsp='cd ~/sp'
 alias i3set='vim ~/.config/i3/config'
 alias i3bset='vim ~/.config/i3blocks/config'
 
-# python3.6
+# python3.8
 alias py3='python3'
 
 export LC_CTYPE="ru_RU.UTF-8"
@@ -145,5 +140,4 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH=$PATH:$HOME/build/clion/bin
 export PATH=$PATH:/usr/local/texlive/2019/bin/x86_64-linux
