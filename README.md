@@ -22,4 +22,4 @@ Computer | Distributive | Model
 ---------|--------------|-------
 toshiba | ArchLinux | Toshiba Satelline P200
 seashell | Debian 9 | Asus Eee PC 1011 Seashell series
-neo | Ubuntu 18.04 | Desktop PC
+neo | Ubuntu 20.04 | Desktop PC
