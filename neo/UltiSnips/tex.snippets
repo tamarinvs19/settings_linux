@@ -90,9 +90,8 @@ endsnippet
 
 snippet enum "enumerate" wA
 \begin{enumerate}[noitemsep]
-    \item \boxed{ 1 \Longrightarrow 2} $1
-    \item \boxed{ 2 \Longrightarrow 1} $2
-\end{enumerate} $3
+    \item $1
+\end{enumerate} $0
 endsnippet
 
 # snippet bveq(\d) "big and hard equals varilbles" wA
@@ -177,6 +176,9 @@ snippet Xi "Xi" iA
 \Xi $0
 endsnippet
 
+snippet lambda "lambda" A
+\lambda $0
+endsnippet
 # --
 
 snippet stci "\stackrel \circ" wA
@@ -765,6 +767,18 @@ snippet мп "метр. пр-во" wA
 метрическое пространство$1
 endsnippet
 
+snippet вп "вект. пр-во" w
+векторное пространство$1
+endsnippet
+
+snippet впр "вект. пр-во разм-ти" w
+векторное пространство ${1:$V$} размерности ${2:$n$}$0
+endsnippet
+
+snippet Впр "вект. пр-во разм-ти" w
+Векторное пространство ${1:$V$} размерности ${2:$n$}$0
+endsnippet
+
 # section
 snippet ssec "New section" wA
 \section{$1}
@@ -798,14 +812,14 @@ snippet wti "big tilde" wA
 endsnippet
 
 context "math()"
-snippet dd "partial" iA
+snippet DD "partial" iA
 \partial $0
 endsnippet
 
 #code
 snippet hcode "Code" wA
-\begin{minted}[fontsize=\footnotesize,numbersep=3pt,framesep=1mm,linenos,frame=single,label=$0]{c}
-$1
+\begin{minted}[fontsize=\footnotesize,numbersep=3pt,framesep=1mm,linenos,frame=single,label=]{cpp}
+$0
 \end{minted}
 endsnippet
 
@@ -819,4 +833,24 @@ snippet cmd "command line" wA
 \begin{verbatim}
 $ $0
 \end{verbatim}
+endsnippet
+
+snippet see "Рассмотрим" wA
+Рассмотрим $0
+endsnippet
+
+snippet Def "Definition" wA
+\begin{defn}
+    $0
+\end{defn}
+endsnippet
+
+snippet ddef "Definition with name" wA
+\begin{defn}[$1]
+    $0
+\end{defn}
+endsnippet
+
+snippet det "determinant" wA
+\det $0
 endsnippet

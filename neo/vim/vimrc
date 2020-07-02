@@ -32,6 +32,7 @@ autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noet
 autocmd FileType html setlocal ts=2 sts=2 sw=2 noet
 autocmd FileType htmldjango setlocal ts=2 sts=2 sw=2 noet
 autocmd FileType css setlocal ts=4 sts=4 sw=4 noet
+autocmd FileType tex setlocal ts=4 sts=4 sw=4 noet
 
 command! Vimrc :vs $MYVIMRC
 " copy to buffer
@@ -62,11 +63,10 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 let NERDTreeWinSize = 20
 map <F3> :NERDTreeToggle<CR>
 
-
 " markdown preview
 Plug 'JamshedVesuna/vim-markdown-preview'
 let vim_markdown_preview_github=1
-" let vim_markdown_preview_hotkey='<C-p>'
+let vim_markdown_preview_hotkey='<C-p>'
 
 Plug 'morhetz/gruvbox'
 let g:indent_guides_auto_colors = 0
@@ -167,12 +167,6 @@ let g:tex_conceal='abdmg'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 
-augroup Tex
-    autocmd!
-    autocmd FileType *.tex set conceallevel=1
-    autocmd FileType *.tex set concealcursor=c
-augroup END
-
 let g:vimtex_compiler_latexmk = {
       \ 'options' : [
       \   '-verbose',
@@ -216,6 +210,9 @@ let g:cpp_experimental_simple_template_highlight = 1
 Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
 let g:latex_to_unicode_auto = 1
 autocmd BufRead,BufNewFile *.jl :set filetype=julia
+
+" rust
+Plug 'rust-lang/rust.vim', {'for': 'rust'}
 
 " python
 nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
@@ -281,3 +278,9 @@ function! PasteReplace(type, ...)
     endif
 endfunction
 nmap SS S$
+
+set conceallevel=1
+set concealcursor=c
+:setlocal spell 
+:hi SpellBad cterm=underline,italic 
+

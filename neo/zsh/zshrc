@@ -21,7 +21,7 @@ alias ls='ls --color=auto'
 alias grep='grep --colour=auto'
 
 alias go='git checkout'
-alias gitlog='git log --graph --pretty=oneline --addrev-commit --all --decorate'
+alias gitlog='git log --graph --pretty=oneline --all --decorate'
 
 alias df='df -h'
 alias cal='cal -m'
