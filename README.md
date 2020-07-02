@@ -1,5 +1,5 @@
 # settings_linux
-There are my settings for Debian9, ArchLinux, Ubuntu 18.04. 
+There are my settings for Debian9, ArchLinux, Ubuntu 20.04. 
 
 Name | Description | Config file | Note
 -----|-------------|-------------|------
@@ -22,4 +22,4 @@ Computer | Distributive | Model
 ---------|--------------|-------
 toshiba | ArchLinux | Toshiba Satelline P200
 seashell | Debian 9 | Asus Eee PC 1011 Seashell series
-neo | Ubuntu 18.04 | Desktop PC
+neo | Ubuntu 20.04 | Desktop PC
