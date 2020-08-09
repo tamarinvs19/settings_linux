@@ -3,11 +3,11 @@
 
 import os
 
-background = '#004953'
-background_past = '#002933'
-background_next = '#002933'
+background = '#434343'
+background_past = '#262626'
+background_next = '#262626'
 
-volume, _, setting = [x[1:-1] for x in os.popen("amixer | grep 'Master' -A 4").read().strip().split('\n')[-1].strip().split(' ')[-3:]]
+volume, setting = [x[1:-1] for x in os.popen("amixer | grep 'Front Left: P'").read().strip().split(' ')[-2:]]
 volume = int(volume[:-1])
 if setting == 'on':
     if volume > 0:
@@ -19,7 +19,7 @@ if setting == 'on':
     text = "{sign} {volume}".format(sign=sign, volume=volume)
 else:
     color = "#af0000"
-    text = ' '
+    text = ''
 
 out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span><span background="{background_next}" color="{background}"></span>'
 

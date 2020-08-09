@@ -18,7 +18,7 @@ def math():
 endglobal
 
 snippet template "Basic template" b
-\documentclass[12pt,a4paper]{article}
+\documentclass[a4paper]{article}
 
 \usepackage [utf8] {inputenc}
 \usepackage [T2A] {fontenc}
@@ -27,9 +27,16 @@ snippet template "Basic template" b
 \usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{needspace}
+\usepackage{etoolbox}
+\usepackage{lipsum}
+\usepackage{comment}
 \usepackage{cmap}
 \usepackage[pdftex]{graphicx}
+\usepackage{hyperref}
+\usepackage{epstopdf}
+\usepackage{enumitem}
 \usepackage{fullpage}
+
 \usepackage{textcomp}
 
 % figure support
@@ -39,9 +46,16 @@ snippet template "Basic template" b
 \usepackage{pdfpages}
 \usepackage{transparent}
 \newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
 }
+
+\pdfsuppresswarningpagegroup=1
+
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Q}{\mathbb{Q}}
 
 \begin{document}
 	$0
@@ -76,8 +90,9 @@ endsnippet
 
 snippet enum "enumerate" wA
 \begin{enumerate}[noitemsep]
-    \item $1
-\end{enumerate} $0
+    \item \boxed{ 1 \Longrightarrow 2} $1
+    \item \boxed{ 2 \Longrightarrow 1} $2
+\end{enumerate} $3
 endsnippet
 
 # snippet bveq(\d) "big and hard equals varilbles" wA
@@ -102,7 +117,7 @@ snippet Delta "Delta" iA
 \Delta $0
 endsnippet
 
-snippet alp "alpha" iA
+snippet alpha "alpha" iA
 \alpha $0
 endsnippet
 
@@ -130,14 +145,6 @@ snippet phi "phi" iA
 \varphi $0
 endsnippet
 
-snippet theta "theta" iA
-\theta $0
-endsnippet
-
-snippet Theta "Theta" iA
-\Theta $0
-endsnippet
-
 snippet Om "Omega" iA
 \Omega $0
 endsnippet
@@ -162,9 +169,6 @@ snippet Xi "Xi" iA
 \Xi $0
 endsnippet
 
-snippet lambda "lambda" A
-\lambda $0
-endsnippet
 # --
 
 snippet stci "\stackrel \circ" wA
@@ -668,11 +672,9 @@ snippet case "cases" wA
 endsnippet
 
 snippet align "align" wA
-\[
-\begin{aligned}
+\begin{align*}
 	$1
-\end{aligned}
-\]
+\end{align*}
 endsnippet
 
 context  "math()"
@@ -753,18 +755,6 @@ snippet мп "метр. пр-во" wA
 метрическое пространство$1
 endsnippet
 
-snippet вп "вект. пр-во" w
-векторное пространство$1
-endsnippet
-
-snippet впр "вект. пр-во разм-ти" w
-векторное пространство ${1:$V$} размерности ${2:$n$}$0
-endsnippet
-
-snippet Впр "вект. пр-во разм-ти" w
-Векторное пространство ${1:$V$} размерности ${2:$n$}$0
-endsnippet
-
 # section
 snippet ssec "New section" wA
 \section{$1}
@@ -798,14 +788,14 @@ snippet wti "big tilde" wA
 endsnippet
 
 context "math()"
-snippet DD "partial" iA
+snippet dd "partial" iA
 \partial $0
 endsnippet
 
 #code
 snippet hcode "Code" wA
-\begin{minted}[fontsize=\footnotesize,numbersep=3pt,framesep=1mm,linenos,frame=single,label=]{cpp}
-$0
+\begin{minted}[fontsize=\footnotesize,numbersep=3pt,framesep=1mm,linenos,frame=single,label=$0]{c}
+$1
 \end{minted}
 endsnippet
 
@@ -819,24 +809,4 @@ snippet cmd "command line" wA
 \begin{verbatim}
 $ $0
 \end{verbatim}
-endsnippet
-
-snippet see "Рассмотрим" wA
-Рассмотрим $0
-endsnippet
-
-snippet Def "Definition" wA
-\begin{defn}
-    $0
-\end{defn}
-endsnippet
-
-snippet ddef "Definition with name" wA
-\begin{defn}[$1]
-    $0
-\end{defn}
-endsnippet
-
-snippet det "determinant" wA
-\det $0
 endsnippet

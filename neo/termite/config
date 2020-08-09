@@ -4,17 +4,19 @@ allow_bold = true
 #bold_is_bright = true
 #clickable_url = true
 dynamic_title = true
-font = Hack 17
+#font = FantasqueSansMono Nerd Font Mono Regular 20
+#font = Hack 17
+font = Iosevka Regular 17
 #fullscreen = true
-#icon_name = terminal
+icon_name = terminal
 mouse_autohide = true
 #scroll_on_output = false
 #scroll_on_keystroke = true
 # Length of the scrollback buffer, 0 disabled the scrollback buffer
 # and setting it to a negative value means "infinite scrollback"
 scrollback_lines = 50000
-#search_wrap = true
-#urgent_on_bell = true
+search_wrap = true
+urgent_on_bell = true
 hyperlinks = true
 
 # $BROWSER is used by default if set, with xdg-open as a fallback
@@ -44,9 +46,9 @@ scrollbar = off
 # cursor = #222222
 # cursor_foreground = #af0000
 
-foreground = #dcdccc
+foreground = #eee8d5
 foreground_bold = #ffffff
-background = #262626
+background = #121212
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -57,9 +59,9 @@ highlight = #2f2f2f
 # Colors from color0 to color254 can be set
 color0 = #434343
 color1 = #af0000
-color2 = #888888
+color2 = #5f7f00
 color3 = #ffaf00
-color4 = #3f888f
+color4 = #5faf00
 color5 = #ffaf00
 color6 = #8cd0d3
 color7 = #dcdccc
@@ -67,13 +69,13 @@ color8 = #709080
 color9 = #af005f
 color10 = #af5faa
 color11 = #ff0001
-color12 = #3eb489
+color12 = #5faf00
 color13 = #af00af
 color14 = #00af5f
 color15 = #eee8d5
 
 [hints]
-#font = Monospace 12
+#font = FantasqueSansMono NF Regular 21
 #foreground = #dcdccc
 #background = #3f3f3f
 #active_foreground = #e68080
