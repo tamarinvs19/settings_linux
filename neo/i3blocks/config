@@ -4,14 +4,6 @@ color=#888888
 separator=false
 separator_block_width=3
 
-[volume]
-command=~/.config/i3blocks/scripts/volume_py
-label=
-interval=5
-markup=pango
-
-[separator]
-
 [disk]
 command=~/.config/i3blocks/scripts/disk
 label=
@@ -21,10 +13,10 @@ interval=60
 
 #[eth]
 
-[wifi]
-command=~/.config/i3blocks/scripts/wifi_py
+[volume]
+command=~/.config/i3blocks/scripts/volume_py
 label=
-interval=10
+interval=5
 markup=pango
 
 [separator]
@@ -32,7 +24,7 @@ markup=pango
 [mem]
 command=~/.config/i3blocks/scripts/memory
 interval=30
-label=MEM: 
+label=MEM:
 
 [cpu_usage]
 command=~/.config/i3blocks/scripts/cpu_usage
@@ -41,10 +33,10 @@ label=CPU:
 
 [separator]
 
-[battery]
-command=~/.config/i3blocks/scripts/battery_py
-interval=30
+[ethernet]
+command=~/.config/i3blocks/scripts/ethernet_py
 label=
+interval=10
 markup=pango
 
 [separator]

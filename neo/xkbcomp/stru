@@ -1,11 +1,10 @@
 xkb_keymap {
     xkb_keycodes  { include "evdev+aliases(qwerty)"    };
     xkb_types     { include "complete"   };
-    xkb_compat    { include "complete+ledscroll(group_lock)"   };
+    xkb_compat    { include "complete"   };
     xkb_geometry  { include "pc(pc104)"  };
     xkb_symbols "my" {
 	include "pc+us+ru:2+inet(evdev)"
-	include "level3(modifier_mapping)"
 
 	name[group1]="English (US)";
 	name[group2]="Russian";
@@ -21,7 +20,7 @@ xkb_keymap {
 	   symbols[group1] = [ ISO_First_Group, ISO_Last_Group ]
 	};
 
-
+	key <TLDE> { [ asciitilde, grave ] };
 	key <SPCE> { [ space, space, BackSpace, BackSpace ] };
 	key <AC06> { 
 	    symbols[group1] = [ h, H, KP_Left,  H ],
@@ -40,7 +39,7 @@ xkb_keymap {
 	    symbols[group2] = [ Cyrillic_de, Cyrillic_DE, KP_Right ]
 	    };
 	key <AC10> { [ colon, semicolon ] };
-
+	
 	key <BKSL> {
 	    type = "ALPHABETIC",
 	    type[group2] = "FOUR_LEVEL",
@@ -48,14 +47,36 @@ xkb_keymap {
 	    type[group1] = "FOUR_LEVEL",
 	    symbols[group1]=[ backslash, slash, bar, ISO_First_Group ]
 	};
-
-	key <TLDE> { 
-	    type = "ALPHABETIC",
-	    type[group2] = "FOUR_LEVEL",
-	    symbols[group2] = [ asciitilde, grave, Cyrillic_io, Cyrillic_IO ], 
-	    symbols[group1] = [ asciitilde, grave ] 
-	    };
-	
+	key <LatE> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_u, Cyrillic_U, Cyrillic_yu, Cyrillic_YU]
+	};
+	key <LatD> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_ve, Cyrillic_VE, Cyrillic_be, Cyrillic_BE]
+	};
+	key <LatM> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_softsign, Cyrillic_SOFTSIGN, Cyrillic_hardsign, Cyrillic_HARDSIGN ]
+	};
+	key <LatP> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_ze, Cyrillic_ZE, Cyrillic_zhe, Cyrillic_ZHE]
+	};
+	key <LatO> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_shcha, Cyrillic_SHCHA, Cyrillic_e, Cyrillic_E]
+	};
+	key <LatI> {
+	    type= "ALPHABETIC",
+	    type[group2]= "FOUR_LEVEL",
+	    symbols[group2]=[Cyrillic_sha, Cyrillic_SHA, Cyrillic_ha, Cyrillic_HA]
+	};
 	key <AD11> {
 	    type[group2]= "FOUR_LEVEL",
 	    symbols[group2]=[Cyrillic_ha, Cyrillic_HA, bracketleft,         braceleft]
@@ -81,8 +102,7 @@ xkb_keymap {
 	    symbols[group2]=[Cyrillic_yu, Cyrillic_YU, period,           greater]
 	};
 	key <AB10> {
-	    symbols[group1]=[slash, question, BackSpace],
-	    symbols[group2]=[slash, question, BackSpace]
+	    symbols[group2]=[slash, question]
 	};
 	key <AE03> {
 	    type[group2]="FOUR_LEVEL",
@@ -97,10 +117,7 @@ xkb_keymap {
 	key <AE07> {
 	    symbols[group2]=[7,           ampersand]
 	};
-	key <AE11> {
-	    symbols[group1]=[minus,           underscore, asciicircum],
-	    symbols[group2]=[minus,           underscore, asciicircum]
-	};
+	key <AE11> { [minus, underscore, asciicircum] };
     };
 };
 

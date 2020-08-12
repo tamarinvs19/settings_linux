@@ -2,12 +2,13 @@
 
 import os
 
-background = '#262626'
-background_past = '#121212'
-background_next = '#121212'
+background = '#434343'
+background_past = '#262626'
+background_next = '#262626'
 
 battery_number = 0
 command = "acpi -b | grep 'Battery {}'".format(battery_number)
+print(command)
 
 acpi = os.popen(command).read().split(', ')
 status = acpi[0].split(': ')[1]

@@ -1,1 +1,2 @@
-rofi.theme: /usr/share/rofi/themes/sidebar.rasi
+#include "/usr/share/rofi/themes//gruvbox-dark-soft.theme"
+rofi.theme: /usr/share/rofi/themes/fancy.rasi

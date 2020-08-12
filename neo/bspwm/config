@@ -18,14 +18,14 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #002933
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-primary = #ffb52a
+primary = #3f888f
 secondary = #e60053
-alert = #bd2c40
+alert = #af0000
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -90,7 +90,7 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " 
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -108,7 +108,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}  %percentage_used%%
+label-mounted = %{F#666} %{F#0a81f5}%percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
