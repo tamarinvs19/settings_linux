@@ -53,7 +53,7 @@ snippet титт "тогда и только тогда, когда" wA
 тогда и только тогда, когда $1
 endsnippet
 
-snippet согда "тогда и только тогда, когда" wA
+snippet согда "тогда и только тогда, когда" w
 тогда и только тогда, когда $1
 endsnippet
 
@@ -75,6 +75,12 @@ $ $
 endsnippet
 
 snippet enum "enumerate" wA
+\begin{enumerate}
+    \item $1
+\end{enumerate} $0
+endsnippet
+
+snippet nenum "enumerate" wA
 \begin{enumerate}[noitemsep]
     \item $1
 \end{enumerate} $0
@@ -130,6 +136,10 @@ snippet phi "phi" iA
 \varphi $0
 endsnippet
 
+snippet pp "Phi" iA
+\Phi $0
+endsnippet
+
 snippet theta "theta" iA
 \theta $0
 endsnippet
@@ -164,6 +174,32 @@ endsnippet
 
 snippet lambda "lambda" A
 \lambda $0
+endsnippet
+
+snippet eta "eta" A
+\eta $0
+endsnippet
+
+snippet mu "mu" wA
+\mu`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
+snippet mmu "mu^*()" wA
+\mu^*( $1 )`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
+snippet nu "nu" A
+\nu $0
 endsnippet
 # --
 
@@ -278,6 +314,16 @@ endsnippet
 context "math()"
 snippet ==> "Longrightarrow" wA
 \Longrightarrow $0
+endsnippet
+
+context "math()"
+snippet --> "rightrightarrows" wA
+\rightrightarrows $0
+endsnippet
+
+context "math()"
+snippet ->-> "longrightarrow" wA
+\Longleftarrow $0
 endsnippet
 
 context "math()"
@@ -510,6 +556,11 @@ snippet AA "forall" iA
 endsnippet
 
 context  "math()"
+snippet ann "an" iA
+a_{n}
+endsnippet
+
+context  "math()"
 snippet xnn "xn" iA
 x_{n}
 endsnippet
@@ -518,7 +569,6 @@ context  "math()"
 snippet ynn "yn" iA
 y_{n}
 endsnippet
-
 
 context  "math()"
 snippet xii "xi" iA
@@ -551,6 +601,11 @@ x_{m}
 endsnippet
 
 context  "math()"
+snippet nNN "^{n}" iA
+${1:x}^{n}
+endsnippet
+
+context  "math()"
 snippet xx "cross" iA
 \times 
 endsnippet
@@ -577,8 +632,20 @@ snippet dint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${visual}} $0
 endsnippet
 
-snippet dmid "middle for int" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${visual}} $0
+priority 300
+context  "math()"
+snippet mint "integral by measure" wA
+\int_{${1:X}} ${2:${visual}} $0
+endsnippet
+
+snippet dsubst "middle for int" wA
+\Bigm|_{${1:-\infty}}^{${2:\infty}} $0
+endsnippet
+
+priority 500
+context  "math()"
+snippet dlam "d \lambda" wA
+d \lambda_{${1:}} $0
 endsnippet
 
 priority 200
@@ -728,6 +795,14 @@ S_{n} $1
 endsnippet
 
 # fonts snippets
+snippet mmf "my different font" wA
+\selectedFont{$1} $0
+endsnippet
+
+snippet ььа "my different font" wA
+\selectedFont{$1} $0
+endsnippet
+
 snippet bbf "bold font" wA
 {\bf $1} $0 
 endsnippet
@@ -777,11 +852,47 @@ $0
 endsnippet
 
 snippet ssum "sum with params" wA
-\sum_{$1}^{$2} $0
+\sum_{${1:n=0}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet bgu "\bigcup_{}^{}" wA
+\bigcup_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet bga "\bigcap_{}^{}" wA
+\bigcap_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet lbgu "\bigcup_{}^{}" wA
+\bigcup\limits_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet lbga "\bigcap_{}^{}" wA
+\bigcap\limits_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet bsu "\bigsqcup_{}^{}" wA
+\bigsqcup_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet bsa "\bigsqcap_{}^{}" wA
+\bigsqcap_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet lbsu "\bigsqcup_{}^{}" wA
+\bigsqcup\limits_{${1:j=1}}^{${2:\infty}} ${0:visual}
+endsnippet
+
+snippet lbsa "\bigsqcap_{}^{}" wA
+\bigsqcap\limits_{${1:j=1}}^{${2:\infty}} ${0:visual}
 endsnippet
 
 snippet sqrt "sqrt" wA
 \sqrt{ $1} $0
+endsnippet
+
+snippet nsqrt "sqrt" wA
+\sqrt[${1:n}]{ $2} $0
 endsnippet
 
 context "math()"
@@ -844,4 +955,17 @@ endsnippet
 snippet imgpage "minipage for img" wA
 \begin{minipage}[c][\totalheight][c]{\columnwidth}
 \end{minipage}
+endsnippet
+
+# FP
+snippet lmb "lambda function" wA
+\\lambda ${1:x}.\: ${2:x} ${0}
+endsnippet
+
+snippet llmb "lambda function" wA
+(\\lambda ${1:x}.\: ${2:x}) ${0}
+endsnippet
+
+snippet SS "description"
+$\sigma$-алгебр$0
 endsnippet

@@ -1,0 +1,33 @@
+.app-header-bar {
+  background: #3f888f;
+}
+.app-bar {
+  background: #002933;
+}
+.app-bar button.app-bar-link.app-bar-selected {
+  background: #3f888f;
+}
+.app-bar button.app-bar-link.app-bar-selected:focus {
+  background: #3f888f;
+}
+.app-bar button.app-bar-link.app-bar-selected:hover {
+  background: #3f888f;
+}
+.app-bar button.app-bar-link {
+  background: #002933;
+}
+.app-bar button.app-bar-link:focus {
+  background: #3f888f;
+}
+.app-bar button:hover.app-bar-link:hover {
+  background: #3f888f;
+}
+.app-bar button.app-bar-link:active {
+  background: #3f888f;
+}
+.app-bar button:hover, .app-bar button:hover.new-flyout {
+  background: #3f888f;
+}
+.app-bar button:focus, .app-bar button:focus.new-flyout {
+  background: #3f888f;
+}
