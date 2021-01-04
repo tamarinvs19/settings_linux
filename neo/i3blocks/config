@@ -42,7 +42,7 @@ markup=pango
 [separator]
 
 [time]
-command=date '+%_d %_b %Y %k:%M'
+command=date '+%_d %_b %k:%M'
 #command=~/.config/i3blocks/scripts/date_time_py
 color=#888888
 interval=1

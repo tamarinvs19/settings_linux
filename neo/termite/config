@@ -6,7 +6,7 @@ allow_bold = true
 dynamic_title = true
 #font = FantasqueSansMono Nerd Font Mono Regular 20
 #font = Hack 17
-font = Iosevka Regular 17
+font = Iosevka Regular 19
 #fullscreen = true
 icon_name = terminal
 mouse_autohide = true
@@ -48,7 +48,8 @@ scrollbar = off
 
 foreground = #eee8d5
 foreground_bold = #ffffff
-background = #121212
+background = rgba(00, 41, 51, 0.8)
+# background = #002933
 
 # 20% background transparency (requires a compositor)
 #background = rgba(63, 63, 63, 0.8)
@@ -57,22 +58,23 @@ background = #121212
 highlight = #2f2f2f
 
 # Colors from color0 to color254 can be set
-color0 = #434343
-color1 = #af0000
-color2 = #5f7f00
-color3 = #ffaf00
-color4 = #5faf00
-color5 = #ffaf00
-color6 = #8cd0d3
-color7 = #dcdccc
-color8 = #709080
-color9 = #af005f
-color10 = #af5faa
-color11 = #ff0001
-color12 = #5faf00
-color13 = #af00af
-color14 = #00af5f
-color15 = #eee8d5
+# color0 = #073642
+color0 = #073642
+color1 = #dc322f
+color2 = #859900
+color3 = #b58900
+color4 = #3f888f
+color5 = #d33682
+color6 = #2aa198
+color7 = #eee8d5
+color8 = #002933
+color9 = #cb4b16
+color10 = #586e75
+color11 = #657b83
+color12 = #839496
+color13 = #6c71c4
+color14 = #93a1a1
+color15 = #fdf6e3
 
 [hints]
 #font = FantasqueSansMono NF Regular 21

@@ -6,7 +6,7 @@ background = '#262626'
 background_past = '#393939'
 color = '#888888'
 
-command = "date '+%_d %_b %Y %k:%M'"
+command = "date '+%_d %_b %k:%M'"
 time = os.popen(command).read().strip()
 
 out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span>'
