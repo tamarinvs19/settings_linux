@@ -1,0 +1,29 @@
+! стиль полосы прокрутки - rxvt (по умолчанию), plain (самый компактный), next, или xterm
+URxvt.scrollBar: false
+! прокрутка по нажатию клавиши
+URxvt*scrollTtyKeypress: true
+
+URxvt.font: xft:Hack:size=13
+
+URxvt*background: gray15
+
+! Цвет шрифта
+URxvt*foreground: gray95
+
+! Другие цвета
+URxvt*color0: grey40
+URxvt*color1: red3
+URxvt*color2: green3
+URxvt*color3: yellow3
+URxvt*color4: blue2
+URxvt*color5: magenta3
+URxvt*color6: cyan3
+URxvt*color7: gray90
+URxvt*color8: grey50
+URxvt*color9: red
+URxvt*color10: green
+URxvt*color11: yellow
+URxvt*color12: blue
+URxvt*color13: magenta
+URxvt*color14: cyan
+URxvt*color15: white
