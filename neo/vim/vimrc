@@ -49,9 +49,6 @@ aug i3config_ft_detection
   au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
 aug end
 
-" Any valid git URL is allowed
-Plug 'junegunn/vim-github-dashboard'
-
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 let NERDTreeWinSize = 20
 map <F3> :NERDTreeToggle<CR>
@@ -104,8 +101,8 @@ Plug 'farmergreg/vim-lastplace'
 let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
 let g:lastplace_open_folds = 0
 
-Plug 'vim-airline/vim-airline', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell' ] }
-Plug 'vim-airline/vim-airline-themes', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell' ] }
+Plug 'vim-airline/vim-airline', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell', 'lean' ] }
+Plug 'vim-airline/vim-airline-themes', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell', 'lean' ] }
 let g:airline_theme='solarized' " raven_blue
 let g:airline_solarized_bg = 'dark'
 let g:airline_left_sep = ''
@@ -277,6 +274,10 @@ let g:jedi#popup_select_first = 0
 " let g:pymode_options_max_line_length = 160
 " let g:pymode_python = 'python3'
 
+
+Plug 'leanprover/lean.vim', {'for': 'lean'}
+
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 " end plugins
