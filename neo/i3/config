@@ -133,7 +133,7 @@ bindsym $mod+Shift+s workspace $wsSlack
 bindsym $mod+d workspace $wsDiscord
 bindsym $mod+o workspace $wsOBS
 bindsym $mod+Control+c workspace $wsPavuControl
-bindsym $mod+i workspace $wsInkscape
+bindsym $mod+g workspace $wsInkscape
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
@@ -298,4 +298,5 @@ exec compton --config ~/.config/compton/compton.conf
 
 # exec evolution &
 
+exec xrdb ~/.Xresources &
 exec python3 ~/builds/inkscape-shortcut-manager/main.py &

@@ -74,7 +74,7 @@ $ $
 \end{description} $3
 endsnippet
 
-snippet enum "enumerate" wA
+snippet enum "enumerate" 
 \begin{enumerate}
     \item $1
 \end{enumerate} $0
@@ -86,81 +86,73 @@ snippet nenum "enumerate" wA
 \end{enumerate} $0
 endsnippet
 
-# snippet bveq(\d) "big and hard equals varilbles" wA
-# $ $ `!p
-# n = match.group(1)
-# snip.rv = "\\begin{description}\n" + "\n".join(['\item \\boxed{ $' + str(jj \Longrightarrow 2} $5
-#     \item \\boxed{ 2 \Longrightarrow 1} $4
-# \end{description} `
-# $3
-# endsnippet
 
 # alphabet
-snippet eps "epsilon" iA
+snippet eps "epsilon" A
 \varepsilon $0
 endsnippet
 
-snippet delta "delta" iA
+snippet delta "delta" A
 \delta $0
 endsnippet
 
-snippet Delta "Delta" iA
+snippet Delta "Delta" A
 \Delta $0
 endsnippet
 
-snippet alp "alpha" iA
+snippet alp "alpha" A
 \alpha $0
 endsnippet
 
-snippet beta "beta" iA
+snippet beta "beta" A
 \beta $0
 endsnippet
 
-snippet gamma "gamma" iA
+snippet gamma "gamma" A
 \gamma $0
 endsnippet
 
-snippet Gamma "Gamma" iA
+snippet Gamma "Gamma" A
 \Gamma $0
 endsnippet
 
-snippet Sigma "Sigma" iA
+snippet Sigma "Sigma" A
 \Sigma $0
 endsnippet
 
-snippet sigma "sigma" iA
+snippet sigma "sigma" A
 \sigma $0
 endsnippet
 
-snippet phi "phi" iA
+snippet phi "phi" A
 \varphi $0
 endsnippet
 
-snippet pp "Phi" iA
+snippet Phi "Phi" A
 \Phi $0
 endsnippet
 
-snippet theta "theta" iA
+snippet theta "theta" A
 \theta $0
 endsnippet
 
-snippet Theta "Theta" iA
+snippet Theta "Theta" A
 \Theta $0
 endsnippet
 
-snippet Om "Omega" iA
+snippet Om "Omega" A
 \Omega $0
 endsnippet
 
-snippet omega "omega" iA
+snippet omega "omega" A
 \omega $0
 endsnippet
 
-snippet Tau "Tau" iA
+snippet Tau "Tau" A
 \Tau $0
 endsnippet
 
-snippet tau "tau" iA
+snippet tau "tau" A
 \tau $0
 endsnippet
 
@@ -168,7 +160,7 @@ snippet xi "xi" A
 \xi $0
 endsnippet
 
-snippet Xi "Xi" iA
+snippet Xi "Xi" A
 \Xi $0
 endsnippet
 
@@ -228,22 +220,22 @@ endsnippet
 # \{$1\}$0
 # endsnippet
 
-context  "math()"
+# context  "math()"
 snippet all "forall" A
 \forall $0
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet log "Log" A
 \log{$1}$0
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet sum "Sum" A
 \sum $1
 endsnippet
 
-context "math()"
+# context "math()"
 snippet in "in" A
 \in $0
 endsnippet
@@ -281,68 +273,68 @@ endsnippet
 # \right )
 # endsnippet
 
-context "math()"
+# context "math()"
 snippet -> "to" wA
 \to $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet to "to" A
 \to $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet >= "ge" wA
 \ge $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet <= "le" wA
 \le $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet => "rightarrow" wA
 \Rightarrow $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet =< "leftarrow" wA
 \Leftarrow $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet ==> "Longrightarrow" wA
 \Longrightarrow $0
 endsnippet
 
-context "math()"
-snippet --> "rightrightarrows" wA
+# context "math()"
+snippet ->-> "rightrightarrows" wA
 \rightrightarrows $0
 endsnippet
 
-context "math()"
-snippet ->-> "longrightarrow" wA
+# context "math()"
+snippet --> "longrightarrow" wA
 \Longleftarrow $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet ==< "Longleftarrow" wA
 \Longleftarrow $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet lleq "Longleftrightarrow" wA
 \Longleftrightarrow $0
 endsnippet
 
 priority 10
-context "math()"
+# context "math()"
 snippet lequ "Leftrightarrow" wA
 \Leftringharrow $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet abs "Abs" wA
 \lvert $1 \rvert $0
 endsnippet
@@ -368,53 +360,53 @@ $1
 .\] $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet '([A-Za-z])(\d)' "auto subscript" wrA
 `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
 endsnippet
 
-context "math()"
+# context "math()"
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`}
 endsnippet
 
-context "math()"
+# context "math()"
 snippet sr "^2" iA
 ^2
 endsnippet
 
-context "math()"
+# context "math()"
 snippet cb "^3" iA
 ^3
 endsnippet
 
-context "math()"
+# context "math()"
 snippet compl "complement" iA
 ^{c}
 endsnippet
 
-context "math()"
+# context "math()"
 snippet inv "invese element" iA
 ^{-1}
 endsnippet
 
-context "math()"
+# context "math()"
 snippet td "superscript" iA
 ^{$1}$0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet // "Fraction" iA
 \\frac{$1}{$2}$0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet '((\d+)|(\d*)(\\)?([A-Za-z]+)((\^|_)(\{\d+\}|\d))*)/' "Fraction" wrA
 \\frac{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 priority 1000
-context "math()"
+# context "math()"
 snippet '^.*\)/' "() Fraction" wrA
 `!p
 stripped = match.string[:-1]
@@ -486,11 +478,11 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
-# snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
-# \vec{`!p snip.rv=match.group(1)`}
-# endsnippet
+snippet "(\\?\w+)(,\.|\.,)" "Vector postfix" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet
 
-context  "math()"
+# context  "math()"
 snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
@@ -531,7 +523,7 @@ snippet lrA "leftangle rightangle" iA
 \left\langle ${1:${VISUAL}} \right\rangle$0
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet conj "conjugate" iA
 \overline{$1}$0
 endsnippet
@@ -540,72 +532,72 @@ snippet __ "subscript" iA
 _{$1}$0
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet ooo "\infty" iA
 \infty
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet EE "geq" iA
 \exists 
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet AA "forall" iA
 \forall 
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet ann "an" iA
 a_{n}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet xnn "xn" iA
 x_{n}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet ynn "yn" iA
 y_{n}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet xii "xi" iA
 x_{i}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet yii "yi" iA
 y_{i}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet xjj "xj" iA
 x_{j}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet yjj "yj" iA
 y_{j}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet xp1 "x" iA
 x_{n+1}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet xmm "x" iA
 x_{m}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet nNN "^{n}" iA
 ${1:x}^{n}
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet xx "cross" iA
 \times 
 endsnippet
@@ -615,25 +607,25 @@ snippet ** "cdot" iA
 \cdot 
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet norm "norm" iA
 \| $1 \| $0
 endsnippet
 
 priority 100
-context  "math()"
+# context  "math()"
 snippet '(?<!\\)(sin|cos|arcctg|ctg|csc|ln|log|exp|star|perp)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
 priority 300
-context  "math()"
+# context  "math()"
 snippet dint "integral" wA
 \int_{${1:-\infty}}^{${2:\infty}} ${3:${visual}} $0
 endsnippet
 
 priority 300
-context  "math()"
+# context  "math()"
 snippet mint "integral by measure" wA
 \int_{${1:X}} ${2:${visual}} $0
 endsnippet
@@ -643,29 +635,29 @@ snippet dsubst "middle for int" wA
 endsnippet
 
 priority 500
-context  "math()"
+# context  "math()"
 snippet dlam "d \lambda" wA
 d \lambda_{${1:}} $0
 endsnippet
 
 priority 200
-context  "math()"
+# context  "math()"
 snippet '(?<!\\)(arcsin|arccos|arctan|arctg|arcctg|arccsc|arcsec|pi|zeta|int)' "ln" rwA
 \\`!p snip.rv = match.group(1)`
 endsnippet
 
 priority 200
-context  "math()"
+# context  "math()"
 snippet <-> "leftrightarrow" iA
 \leftrightarrow
 endsnippet
 
-# context  "math()"
+# # context  "math()"
 snippet !> "mapsto" iA
 \mapsto 
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet \\\ "setminus" iA
 \setminus $1
 endsnippet
@@ -683,19 +675,15 @@ snippet ~~ "~" iA
 \sim $1
 endsnippet
 
-# # context  "math()"
+# # # context  "math()"
 # snippet set "set" wA
 # \\{$1\\} $0
 # endsnippet
 
 
-context  "math()"
+# context  "math()"
 snippet CC "subset" Ai
 \subset 
-endsnippet
-
-snippet notin "not in " iA
-\not\in 
 endsnippet
 
 snippet NN "cap" iA
@@ -722,19 +710,19 @@ snippet <! "normal" iA
 \triangleleft 
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet tt "text" iA
 \text{$1}$0
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet case "cases" wA
 \begin{cases}
 	$1
 \end{cases}
 endsnippet
 
-snippet align "align" wA
+snippet align "align" 
 \[
 \begin{aligned}
 	$1
@@ -742,12 +730,12 @@ snippet align "align" wA
 \]
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet and "logic and" wA
 \wedge $1
 endsnippet
 
-context  "math()"
+# context  "math()"
 snippet or "logic or" bw
 \vee $1
 endsnippet
@@ -756,12 +744,12 @@ snippet ~== "cong" iA
 \cong $1
 endsnippet
 
-context "math()"
+# context "math()"
 snippet ~= "simeq" iA
 \simeq $1
 endsnippet
 
-context "math()"
+# context "math()"
 snippet != "not =" iA
 \ne $1
 endsnippet
@@ -895,7 +883,7 @@ snippet nsqrt "sqrt" wA
 \sqrt[${1:n}]{ $2} $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet :: "colon" iA
 \colon $0
 endsnippet
@@ -908,7 +896,7 @@ snippet wti "big tilde" wA
 \widetilde{ $1} $0
 endsnippet
 
-context "math()"
+# context "math()"
 snippet DD "partial" iA
 \partial $0
 endsnippet
@@ -968,4 +956,8 @@ endsnippet
 
 snippet SS "description"
 $\sigma$-алгебр$0
+endsnippet
+
+snippet fchoose "function of choose" iA
+I^{${1:VISUAL}}_{${2:VISUAL}} $0
 endsnippet

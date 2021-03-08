@@ -143,7 +143,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source /etc/profile.d/vte-2.91.sh
-export PATH="/home/vyacheslav/.local/bin:/home/vyacheslav/builds/idea-IC-202.6948.69/bin:$PATH"
+export PATH="/home/vyacheslav/.local/bin:/home/vyacheslav/builds/idea/idea-IC-203.7148.57/bin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
