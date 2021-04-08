@@ -64,6 +64,10 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guifg=gray ctermfg=5
 
 " Вместо 'c-n' 'tab'
 Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
+
+" Icons
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'szw/vim-tags'
 Plug 'majutsushi/tagbar'
@@ -191,24 +195,44 @@ imap <F7> <esc>:setlocal spell<cr>i
 set spelllang=en_us,ru_ru
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 
-" cpp syntax
-Plug 'xavierd/clang_complete', {'for': ['cpp']}
-" path to directory where library can be found
-" let g:clang_library_path='/usr/lib/llvm-10/lib'
-" or path directly to the library file
-let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
-let g:clang_snippets=1
-let g:clang_snippets_engine = 'ultisnips'
-let g:clang_periodic_quickfix=1
-let g:clang_hl_errors=1
-let g:clang_close_preview=1
-map <c-m> :call g:ClangUpdateQuickFix()<cr>
 
-Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'} 
-let g:cpp_class_scope_highlight = 1
-let g:cpp_member_variable_highlight = 1
-let g:cpp_class_decl_highlight = 1
-let g:cpp_experimental_simple_template_highlight = 1
+Plug 'w0rp/ale', {'for': ['c', 'cpp', 'haskell', 'python'] }
+let g:airline#extensions#ale#enabled = 0
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_keep_list_window_open = 1
+let g:ale_list_vertical = 0
+let g:ale_list_window_size = 9
+
+let g:ale_haskell_hlint_change_directory=0
+" let g:ale_haskell_stack_ghc_options='-v'
+" let g:ale_haskell_stack_build_options='-v'
+let g:ale_linters = {'haskell': ['hdevtools', 'hlint', 'hie', 'stack_build', 'stack_ghc']}
+
+
+
+" " cpp syntax
+" Plug 'xavierd/clang_complete', {'for': ['cpp']}
+" " path to directory where library can be found
+" " let g:clang_library_path='/usr/lib/llvm-10/lib'
+" " or path directly to the library file
+" let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
+" let g:clang_snippets=1
+" let g:clang_snippets_engine = 'ultisnips'
+" let g:clang_periodic_quickfix=1
+" let g:clang_hl_errors=1
+" let g:clang_close_preview=1
+" map <c-m> :call g:ClangUpdateQuickFix()<cr>
+"
+" Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'} 
+" let g:cpp_class_scope_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let g:cpp_class_decl_highlight = 1
+" let g:cpp_experimental_simple_template_highlight = 1
 
 " julia
 Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
