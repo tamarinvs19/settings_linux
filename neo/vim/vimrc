@@ -246,7 +246,6 @@ Plug 'rust-lang/rust.vim', {'for': 'rust'}
 Plug 'udalov/kotlin-vim'
 
 " haskell
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neovimhaskell/haskell-vim'
 let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
 let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
