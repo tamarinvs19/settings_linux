@@ -1,0 +1,13 @@
+#!/usr/bin/python3
+
+import os
+
+background = '#262626'
+background_past = '#393939'
+color = '#888888'
+
+command = "date '+%_d %_b %k:%M'"
+time = os.popen(command).read().strip()
+
+out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span>'
+print(out.format(text=time, background_past=background_past, background=background, color=color))

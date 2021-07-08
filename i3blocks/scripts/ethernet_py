@@ -1,0 +1,18 @@
+#!/usr/bin/python3
+
+import os
+
+interface = 'enp3s0'
+
+background = '#004953'
+background_past = '#002933'
+background_next = '#002933'
+
+out = '<span background="{background}" color="{color}"><span color="{background_past}"></span> {text} </span><span background="{background_next}" color="{background}"></span>'
+if os.popen('cat /sys/class/net/{}/operstate'.format(interface)).read().strip() == 'down':
+    print(out.format(color="#af0000", background=background, background_next=background_next, background_past=background_past, text=" "))
+else:
+    color = '#5faf00'
+    print(out.format(text='eth', color=color, background=background, background_next=background_next, background_past=background_past))
+
+
