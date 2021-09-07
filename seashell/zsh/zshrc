@@ -31,18 +31,19 @@ alias umount='sudo umount'
 alias mount='sudo mount'
 
 alias cdu='cd ~/Documents/university'
+alias cdsp='cd ~/Documents/university/sp'
 alias cdpl='cd ~/Documents/python-learning'
 alias cdls='cd ~/Documents/settings_linux'
 alias cdmx='cd ~/Documents/misterX'
 alias i3set='vim ~/.config/i3/config'
-alias i3pyset='vim ~/.config/i3pystatus/config.py'
 
 #git
-alias goo='git checkout'
+alias go='git checkout'
 alias gitlog='git log --graph --pretty=oneline --abbrev-commit --all --decorate'
 
 # python3.7
 alias py3='python3.7'
+alias ipy3='ipython3'
 
 export LC_CTYPE="ru_RU.UTF-8"
 
@@ -55,7 +56,7 @@ export PATH=$HOME/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:$
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="green"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -150,4 +151,5 @@ source $ZSH/oh-my-zsh.sh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 #export PATH=$PATH:/opt/clion/bin
+export PATH="$HOME/.cargo/bin:$PATH"
 source /home/slava/builds/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
