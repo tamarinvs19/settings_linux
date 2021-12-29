@@ -5,7 +5,7 @@ set relativenumber
 set smartindent
 set expandtab
 
-" set nowrap " автоперенос
+set nowrap " автоперенос
 set ttimeoutlen=0
 set splitright
 set splitbelow
