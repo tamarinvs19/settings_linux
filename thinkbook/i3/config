@@ -95,16 +95,13 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9: "
 set $ws10 "10: "
-set $wsTelegram ""
-set $wsZoom ""
+set $wsTelegram "T: "
+set $wsZoom "Z: "
 set $wsSlack "Slack"
 set $wsDiscord "Discord"
-set $wsWICD ""
-set $wsWP "WP"
 set $wsOBS "OBS"
-set $wsPavuControl ""
-set $wsInkscape ""
-
+set $wsPavuControl "P: "
+set $wsInkscape "G: "
 
 # switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -117,14 +114,12 @@ bindsym $mod+7 workspace $ws7
 bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
-bindsym $mod+Shift+i workspace $wsWICD
-bindsym $mod+Shift+p workspace $wsWP
 bindsym $mod+t workspace $wsTelegram
 bindsym $mod+z workspace $wsZoom
 bindsym $mod+Shift+s workspace $wsSlack
 bindsym $mod+d workspace $wsDiscord
 bindsym $mod+o workspace $wsOBS
-bindsym $mod+Shift+F12 workspace $wsPavuControl
+bindsym $mod+Shift+p workspace $wsPavuControl
 bindsym $mod+g workspace $wsInkscape
 
 # move focused container to workspace
@@ -143,18 +138,20 @@ bindsym $mod+Shift+o move container to workspace $wsOBS
 
 # assign
 assign [class="Vivaldi"] $ws3
-assign [class="Firefox"] $ws4
+assign [class="Firefox"] $ws3
 assign [class="Audacious"] $ws10
 assign [class="Pcmanfm"] $ws9
+assign [class="nautilus"] $ws9
 assign [class="Libreoffice"] $ws4
-assign [class="Wicd"] $wsWICD
-assign [class="WhatPulse"] $wsWP
 assign [class="Telegram"] $wsTelegram
 assign [class="Slack"] $wsSlack
 assign [class="zoom"] $wsZoom
 assign [class="discord"] $wsDiscord
 assign [class="OBS"] $wsOBS
-assign [class="Intellij IDEA"] $ws2
+assign [class="Intellij IDEA"] $ws1
+assign [class="PyCharm"] $ws1
+assign [class="DataGrip"] $ws1
+assign [class="WebStorm"] $ws1
 assign [class="Pavucontrol"] $wsPavuControl
 assign [class="Inkscape"] $wsInkscape
 
@@ -244,11 +241,10 @@ bindsym XF86AudioLowerVolume exec amixer sset Master 10%-
 bindsym XF86AudioRaiseVolume exec amixer sset Master 10%+
 bindsym XF86AudioMute exec amixer sset Master toggle
 
-bindsym $win+F2 exec wicd-gtk
 bindsym $win+F9 exec pavucontrol
 
 #screenshort
-bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/' &
+bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/business/' &
 bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/' &
 
 #bar toggle, hide, show
@@ -262,23 +258,23 @@ bar {
     position          top
     workspace_buttons yes
     font pango: Font Awesome, Iosevka 15
-    separator_symbol ""
+    separator_symbol " "
     colors {
-    	background #031b33
+    	background #262626
     	statusline #eee8d5
-	separator  #2A6478
-	focused_workspace  #2A6478 #2A6478 #eee8d5
-    	active_workspace   #031b33 #031b33 #05294d
-    	inactive_workspace #031b33 #031b33 #888888
+	separator  #5faf00
+	focused_workspace  #434343 #5faf00 #eee8d5
+    	active_workspace   #262626 #262626 #5faf00
+    	inactive_workspace #262626 #262626 #888888
     	urgent_workspace   #af0000 #af0000 #eee8d5
     }
 }
 
 # $i3-theme-window
 # class                 border  backgr. text    indicator
-client.focused          #05294d #05294d #eee8d5 #eee8d5
-client.focused_inactive #093943 #003943 #888888 #eee8d5
-client.unfocused        #031b33 #031b33 #888888 #eee8d5
+client.focused          #262626 #5faf00 #eee8d5 #eee8d5
+client.focused_inactive #262626 #262626 #5faf00 #eee8d5
+client.unfocused        #262626 #262626 #888888 #eee8d5
 client.urgent 		#af0000 #af0000 #eee8d5 #eee8d5
 
 
@@ -287,7 +283,7 @@ exec xkbcomp /home/vyacheslav/.config/xkbcomp/stru $DISPLAY && xcape -t 500 -e "
 
 exec redshift -l 59:30 -t 3500:3000 &
 # exec nitrogen --restore
-# exec compton --config ~/.config/compton/compton.conf
+exec compton --config ~/.config/compton/compton.conf
 # exec xscreensaver &
 
 # exec evolution &
@@ -295,3 +291,4 @@ exec redshift -l 59:30 -t 3500:3000 &
 # exec xrdb ~/.Xresources &
 # exec python3 ~/builds/inkscape-shortcut-manager/main.py &
 exec "xautolock -detectsleep -time 3 -locker $locker"
+exec "~/run_bot.sh"

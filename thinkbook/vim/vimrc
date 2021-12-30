@@ -107,7 +107,7 @@ let g:lastplace_open_folds = 0
 
 Plug 'vim-airline/vim-airline', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell', 'lean' ] }
 Plug 'vim-airline/vim-airline-themes', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell', 'lean' ] }
-let g:airline_theme='luna' " raven_blue
+let g:airline_theme='gruvbox' " raven_blue
 let g:airline_solarized_bg = 'dark'
 let g:airline_left_sep = ''
 let g:airline_fugitive_prefix = '∲'
