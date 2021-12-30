@@ -16,8 +16,8 @@ for_window [tiling class="Termite"] border pixel 1
 for_window [class="TermiteInkscape"] floating enable
 for_window [class="TermiteInkscape"] resize set 1100 170
 
-gaps inner 5
-gaps outer 2
+# gaps inner 5
+# gaps outer 2
 # [inner|outer|horizontal|vertical|top|left|bottom|right] <px>
 
 # activate floating
