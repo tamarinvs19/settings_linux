@@ -1,10 +1,9 @@
-
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $win Mod1
-set $mod Mod4
+set $win Mod4
+set $mod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -23,7 +22,7 @@ gaps outer 0
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $win+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -146,6 +145,8 @@ assign [class="Libreoffice"] $ws4
 assign [class="Telegram"] $wsTelegram
 assign [class="Slack"] $wsSlack
 assign [class="zoom"] $wsZoom
+assign [class="zhumu"] $wsZoom
+assign [class="Zhumu"] $wsZoom
 assign [class="discord"] $wsDiscord
 assign [class="OBS"] $wsOBS
 assign [class="Intellij IDEA"] $ws1
@@ -154,6 +155,8 @@ assign [class="DataGrip"] $ws1
 assign [class="WebStorm"] $ws1
 assign [class="Pavucontrol"] $wsPavuControl
 assign [class="Inkscape"] $wsInkscape
+
+for_window [class="popup-bottom-center"] floating enable
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -235,8 +238,8 @@ bindsym $win + Control + l exec xdotool mousemove_relative 50 0
 bindsym $win + Shift + i exec xdotool click 1
 bindsym $win + Shift + o exec xdotool click 3
 
-bindsym XF86MonBrightnessUp exec brightnessctl -d "amdgpu_bl0" set +5%
-bindsym XF86MonBrightnessDown exec brightnessctl -d "amdgpu_bl0" set 5%-
+bindsym XF86MonBrightnessUp exec brightnessctl -d "amdgpu_bl0" set +1%
+bindsym XF86MonBrightnessDown exec brightnessctl -d "amdgpu_bl0" set 1%-
 bindsym XF86AudioLowerVolume exec amixer sset Master 10%-
 bindsym XF86AudioRaiseVolume exec amixer sset Master 10%+
 bindsym XF86AudioMute exec amixer sset Master toggle
@@ -244,7 +247,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle
 bindsym $win+F9 exec pavucontrol
 
 #screenshort
-bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/business/' &
+bindsym Print exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/' &
 bindsym $win+Print exec scrot -s '%Y-%m-%d-%H-%M_$wx$h.png' -e 'mv $f ~/Pictures/Screenshots/' &
 
 #bar toggle, hide, show
@@ -279,9 +282,11 @@ client.urgent 		#af0000 #af0000 #eee8d5 #eee8d5
 
 
 # Keyboard settings
-exec xkbcomp /home/vyacheslav/.config/xkbcomp/stru $DISPLAY && xcape -t 500 -e "ISO_Level3_Shift=Escape"
+exec xkbcomp /home/vyacheslav/.config/xkbcomp/stru $DISPLAY && xcape -t 300 -e "ISO_Level3_Shift=Escape;Alt_L=ISO_Level3_Shift|Alt_L;Alt_R=ISO_Level3_Shift|Alt_R"
+bindsym $mod+Next exec xkbcomp /home/vyacheslav/.config/xkbcomp/stru $DISPLAY && xcape -t 300 -e "ISO_Level3_Shift=Escape;Alt_L=ISO_Level3_Shift|Alt_L;Alt_R=ISO_Level3_Shift|Alt_R"
 
-exec redshift -l 59:30 -t 3500:3000 &
+
+exec redshift -l 59:30 -t 5500:4000 &
 # exec nitrogen --restore
 exec compton --config ~/.config/compton/compton.conf
 # exec xscreensaver &
@@ -290,5 +295,10 @@ exec compton --config ~/.config/compton/compton.conf
 
 # exec xrdb ~/.Xresources &
 # exec python3 ~/builds/inkscape-shortcut-manager/main.py &
-exec "xautolock -detectsleep -time 3 -locker $locker"
-exec "~/run_bot.sh"
+
+# exec "xautolock -detectsleep -time 3 -locker $Locker"
+exec_always xautolock -time 15 -locker "xset dpms force off" -notify 5 -notifier "i3lock -i ~/Pictures/forest-outline-small.png"
+
+# exec "/home/vyacheslav/run_bot.sh"
+# bindsym $mod+F12 exec "/home/vyacheslav/run_bot.sh" &
+# bindsym F5 exec scrot '%Y-%m-%d-%H-%M-%S_$wx$h_scrot.png' -e 'mv $f ~/Pictures/Screenshots/business/' 
