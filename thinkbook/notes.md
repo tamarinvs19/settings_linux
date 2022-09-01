@@ -27,3 +27,5 @@
 - redshift
 
 - font awesome
+
+- tex latex pdflatex lualatex?
