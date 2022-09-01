@@ -1,0 +1,23 @@
+## Зависимости
+
+- i3
+- i3blocks
+- zsh
+- rofi
+- alacritty
+- vim
+- ranger
+- nautilus
+- telegram-desktop
+- arandr
+- gedit
+- libreoffice
+- stacer?
+- pavucontrol
+- vivaldi
+- slack
+- nitrogen
+- gimp
+- inkscape
+- grub-customizer
+-  

@@ -266,8 +266,8 @@ bar {
     	background #262626
     	statusline #eee8d5
 	separator  #5faf00
-	focused_workspace  #fbf1c7 #343434 #fbf1c7
-    	active_workspace   #262626 #fbf1c7 #fbf1c7
+	focused_workspace  #434343 #5faf00 #eee8d5
+    	active_workspace   #262626 #262626 #5faf00
     	inactive_workspace #262626 #262626 #888888
     	urgent_workspace   #af0000 #af0000 #eee8d5
     }
@@ -275,9 +275,9 @@ bar {
 
 # $i3-theme-window
 # class                 border  backgr. text    indicator
-client.focused          #262626 #262626 #888888 #eee8d5
-client.focused_inactive #262626 #262626 #fbf1c7 #eee8d5
-client.unfocused        #262626 #343434 #888888 #eee8d5
+client.focused          #262626 #5faf00 #eee8d5 #eee8d5
+client.focused_inactive #262626 #262626 #5faf00 #eee8d5
+client.unfocused        #262626 #262626 #888888 #eee8d5
 client.urgent 		#af0000 #af0000 #eee8d5 #eee8d5
 
 

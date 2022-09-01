@@ -263,7 +263,7 @@ bar {
     font pango: Font Awesome, Iosevka 15
     separator_symbol " "
     colors {
-    	background #262626
+    	background #888888
     	statusline #eee8d5
 	separator  #5faf00
 	focused_workspace  #fbf1c7 #343434 #fbf1c7

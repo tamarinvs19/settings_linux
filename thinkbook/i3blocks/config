@@ -1,0 +1,31 @@
+full_text= 
+align=center
+color=#eee8d5
+separator=false
+separator_block_width=3
+
+[disk]
+command=~/.config/i3blocks/scripts/disk
+label=  
+interval=60
+
+[cpu_usage]
+command=~/.config/i3blocks/scripts/cpu_usage
+interval=3
+label= 
+
+[separator]
+
+[mem]
+command=~/.config/i3blocks/scripts/memory
+interval=30
+label= 
+
+[time]
+command=date '+%_d %_b %k:%M'
+#command=~/.config/i3blocks/scripts/date_time_py
+interval=1
+#background=#0b394e
+label= 
+#markup=pango
+

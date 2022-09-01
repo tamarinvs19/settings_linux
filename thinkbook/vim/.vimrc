@@ -1,0 +1,315 @@
+syntax on
+set number
+set relativenumber
+" set autoindent
+set smartindent
+set expandtab
+
+" set nowrap " автоперенос
+set ttimeoutlen=0
+set splitright
+set splitbelow
+set hidden " Позволяет переходить на другую вкладку без сохранения
+set ignorecase " Игнорировать регистр при поиске. Для поиска с учетом регистра, нужно поместить \C в любое место искомой строки
+set hlsearch " подсвечивать все совпадения при поиске
+set incsearch " подсвечивать совпадение во время поиска на лету
+set cursorline " выделять строку, на которой находится курсор
+set pumheight=5 " количество строк в всплывающем окне
+set scrolloff=5 " количество строк вокруг курсора при прокрутке
+set confirm " подтверждение при закрытии несохраненного файла
+
+" отступы
+autocmd FileType python setlocal ts=4 sts=4 sw=4 et
+autocmd FileType cpp setlocal ts=4 sts=4 sw=4 et
+autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noet
+autocmd FileType html setlocal ts=2 sts=2 sw=2 noet
+autocmd FileType htmldjango setlocal ts=2 sts=2 sw=2 noet
+autocmd FileType css setlocal ts=2 sts=2 sw=2 noet
+autocmd FileType tex setlocal ts=4 sts=4 sw=4 noet
+autocmd FileType haskell setlocal ts=2 sts=0 sw=0 et
+
+command! Vimrc :vs $MYVIMRC
+" copy to buffer
+vmap <F2> "+y
+
+nmap fl :bn<cr>
+nmap fh :bp<cr>
+
+" toggle paste mode
+nmap fp :set paste<cr>
+nmap fpp :set nopaste<cr>
+
+
+" Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+
+" подсветка синтаксиса в i3config 
+Plug 'mboughaba/i3config.vim'
+aug i3config_ft_detection
+  au!
+  au BufNewFile,BufRead ~/.config/i3/config set filetype=i3config
+aug end
+
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+let NERDTreeWinSize = 20
+map <F3> :NERDTreeToggle<CR>
+
+Plug 'https://github.com/altercation/vim-colors-solarized'
+
+Plug 'morhetz/gruvbox'
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_enable_on_vim_startup = 1
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guifg=gray ctermfg=5
+
+" Вместо 'c-n' 'tab'
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
+
+" Icons
+" Plug 'ryanoasis/vim-devicons'
+
+Plug 'szw/vim-tags'
+Plug 'majutsushi/tagbar'
+let g:tagbar_sort = 0
+map <F5> :TagbarToggle<CR>
+
+Plug 'luochen1990/rainbow'
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+\    'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\    'ctermfgs': ['red', 'yellow', 'darkgreen', 'darkcyan', 'blue', 'darkmagenta'],
+\    'guis': [''],
+\    'cterms': [''],
+\    'operators': '_,_',
+\    'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\    'separately': {
+\        '*': {},
+\        'lisp': {
+\            'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\        },
+\        'python': {
+\            'guifgs': ['yellow', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\        },
+\        'tex': {
+\            'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'], 
+\        },
+\        'haskell': {
+\            'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+\        },
+\    }
+\}
+
+" восстановление последней позиции в файле
+Plug 'farmergreg/vim-lastplace'
+let g:lastplace_ignore = "gitcommit,gitrebase,svn,hgcommit"
+let g:lastplace_open_folds = 0
+
+Plug 'vim-airline/vim-airline', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell', 'lean' ] }
+Plug 'vim-airline/vim-airline-themes', {'for': ['python', 'julia', 'javascript', 'json', 'cpp', 'c', 'html', 'htmldjango', 'haskell', 'lean' ] }
+let g:airline_theme='gruvbox' " raven_blue
+let g:airline_solarized_bg = 'dark'
+let g:airline_left_sep = ''
+let g:airline_fugitive_prefix = '∲'
+let g:airline_right_sep = ''
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#keymap#enabled = '0'
+let g:airline#extensions#xkblayout#enabled = '0'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#tab_min_count = 2
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#show_tab_nr = 1
+
+" Change lang to EN in Normal
+Plug 'lyokha/vim-xkbswitch'
+let g:XkbSwitchEnabled       = 1
+let g:XkbSwitchLib           = '/usr/lib/libxkbswitch.so'
+let g:XkbSwitchIMappings     = ['ru']
+let g:XkbSwitchSkipIMappings = {'*' : ['[', ']', '{', '}', "'"]}
+
+" комментирование выделенных строк
+Plug 'tomtom/tcomment_vim'
+
+" Plugun for fast creating tags
+Plug 'mattn/emmet-vim',           { 'for': ['htmldjango', 'html', 'css'] }
+
+Plug 'hail2u/vim-css3-syntax',    { 'for': ['htmldjango', 'html','css'] }
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
+
+Plug 'pangloss/vim-javascript',      { 'for': 'javascript' }
+let g:javascript_plugin_jsdoc = 1
+
+Plug 'othree/html5.vim', {'for': ['htmldjango', 'html']}
+
+" Отображение линий отступов
+Plug 'Yggdroot/indentLine'
+let g:indentLine_char       = '¦'
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui  = '#A4E57E'
+
+Plug 'Chiel92/vim-autoformat'
+let g:formatprg_args_javascript = "-j -q -B -f -"
+noremap  <F8>   :Autoformat<CR><CR>
+vnoremap <C-F8> gq
+
+Plug 'lervag/vimtex', {'for': 'tex'}
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+let g:vimtex_compiler_latexmk = {
+      \ 'options' : [
+      \   '-verbose',
+      \   '-file-line-error',
+      \   '-shell-escape',
+      \   '-interaction=nonstopmode',
+      \   '-synctex=1',
+      \   '-jobname="string"'
+      \ ],
+      \}
+
+inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
+nnoremap <buffer> <F10> :exec '!pdflatex -shell-escape' shellescape(@%, 1)<cr>
+nnoremap <buffer> <F12> :exec '!xelatex -shell-escape' shellescape(@%, 1)<cr>
+
+
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+let g:UltiSnipsExpandTrigger="<c-s>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips', $HOME.'/.vim/plugged/vim-snippets/UltiSnips']
+let g:UltiSnipsEditSplit="vertical"
+
+nmap <F7> :setlocal spell<cr>
+vmap <F7> <esc>:setlocal spell<cr>i
+imap <F7> <esc>:setlocal spell<cr>i
+" setlocal spell
+set spelllang=ru_ru,en_us
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+
+Plug 'w0rp/ale', {'for': ['c', 'cpp', 'haskell', 'python', 'html', 'javascript'] }
+let g:airline#extensions#ale#enabled = 1
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_open_list = 0
+let g:ale_keep_list_window_open = 0
+let g:ale_list_vertical = 0
+let g:ale_list_window_size = 9
+
+let g:ale_haskell_hlint_change_directory=0
+" let g:ale_haskell_stack_ghc_options='-v'
+" let g:ale_haskell_stack_build_options='-v'
+let g:ale_linters = {'haskell': ['hdevtools', 'hlint', 'hie', 'stack_build', 'stack_ghc']}
+
+
+
+" " cpp syntax
+" Plug 'xavierd/clang_complete', {'for': ['cpp']}
+" " path to directory where library can be found
+" " let g:clang_library_path='/usr/lib/llvm-10/lib'
+" " or path directly to the library file
+" let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
+" let g:clang_snippets=1
+" let g:clang_snippets_engine = 'ultisnips'
+" let g:clang_periodic_quickfix=1
+" let g:clang_hl_errors=1
+" let g:clang_close_preview=1
+" map <c-m> :call g:ClangUpdateQuickFix()<cr>
+"
+" Plug 'octol/vim-cpp-enhanced-highlight', {'for': 'cpp'} 
+" let g:cpp_class_scope_highlight = 1
+" let g:cpp_member_variable_highlight = 1
+" let g:cpp_class_decl_highlight = 1
+" let g:cpp_experimental_simple_template_highlight = 1
+
+" julia
+" Plug 'JuliaEditorSupport/julia-vim', {'for': 'julia'}
+let g:latex_to_unicode_auto = 1
+autocmd BufRead,BufNewFile *.jl :set filetype=julia
+
+" rust
+" Plug 'rust-lang/rust.vim', {'for': 'rust'}
+
+" kotlin
+Plug 'udalov/kotlin-vim'
+
+" haskell
+" Plug 'neovimhaskell/haskell-vim'
+let g:haskell_enable_quantification = 1   " to enable highlighting of `forall`
+let g:haskell_enable_recursivedo = 1      " to enable highlighting of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " to enable highlighting of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " to enable highlighting of `pattern`
+let g:haskell_enable_typeroles = 1        " to enable highlighting of type roles
+let g:haskell_enable_static_pointers = 1  " to enable highlighting of `static`
+let g:haskell_backpack = 1                " to enable highlighting of backpack keywords
+
+" python
+nnoremap <buffer> <F9> :exec '!python3' shellescape(@%, 1)<cr>
+" au FileType *.py nnoremap <buffer> <F9> :!python3 % <cr>
+
+Plug 'davidhalter/jedi-vim', {'for': 'python'}
+
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#popup_on_dot = 1
+let g:jedi#force_py_version = 3
+let g:jedi#popup_select_first = 0
+
+" Plug 'klen/python-mode', {'for': 'python'}
+" let g:pymode_rope = 0
+" let g:pymode_rope_completion = 0
+" let g:pymode_rope_complete_on_dot = 0
+
+" let g:pymode_lint_cwindow = 0
+" let g:pymode_doc = 0
+" let g:pymode_doc_key = 'F1'
+"
+" let g:pymode_lint = 1
+" let g:pymode_lint_checker = "pyflakes,pep8"
+" let g:pymode_lint_ignore="E501,W601,C0110"
+" let g:pymode_indent = 1
+"
+" let g:pymode_lint_write = 1
+" let g:pymode_virtualenv = 1
+" let g:pymode_rope_rename_bind = '<C-c>rr'
+"
+" " установка breakpoints
+" "let g:pymode_breakpoint = 1
+" "let g:pymode_breakpoint_key = '<leader>b'
+"
+" let g:pymode_syntax = 1
+" let g:pymode_syntax_all = 1
+" let g:pymode_syntax_indent_errors = g:pymode_syntax_all
+" let g:pymode_syntax_space_errors = g:pymode_syntax_all
+"
+" let g:pymode_options_max_line_length = 160
+" let g:pymode_python = 'python3'
+
+call plug#end()
+" end plugins
+
+colorscheme gruvbox
+set background=light
+set t_Co=256
+
+au FileType tex set conceallevel=1
+au FileType tex set concealcursor=c
+au FileType tex :setlocal spell 
+:hi SpellBad cterm=underline,italic 
+
+packloadall
+silent! helptags ALL
