@@ -3,7 +3,7 @@
 import os
 # import basiciw
 
-interface = 'wlx502b73c03b19'
+interface = 'wlan0'
 
 background = '#434343'
 background_past = '#262626'
