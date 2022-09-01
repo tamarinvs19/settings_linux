@@ -2,10 +2,11 @@
 
 - i3
 - i3blocks
-- zsh
+- i3lock
+- zsh + oh-my-zsh
 - rofi
 - alacritty
-- vim
+- vim + vim-plug
 - ranger
 - nautilus
 - telegram-desktop
@@ -20,4 +21,9 @@
 - gimp
 - inkscape
 - grub-customizer
--  
+- zathura
+- zoom
+- xdotool
+- redshift
+
+- font awesome
